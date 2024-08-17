@@ -29,13 +29,21 @@ class Venue(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
 
 
+    class Meta:
+        ordering = ["-venue_name"]
+
+
+    def __str__ (self):
+        return f"{self.venue_name}"
+
+
 # TextChoice code source:
 # https://docs.djangoproject.com/en/5.0/ref/models/fields/#enumeration-types
 class Booking(models.Model):
     """
     Stores a single booking entry
     """
-    booking_id = models.AutoField(primary_key=True, default="001")
+    booking_id = models.AutoField(primary_key=True)
     venue = models.ForeignKey(Venue, on_delete=models.PROTECT)
     client_id = models.ForeignKey(
         User, on_delete=models.PROTECT, related_name="venue_bookings"
@@ -50,6 +58,12 @@ class Booking(models.Model):
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)
 
+
     class Meta:
         unique_together = ('venue', 'event_date')
+        ordering = ["-event_date", "-client_id"]
+
+
+    def __str__ (self):
+        return f"{self.event_date}, {self.venue}, {self.client_id}"
 

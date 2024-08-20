@@ -7,13 +7,13 @@ from .models import Venue
 class VenueList(generic.ListView):
      """
      Renders a paginated view of 6 posts the queryset displaying the title and
-     basic information about each post allowing user to navigate to older and newer
-     posts.
-     Displays an multiple descending instances of :model:`blog.Post`.
+     basic information about each venue allowing user to navigate view all venue
+     options.
+     Displays an multiple descending instances of :model:`booking.Venue`.
      **Context**
      ``index``
-        The most recent 6 instances instance of :model:`blog.Post`.
+        The most recent 6 instances instance of :model:`booking.Venue`.
      **Template:**
-     :template:`blog/index.html`
+     :template:`blog/venue_list.html`
      """
      model = Venue

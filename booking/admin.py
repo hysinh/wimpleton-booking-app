@@ -5,7 +5,9 @@ from .models import Venue, Booking
 # Register your models here.
 @admin.register(Venue)
 class VenueAdmin(SummernoteModelAdmin):
-    list_display = ('venue_name', 'venue_blurb' )
+    list_display = ('venue_name', 'venue_blurb', 'venue_capacity', )
+    search_fields = ['title']
+    list_filter = ('venue_capacity',)
     summernote_fields = ('venue_description')
 
 

@@ -5,5 +5,6 @@ from .models import Venue
 
 
 urlpatterns = [
-    path('', views.VenueList.as_view(), name='venue-hire'),
+    path('', views.VenueList.as_view(), name='home'),
+    path('venue-hire/', views.VenueList.as_view(), name='venue-hire'),
 ]

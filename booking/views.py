@@ -17,3 +17,5 @@ class VenueList(generic.ListView):
      :template:`blog/venue_list.html`
      """
      model = Venue
+     template_name = "booking/venue_list.html"
+     paginate_by = 6

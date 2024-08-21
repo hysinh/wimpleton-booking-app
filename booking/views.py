@@ -19,3 +19,5 @@ class VenueList(generic.ListView):
      model = Venue
      template_name = "booking/venue_list.html"
      paginate_by = 6
+
+

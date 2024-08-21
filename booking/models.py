@@ -27,6 +27,7 @@ class Venue(models.Model):
     venue_blurb = models.TextField(blank=True)
     venue_capacity = models.IntegerField()
     created_on = models.DateTimeField(auto_now_add=True)
+    venue_slug = models.SlugField(max_length=200, unique=True)
 
 
     class Meta:

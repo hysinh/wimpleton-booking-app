@@ -9,7 +9,11 @@ body {
     text-decoration: none;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: #d9dcd6;
+}
+
+.brand a {
+    text-decoration: none;
 }
 
 .red-o {

@@ -1,14 +1,28 @@
 body {
-    font-family: 'Roboto';
-    background-color: #F9FAFC;
+    background-color: #7c0c62;
+    font-family: Montserrat, sans-serif;
 }
 
 .brand {
-    font-family: Lato, sans-serif;
+    font-family: Libre Baskerville, serif;
+    text-transform: uppercase;
+    text-decoration: none;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
+    letter-spacing: 3px;
+    color: #d9dcd6;
 }
+
+.brand a {
+    text-decoration: none;
+}
+
+.nav-background {
+    background-color: #445261;
+}
+
+
+/* old styles */
 
 .red-o {
     color: #E84610;

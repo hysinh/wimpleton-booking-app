@@ -21,3 +21,8 @@ class VenueList(generic.ListView):
      paginate_by = 6
 
 
+
+# Public pages
+
+def homepage(request):
+    return render(request, 'booking/index.html')

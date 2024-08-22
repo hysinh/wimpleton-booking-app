@@ -5,6 +5,15 @@ from .models import Venue
 
 
 urlpatterns = [
-    path('', views.VenueList.as_view(), name='home'),
+    # public pages (no login required)
+    path('', views.homepage, name='welcome'),
+
+    # path('', views.VenueList.as_view(), name='home'),
     path('venue-hire/', views.VenueList.as_view(), name='venue-hire'),
+
+
+
+
+
 ]
+

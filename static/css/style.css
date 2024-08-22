@@ -9,12 +9,20 @@ body {
     text-decoration: none;
     font-size: 1.4rem;
     font-weight: 700;
+    letter-spacing: 3px;
     color: #d9dcd6;
 }
 
 .brand a {
     text-decoration: none;
 }
+
+.nav-background {
+    background-color: #445261;
+}
+
+
+/* old styles */
 
 .red-o {
     color: #E84610;

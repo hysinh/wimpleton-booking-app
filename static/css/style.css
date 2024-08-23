@@ -15,7 +15,7 @@ body {
     padding-bottom: .3125rem;
     margin-right: 1rem;
     white-space: nowrap;
-    font-size: 1.12rem;
+    font-size: .95rem;
     font-weight: 700;
     letter-spacing: 3px;
     color: #d9dcd6;
@@ -61,6 +61,7 @@ body {
 
 .event-type-container {
     display: block;
+    justify-content: center;
     background-color: #ffffff;
 }
 
@@ -69,9 +70,42 @@ body {
     color: #d9dcd6;
 }
 
-.featured-venue {
+.featured-events {
+    width: 100vw;
+    display: block;
+    justify-content: center;
     padding: 15px 2px;
-    background-color: #E84610;
+    background-color: #ffffff;
+}
+
+.featured-events h2 {
+    font-family: Libre Baskerville, serif;
+    text-transform: uppercase;
+    font-size: 1.12rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.featured-events p {
+    font-size: 1rem;
+    padding: 20px 25px;
+}
+
+#featured-events-img-weddings {
+    background: url("/static/images/wimpleton_home_1600x900.webp") no-repeat top center / cover;
+    height: 90vw;
+    width: 90vw;
+    margin-bottom: 20px;
+    /* Makes the square image into a circle */
+    border-radius: 50%;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.weddings-image {
+    display: block;
+    align-items: center;
+    justify-content: center;    
 }
 
 

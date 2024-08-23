@@ -11,10 +11,15 @@ body {
     font-family: Libre Baskerville, serif;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 1.12rem;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    white-space: nowrap;
+    font-size: 1.25rem;
     font-weight: 700;
     letter-spacing: 3px;
     color: #d9dcd6;
+
 }
 
 .brand a {
@@ -23,6 +28,25 @@ body {
 
 .nav-background {
     background-color: #445261;
+}
+
+.main-canvas {
+    background-color: yellow;
+}
+
+.sample-venue-section {
+    display: block;
+    background-color: aqua;
+}
+
+.authenticated-user {
+    background-color: #445261;
+    color: #d9dcd6;
+}
+
+.featured-venue {
+    padding: 15px 2px;
+    background-color: #E84610;
 }
 
 

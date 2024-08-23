@@ -34,9 +34,10 @@
 <body class="d-flex flex-column h-100 main-bg">
 
     <!-- Navigation -->
+    <!-- Code source: https://getbootstrap.com/docs/5.3/components/navbar/-->
     <nav class="navbar navbar-expand-lg navbar-dark nav-background">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#"><span class="brand">Wimpleton House</span></a>
+        <a class="brand" href="#"><span class="brand">Wimpleton House</span></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -91,13 +92,15 @@
         </div>
         </div>
     </div> -->
-    
+    <div class="authenticated-user">
+      {% if user.is_authenticated %}
+          <p class="text-end m-3">You are logged in as {{ user }}</p>
+      {% else %}
+          <p class="text-end m-3">You are not logged in</p>
+      {% endif %}
+    </div>
     <main class="flex-shrink-0 main-bg">
-        {% if user.is_authenticated %}
-            <p class="text-end m-3">You are logged in as {{ user }}</p>
-        {% else %}
-            <p class="text-end m-3">You are not logged in</p>
-        {% endif %}
+      
         {% block content %}
         <!-- Content Goes here -->
         {% endblock content %}
@@ -106,6 +109,19 @@
 
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
+        <div class="container text-center">
+          <div class="row align-items-start">
+            <div class="col">
+              One of three columns
+            </div>
+            <div class="col">
+              One of three columns
+            </div>
+            <div class="col">
+              One of three columns
+            </div>
+          </div>
+        </div>
         <!-- <p class="m-0 text-center text-white">{% block copyright %} Made by Code Instituters {% endblock %}</p>  -->
         <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
             <i class="fab fa-twitter-square ms-3"></i>

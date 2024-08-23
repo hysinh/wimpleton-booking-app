@@ -4,7 +4,7 @@ body {
 }
 
 .nav-brand {
-    font-size: 1.12rem;
+
 }
 
 .brand {
@@ -15,7 +15,7 @@ body {
     padding-bottom: .3125rem;
     margin-right: 1rem;
     white-space: nowrap;
-    font-size: 1.25rem;
+    font-size: 1.12rem;
     font-weight: 700;
     letter-spacing: 3px;
     color: #d9dcd6;
@@ -30,13 +30,38 @@ body {
     background-color: #445261;
 }
 
-.main-canvas {
+.container {
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Featured image styles */
+.featured-image-container {
     background-color: yellow;
 }
 
-.sample-venue-section {
+.home-image {
+    background: url("/static/images/wimpleton_home_1600x900.webp") no-repeat center/cover, #445261;
+    height: 400px;
+}
+
+/* Featured content section */
+.featured-content-container {
+    background-color: #ffffff;
+    padding: 40px 25px;
+}
+
+.featured-content {
+    background-color: #d9dcd6;
+    padding: 40px 25px;
+    font-size: .85em;
+    text-transform: uppercase;
+}
+
+.event-type-container {
     display: block;
-    background-color: aqua;
+    background-color: #ffffff;
 }
 
 .authenticated-user {
@@ -48,6 +73,8 @@ body {
     padding: 15px 2px;
     background-color: #E84610;
 }
+
+
 
 
 /* old styles */

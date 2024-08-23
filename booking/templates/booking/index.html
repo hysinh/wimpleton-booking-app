@@ -1,28 +1,71 @@
 {% extends "base.html" %}
+{% load static %}
+
 
 {% block content %}
-<!-- Venue Hire content starts here -->
+<!-- Featured Image -->
 
-<div class="container-fluid main-canvas">
-    <div class="">
-        Large image goes here
+<div class="featured-image-container">
+  <div class="home-image">
+  </div>
+</div>
 
-        with brand style text across the front with page name
-
-    </div>
+<!-- Featured Image content starts here -->
+<div class="featured-content-container">
+  <div class="featured-content">
+    <p>
+      Wimpleton House is a privately-owned country estate 
+      standing on a secluded 400 acres in the south-east of 
+      Ireland. Upon arrival, you will be instantly transported 
+      back into time while enjoying the finest of modern 
+      comforts.
+    </p>
+    <p>Wimbledon House provides an ideal location to 
+      celebrate an exquisitely luxurious wedding or celebration 
+      or event. Whether celebrating with a small and intimate 
+      group or for larger affairs, Wimpleton House can 
+      accommodate your event needs.
+    </p>
+  </div>
 </div>
 
 <div class="container-fluid text-center">
-    <div class="row align-items-start sample-venue-section">
-      <div class="col featured-venue">
-        <div>img goes here</div>
-        <div>Descriptive blurb</div>
+    <div class="row align-items-start event-type-container">
+      <div class="col featured-venue" style="background-color: yellow;">
+        <div class="col featured-venue">
+          venue image
+        </div>
+        <div>
+          <h2>Weddings</h2>
+          <p>wedding blurb</p>
+        </div>
       </div>
       <div class="col featured-venue" style="background-color: orange;">
-        2nd featured venue
+        <div class="col featured-venue">
+          venue image
+        </div>
+        <div>
+          <h2>Corporate events</h2>
+          <p>corporate events blurb</p>
+        </div>
       </div>
       <div class="col featured-venue" style="background-color: aqua;">
-        3rd featured venue
+        <div class="col featured-venue">
+          venue image
+        </div>
+        <div>
+          <h2>Celebrations</h2>
+          <p>celebrations blurb</p>
+        </div>
+      </div>
+      <div class="col featured-venue" style="background-color: purple;">
+        <div class="col featured-venue">
+          venue image
+        </div>
+        <div>
+          <h2>Galas</h2>
+          <p>galas blurb</p>
+        </div>
       </div>
     </div>
   </div>

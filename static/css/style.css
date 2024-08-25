@@ -84,6 +84,7 @@ body {
     font-size: 1.12rem;
     font-weight: 700;
     letter-spacing: 3px;
+    padding-top: 35px;
 }
 
 .featured-events p {
@@ -95,23 +96,19 @@ body {
     background: url("/static/images/wimpleton_home_1600x900.webp") no-repeat top center / cover;
     height: 90vw;
     width: 90vw;
-    margin-bottom: 20px;
+    margin: 0 auto;
+    padding-bottom: 20px;
     /* Makes the square image into a circle */
     border-radius: 50%;
     max-width: 300px;
     max-height: 300px;
 }
 
-.weddings-image {
-    display: block;
-    align-items: center;
-    justify-content: center;    
-}
 
 
 
 
-/* old styles */
+/* old styles 
 
 .red-o {
     color: #E84610;
@@ -263,3 +260,13 @@ body {
 .approval {
     color: rgb(222, 146, 168);
 }
+
+*/
+
+/* Media query: tablets and larger (768px and up) */
+@media screen and (min-width: 768px) {
+    /* Home page */
+    .featured-events {
+        width: 350px;
+    }
+}    

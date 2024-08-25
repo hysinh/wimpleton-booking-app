@@ -1,5 +1,5 @@
 body {
-    background-color: #7c0c62;
+    background-color: #445261;
     font-family: Montserrat, sans-serif;
 }
 
@@ -38,11 +38,11 @@ body {
 
 /* Featured image styles */
 .featured-image-container {
-    background-color: yellow;
+    background-color: #ffffff;
 }
 
 .home-image {
-    background: url("/static/images/wimpleton_home_1600x900.webp") no-repeat center/cover, #445261;
+    background: url("/static/images/wimpleton_home_1600x900.webp") no-repeat bottom/cover, #445261;
     height: 400px;
 }
 
@@ -93,7 +93,7 @@ body {
 }
 
 #featured-events-img-weddings {
-    background: url("/static/images/wimpleton_home_1600x900.webp") no-repeat top center / cover;
+    background: url("/static/images/featured-event-images-weddings_600x600.webp") no-repeat top center / cover;
     height: 90vw;
     width: 90vw;
     margin: 0 auto;
@@ -104,6 +104,41 @@ body {
     max-height: 300px;
 }
 
+#featured-events-img-celebrations {
+    background: url("/static/images/featured-event-images-celebrations_600x600.webp") no-repeat top center / cover;
+    height: 90vw;
+    width: 90vw;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    /* Makes the square image into a circle */
+    border-radius: 50%;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+#featured-events-img-corporate {
+    background: url("/static/images/featured-event-images-corporate_600x600.webp") no-repeat top center / cover;
+    height: 90vw;
+    width: 90vw;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    /* Makes the square image into a circle */
+    border-radius: 50%;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+#featured-events-img-galas {
+    background: url("/static/images/featured-event-images-galas_600x600.webp") no-repeat top center / cover;
+    height: 90vw;
+    width: 90vw;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    /* Makes the square image into a circle */
+    border-radius: 50%;
+    max-width: 300px;
+    max-height: 300px;
+}
 
 
 

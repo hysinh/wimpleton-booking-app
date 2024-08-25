@@ -1,16 +1,25 @@
 body {
-    background-color: #7c0c62;
+    background-color: #445261;
     font-family: Montserrat, sans-serif;
+}
+
+.nav-brand {
+
 }
 
 .brand {
     font-family: Libre Baskerville, serif;
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 1.0rem;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    white-space: nowrap;
+    font-size: .95rem;
     font-weight: 700;
     letter-spacing: 3px;
     color: #d9dcd6;
+
 }
 
 .brand a {
@@ -21,8 +30,120 @@ body {
     background-color: #445261;
 }
 
+.container {
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+}
 
-/* old styles */
+/* Featured image styles */
+.featured-image-container {
+    background-color: #ffffff;
+}
+
+.home-image {
+    background: url("/static/images/wimpleton_home_1600x900.webp") no-repeat bottom/cover, #445261;
+    height: 400px;
+}
+
+/* Featured content section */
+.featured-content-container {
+    background-color: #ffffff;
+    padding: 40px 25px;
+}
+
+.featured-content {
+    background-color: #d9dcd6;
+    padding: 40px 25px;
+    font-size: .85em;
+    text-transform: uppercase;
+}
+
+.event-type-container {
+    display: block;
+    justify-content: center;
+    background-color: #ffffff;
+}
+
+.authenticated-user {
+    background-color: #445261;
+    color: #d9dcd6;
+}
+
+.featured-events {
+    width: 100vw;
+    display: block;
+    justify-content: center;
+    padding: 15px 2px;
+    background-color: #ffffff;
+}
+
+.featured-events h2 {
+    font-family: Libre Baskerville, serif;
+    text-transform: uppercase;
+    font-size: 1.12rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    padding-top: 35px;
+}
+
+.featured-events p {
+    font-size: 1rem;
+    padding: 20px 25px;
+}
+
+#featured-events-img-weddings {
+    background: url("/static/images/featured-event-images-weddings_600x600.webp") no-repeat top center / cover;
+    height: 90vw;
+    width: 90vw;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    /* Makes the square image into a circle */
+    border-radius: 50%;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+#featured-events-img-celebrations {
+    background: url("/static/images/featured-event-images-celebrations_600x600.webp") no-repeat top center / cover;
+    height: 90vw;
+    width: 90vw;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    /* Makes the square image into a circle */
+    border-radius: 50%;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+#featured-events-img-corporate {
+    background: url("/static/images/featured-event-images-corporate_600x600.webp") no-repeat top center / cover;
+    height: 90vw;
+    width: 90vw;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    /* Makes the square image into a circle */
+    border-radius: 50%;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+#featured-events-img-galas {
+    background: url("/static/images/featured-event-images-galas_600x600.webp") no-repeat top center / cover;
+    height: 90vw;
+    width: 90vw;
+    margin: 0 auto;
+    padding-bottom: 20px;
+    /* Makes the square image into a circle */
+    border-radius: 50%;
+    max-width: 300px;
+    max-height: 300px;
+}
+
+
+
+
+/* old styles 
 
 .red-o {
     color: #E84610;
@@ -174,3 +295,13 @@ body {
 .approval {
     color: rgb(222, 146, 168);
 }
+
+*/
+
+/* Media query: tablets and larger (768px and up) */
+@media screen and (min-width: 768px) {
+    /* Home page */
+    .featured-events {
+        width: 350px;
+    }
+}    

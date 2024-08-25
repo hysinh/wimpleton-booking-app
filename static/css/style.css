@@ -1,5 +1,5 @@
 body {
-    background-color: #445261;
+    background-color: #ffffff;
     font-family: Montserrat, sans-serif;
 }
 
@@ -42,7 +42,7 @@ body {
 }
 
 .home-image {
-    background: url("/static/images/wimpleton_home_1600x900.webp") no-repeat bottom/cover, #445261;
+    background: url("/static/images/wimpleton_home_1067x600.webp") no-repeat center/cover, #445261;
     height: 400px;
 }
 
@@ -141,7 +141,26 @@ body {
 }
 
 
+.footer {
+    background-color: #445261;
+}
 
+
+/* Media query: tablets and larger (768px and up) */
+@media screen and (min-width: 768px) {
+    /* Home page */
+    .home-image {
+        height: 500px;
+        background-position: center;
+    }
+
+    .event-type-container {
+        display: flex;
+        width: 100vw;
+        justify-content: center;
+        align-items: center;
+    }
+}
 
 /* old styles 
 

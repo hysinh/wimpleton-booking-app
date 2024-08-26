@@ -1,12 +1,10 @@
 body {
     background-color: #ffffff;
     font-family: Montserrat, sans-serif;
+    color: #252525;
 }
 
-.nav-brand {
-
-}
-
+/* Navigation */
 .brand {
     font-family: Libre Baskerville, serif;
     text-transform: uppercase;
@@ -36,7 +34,7 @@ body {
     padding: 0px;
 }
 
-/* Featured image styles */
+/* Home page: Featured image styles */
 .featured-image-container {
     background-color: #ffffff;
 }
@@ -46,7 +44,7 @@ body {
     height: 400px;
 }
 
-/* Featured content section */
+/* Home page: Featured content section */
 .featured-content-container {
     background-color: #ffffff;
     padding: 40px 25px;
@@ -138,6 +136,34 @@ body {
     border-radius: 50%;
     max-width: 300px;
     max-height: 300px;
+}
+
+/* Venue Hire Page */
+.container-venues {
+    width: 100vw;
+    padding: 25px 55px;
+}
+
+.card-venue-hire {
+
+}
+
+.venue-title {
+    font-family: Libre Baskerville, serif;
+    text-transform: uppercase;
+    text-decoration: none;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    white-space: nowrap;
+    font-size: 1.15rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+}
+
+.venue-link {
+    text-decoration: none;
+    color: #445261;
 }
 
 

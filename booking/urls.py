@@ -9,6 +9,7 @@ urlpatterns = [
     path('', views.homepage, name='home'),
     # path('', views.VenueList.as_view(), name='home'),
     path('venue-hire/', views.VenueList.as_view(), name='venue-hire'),
+    path('<slug:slug>/', views.venue_detail, name='venue-detail'),
 
 
 

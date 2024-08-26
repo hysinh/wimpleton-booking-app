@@ -8,7 +8,7 @@ class VenueAdmin(SummernoteModelAdmin):
     list_display = ('venue_name', 'venue_blurb', 'venue_capacity', )
     search_fields = ['title']
     list_filter = ('venue_capacity',)
-    prepopulated_fields = {'venue_slug': ('venue_name',)}
+    prepopulated_fields = {'slug': ('venue_name',)}
     summernote_fields = ('venue_description',)
 
 

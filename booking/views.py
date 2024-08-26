@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.http import HttpResponse
 from .models import Venue
@@ -21,6 +21,24 @@ class VenueList(generic.ListView):
      paginate_by = 6
 
 
+def venue_detail(request,slug):
+     """
+     Display an individual :model: 'booking.Venue'
+     ** Context **
+     "venue"
+      an instance of :model: 'booking.Venue'
+     ** Template **
+     : template: 'booking/venue_detail.html'
+     """
+
+     queryset = Venue.objects.filter(status=1)
+     venue = get_object_or_404(queryset, slug=slug)
+
+     return render (
+          request,
+          'booking/venue_detail.html',
+          {"booking":booking},
+     )
 
 # Public pages
 

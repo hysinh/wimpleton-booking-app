@@ -1,6 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
+<!-- Featured Image -->
+
+<div class="featured-image-container">
+    <div class="home-image">
+    </div>
+  </div>
+<!-- Venue Hire intro section -->
+<div class="featured-content-container">
+    <div class="featured-content">
+      <p>
+        A little blurb here about the different type of celebrations and events possible
+      </p>
+      <p>Wimbledon House provides an ideal location to 
+        celebrate an exquisitely luxurious wedding or celebration 
+        or event. Whether celebrating with a small and intimate 
+        group or for larger affairs, Wimpleton House can 
+        accommodate your event needs.
+      </p>
+    </div>
+  </div>
+
+
 <!-- Venue Hire content starts here -->
 <div class="container-venues">
     <div class="row">
@@ -15,8 +37,8 @@
             <p>{{ venue.venue_capacity }} guests</p>
             <p class="card-text text-muted h6">{{ venue.venue_blurb }}
             </p>
-            <p class="card-text text-muted h6">{{ venue.venue_description }}
-            </p>
+            <div class="card-text text-muted h6">{{ venue.venue_description|safe }}
+            </div>
         </div>
         {% if forloop.counter|divisibleby:3 %}
         {% endif %}

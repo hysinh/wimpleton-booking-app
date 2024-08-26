@@ -6,8 +6,7 @@ from .models import Venue
 
 urlpatterns = [
     # public pages (no login required)
-    path('', views.homepage, name='welcome'),
-
+    path('', views.homepage, name='home'),
     # path('', views.VenueList.as_view(), name='home'),
     path('venue-hire/', views.VenueList.as_view(), name='venue-hire'),
 

@@ -16,7 +16,8 @@ class VenueList(generic.ListView):
      **Template:**
      :template:`blog/venue_list.html`
      """
-     model = Venue
+     #model = Venue
+     queryset = Venue.objects.filter(status=1)
      template_name = "booking/venue_list.html"
      paginate_by = 6
 

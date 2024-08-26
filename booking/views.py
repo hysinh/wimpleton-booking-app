@@ -37,7 +37,7 @@ def venue_detail(request,slug):
      return render (
           request,
           'booking/venue_detail.html',
-          {"booking":booking},
+          {"booking":venue},
      )
 
 # Public pages

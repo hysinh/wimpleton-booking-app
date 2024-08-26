@@ -2,10 +2,28 @@
 
 {% block content %}
 <!-- Venue Hire content starts here -->
-<div class="container-fluid">
+<div class="container-venues">
     <div class="row">
+        {% for venue in venue_list %}
+        <div class="col align-items-start card-venue-hire">
+            <div class="image-container">
+                An image goes here
+            </div>
+            <a href="#" class="venue-link">
+                <h2 class="venue-title">{{ venue.venue_name }}</h2>
+            </a>
+            <p>{{ venue.venue_capacity }} guests</p>
+            <p class="card-text text-muted h6">{{ venue.venue_blurb }}
+            </p>
+            <p class="card-text text-muted h6">{{ venue.venue_description }}
+            </p>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}
+        {% endif %}
+        {% endfor %}
 
-        <!-- Blog Entries Column -->
+    </div>
+        <!-- Blog Entries Column
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for venue in venue_list %}
@@ -33,7 +51,7 @@
                 {% endfor %}
 
             </div>
-        </div>
+        </div> -->
     </div>
     {% if is_paginated %}
     <nav aria-label="Page navigation">

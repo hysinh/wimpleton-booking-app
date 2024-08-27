@@ -24,5 +24,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')), 
     path('', include('booking.urls'), name="booking-urls"),
-    path('venue-hire/', views.VenueList.as_view(), name='venue-hire'),
+    #path('venue-hire/', include('booking.urls'), name="booking-urls"),
 ]

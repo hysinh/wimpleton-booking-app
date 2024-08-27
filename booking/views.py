@@ -41,6 +41,15 @@ def venue_detail(request,slug):
           {"booking":venue},
      )
 
+
+def booking_form(request, slug):
+     """
+     Displays the booking form :model: 'booking.Booking'
+     """
+     model = booking_form
+     template_name = "booking/booking_form.html"
+
+
 # Public pages
 
 def homepage(request):

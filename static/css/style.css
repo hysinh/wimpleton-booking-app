@@ -221,6 +221,11 @@ body {
         justify-content: center;
         align-items: center;
     }
+
+    /* Sign up / Sign out / Registration pages */
+    .container-auth-box {
+        width: 550px;
+    }
 }
 
 /* old styles 

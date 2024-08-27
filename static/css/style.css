@@ -17,7 +17,6 @@ body {
     font-weight: 700;
     letter-spacing: 3px;
     color: #d9dcd6;
-
 }
 
 .brand a {
@@ -140,12 +139,36 @@ body {
 
 /* Venue Hire Page */
 .container-venues {
-    width: 100vw;
-    padding: 25px 55px;
+    width: 90vw;
+    padding: 60px 20px 60px;
 }
 
-.card-venue-hire {
+.venue-image {
+    background: url("/static/images/featured_image_1600x900_chapel.webp") no-repeat left/cover, 40px, #445261;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.overlay-text-main {
+    background-color: rgb(246, 250, 246, .5);
+    font-size: 130%;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    width: auto;
+    height: 75px;
+    text-align: center;
+    padding: 20px;
+    /*position: absolute;
+    bottom: 250px;
+    right: 10px;
+    */
+}
+
+
+.card-venue-hire {
+    
 }
 
 .venue-title {
@@ -155,7 +178,7 @@ body {
     padding-top: .3125rem;
     padding-bottom: .3125rem;
     margin-right: 1rem;
-    white-space: nowrap;
+    /*white-space: nowrap;*/
     font-size: 1.15rem;
     font-weight: 700;
     letter-spacing: 3px;

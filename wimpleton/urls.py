@@ -20,10 +20,9 @@ from django.urls import path, include
 
 urlpatterns = [
     # django admin panel
-    path('venue-hire/', include('booking.urls'), name="booking-urls"),
     path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
     path('summernote/', include('django_summernote.urls')), 
     path('', include('booking.urls'), name="booking-urls"),
-    
+    path('venue-hire/', views.VenueList.as_view(), name='venue-hire'),
 ]

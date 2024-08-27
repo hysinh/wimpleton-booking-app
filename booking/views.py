@@ -1,7 +1,8 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.http import HttpResponse
-from .models import Venue
+from .models import Venue, Booking
+from .forms import BookingForm
 
 # Create your views here.
 class VenueList(generic.ListView):
@@ -48,6 +49,19 @@ def booking_form(request, slug):
      """
      model = booking_form
      template_name = "booking/booking_form.html"
+
+
+
+def add_booking(request):
+     if request.method == 'POST':
+          booking_form = BookingForm(request.POST)
+          if booking_form.is_valid:
+               booking_form.save()
+     form = BookingForm()
+     context = {
+          'booking_form': booking_form
+     }
+     return render(request, 'booking/booking_form.html', context)
 
 
 # Public pages

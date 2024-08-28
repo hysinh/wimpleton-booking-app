@@ -1,5 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.contrib import messages
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
+from django.contrib.auth.decorators import login_required, permission_required
 from django.http import HttpResponse
 from .models import Venue, Booking
 from .forms import BookingForm
@@ -38,7 +40,30 @@ def list_approved_bookings(request):
           'bookings': bookings
      }
      return render(request, 'booking/approved_bookings.html', context)
+
+
+def add_booking(request):
+     if request.method == 'POST':
+          add_booking_form = BookingForm(request.POST)
+          if add_booking_form.is_valid:
+               add_booking_form.save()
+               messages.success(request, "Booking added successfully")
+               return redirect('venue-hire')
+     add_booking_form = BookingForm()
+     context = {
+          'add_booking_form': add_booking_form
+     }
+     return render(request, 'booking/add_booking.html', context)
      
+# Public pages
+def homepage(request):
+     return render(request, 'booking/index.html')
+
+def aboutpage(request):
+     return render(request, 'booking/about.html')
+
+def contactpage(request):
+     return render(request, 'booking/contact.html')
 
 def venue_detail(request):
      return HttpResponse("hello!")
@@ -80,7 +105,4 @@ def venue_detail(request):
 #      return render(request, 'booking/booking_form.html', context)
 
 
-# Public pages
 
-def homepage(request):
-    return render(request, 'booking/index.html')

@@ -22,7 +22,13 @@ urlpatterns = [
     # django admin panel
     path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
+
+    # Client login required
+    
     path('summernote/', include('django_summernote.urls')), 
     path('', include('booking.urls'), name="booking-urls"),
     #path('venue-hire/', include('booking.urls'), name="booking-urls"),
+
+    # Public page
+    
 ]

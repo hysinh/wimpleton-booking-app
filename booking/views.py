@@ -23,45 +23,61 @@ class VenueList(generic.ListView):
      paginate_by = 6
 
 
-def venue_detail(request,slug):
+class BookingList(generic.ListView):
      """
-     Display an individual :model: 'booking.Venue'
-     ** Context **
-     "venue"
-      an instance of :model: 'booking.Venue'
-     ** Template **
-     : template: 'booking/venue_detail.html'
+     Displays all the instances of Booking :model: 'booking.Booking'
      """
-
-     queryset = Venue.objects.filter(status=1)
-     venue = get_object_or_404(queryset, slug=slug)
-
-     return render (
-          request,
-          'booking/venue_detail.html',
-          {"booking":venue},
-     )
+     #model = Booking
+     queryset = Booking.objects.filter(status=1)
+     template_name = "booking/booking_list.html"
 
 
-def booking_form(request, slug):
-     """
-     Displays the booking form :model: 'booking.Booking'
-     """
-     model = booking_form
-     template_name = "booking/booking_form.html"
-
-
-
-def add_booking(request):
-     if request.method == 'POST':
-          booking_form = BookingForm(request.POST)
-          if booking_form.is_valid:
-               booking_form.save()
-     form = BookingForm()
+def list_approved_bookings(request):
+     bookings = Booking.objects.filter(status=1)
      context = {
-          'booking_form': booking_form
+          'bookings': bookings
      }
-     return render(request, 'booking/booking_form.html', context)
+     return render(request, 'booking/approved_bookings.html', context)
+     
+
+def venue_detail(request):
+     return HttpResponse("hello!")
+
+
+# def venue_detail(request,slug):
+#      """
+#      Display an individual :model: 'booking.Venue'
+#      ** Context **
+#      "venue"
+#       an instance of :model: 'booking.Venue'
+#      ** Template **
+#      : template: 'booking/venue_detail.html'
+#      """
+
+#      queryset = Venue.objects.filter(status=1)
+#      venue = get_object_or_404(queryset, slug=slug)
+
+#      return render (
+#           request,
+#           'booking/venue_detail.html',
+#           {"booking":venue},
+#      )
+
+
+
+
+
+
+# def add_booking(request):
+#      if request.method == 'POST':
+#           booking_form = BookingForm(request.POST)
+#           if booking_form.is_valid:
+#                booking_form.save()
+#      form = BookingForm()
+#      context = {
+#           'booking_form': booking_form
+#      }
+#      return render(request, 'booking/booking_form.html', context)
 
 
 # Public pages

@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+<!-- Booking form -->
+<div>
+    <!-- Iterate over booking object -->
+    {% for booking in booking_list %}
+    <!-- Display Objects -->
+     <div>
+        <p>{{ booking.venue }}</p>
+        <p>{{ booking.event_date }}</p>
+     </div>
+     <!-- If object list is empty -->
+      {% empty %}
+      No bookings yet
+     {% endfor %}
+</div>
+{% endblock %}

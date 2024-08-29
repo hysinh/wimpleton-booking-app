@@ -30,7 +30,7 @@ class BookingList(generic.ListView):
      Displays all the instances of Booking :model: 'booking.Booking'
      """
      #model = Booking
-     queryset = Booking.objects.filter(status=1)
+     queryset = Booking.objects.all()
      template_name = "booking/booking_list.html"
 
 

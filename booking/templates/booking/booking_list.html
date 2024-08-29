@@ -4,18 +4,22 @@
 
 {% block content %}
 
-<!-- Booking form -->
-<div>
+<!-- List of all Bookings created by this user -->
+<div class="booking-list">
     <!-- Iterate over booking object -->
+    <p class="bold">Your Current Venue Bookings:</p>
     {% for booking in booking_list %}
     <!-- Display Objects -->
-     <div>
-        <p>{{ booking.venue }}</p>
-        <p>{{ booking.event_date }}</p>
-     </div>
-     <!-- If object list is empty -->
-      {% empty %}
-      No bookings yet
+    <div>
+      <div class="booking-card-individual">
+         <p class="booking-venue text-muted">Venue: {{ booking.venue }}</p>
+         <p><span class="text-muted bold">Booking date:</span> {{ booking.event_date }}</p>
+         <p><span class="text-muted bold">Status:</span> {% if booking.status == 0 %}Approved{% else %}Pending Approval{% endif %}</p>
+      </div>
+    </div>
+    <!-- If object list is empty -->
+    {% empty %}
+    No bookings yet
      {% endfor %}
 </div>
 {% endblock %}

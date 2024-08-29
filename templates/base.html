@@ -2,15 +2,13 @@
 
 {% url 'home' as home_url %}
 {% url 'venue-hire' as venue_hire_url %}
+{% url 'about' as about_url %}
+{% url 'contact' as contact_url %}
 {% url 'account_login' as login_url %}
+{% url 'booking-list' as bookinglist_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
 
-<!-- {% url 'home' as home_url %}
-{% url 'about' as about_url %}
-{% url 'account_login' as login_url %}
-{% url 'account_signup' as signup_url %}
-{% url 'account_logout' as logout_url %} -->
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -51,18 +49,22 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+              <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'venue-hire' %}">Venue Hire</a>
+              <a class="nav-link {% if request.path == venue_hire_url %}active{% endif %}" href="{% url 'venue-hire' %}">Venue Hire</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'about' %}">About</a>
+              <a class="nav-link {% if request.path == about_url %}active{% endif %}" href="{% url 'about' %}">About</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+              <a class="nav-link {% if request.path == contact_url %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
             </li>
             {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link {% if request.path == bookinglist_url %}active{% endif %}" aria-current="page" 
+              href="{% url 'booking-list' %}">Venue Bookings</a>
+            </li>
             <li class="nav-item">
               <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" 
               href="{% url 'account_logout' %}">Log out</a>

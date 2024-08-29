@@ -4,6 +4,10 @@ body {
     color: #252525;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 /* Navigation */
 .brand {
     font-family: Libre Baskerville, serif;
@@ -178,11 +182,6 @@ body {
     padding: 20px;
 }
 
-
-.card-venue-hire {
-    
-}
-
 .venue-title {
     font-family: Libre Baskerville, serif;
     text-transform: uppercase;
@@ -201,6 +200,21 @@ body {
     color: #445261;
 }
 
+/* Booking Sections */
+.booking-list {
+    display: block;
+    padding: 10px;
+}
+
+.booking-card-individual {
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #d9dcd6;
+}
+
+.booking-venue {
+    font-weight: bold;
+}
 
 .footer {
     background-color: #445261;
@@ -220,6 +234,11 @@ body {
         width: 100vw;
         justify-content: center;
         align-items: center;
+    }
+
+    /* Sign up / Sign out / Registration pages */
+    .container-auth-box {
+        width: 550px;
     }
 }
 

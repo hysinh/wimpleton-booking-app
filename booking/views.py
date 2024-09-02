@@ -35,7 +35,7 @@ class VenueList(generic.ListView):
 #      template_name = "booking/booking_list.html"
 
 
-# @login_required
+@login_required
 def view_bookings(request):
      bookings = Booking.objects.all()
      context = {

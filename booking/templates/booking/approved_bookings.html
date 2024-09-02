@@ -6,6 +6,7 @@
 
 <!-- Booking form -->
 <div>
+   <!-- {% if user.is_authenticated and bookings.client_id == user %} -->
     <!-- Iterate over booking object -->
     {% for booking in booking_list %}
     <!-- Display Objects -->
@@ -17,5 +18,6 @@
       {% empty %}
       No approved bookings yet
      {% endfor %}
+   <!-- {% endif %} -->
 </div>
 {% endblock %}

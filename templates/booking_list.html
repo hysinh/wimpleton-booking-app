@@ -8,8 +8,9 @@
 <div class="booking-list">
     <!-- Iterate over booking object -->
     <p><span class="bold">Client Name:</span> {{ user.username }}</p>
+    
     <p class="bold">Your Current Venue Bookings:</p>
-    <!-- {% if user.is_authenticated == user %} -->
+
       {% for booking in booking_list %}
       <!-- Display Objects -->
       <div>
@@ -23,6 +24,6 @@
       {% empty %}
       No bookings yet
       {% endfor %}
-    <!-- {% endif %} -->
+
 </div>
 {% endblock %}

@@ -13,9 +13,9 @@ urlpatterns = [
     path('venue-hire/', views.VenueList.as_view(), name='venue-hire'),
 
     # registered user pages
-    path('add-booking/', views.add_booking, name='add-booking'),
+    path('create-booking/', views.create_booking, name='create-booking'),
     path('venue-hire/', views.VenueList.as_view(), name='venue-hire'),
-    path('booking-list/', views.BookingList.as_view(), name='booking-list'),
+    path('booking-list/', views.view_bookings, name='booking-list'),
     path('booking-approved/', views.list_approved_bookings, name='approved-bookings'),
     
 

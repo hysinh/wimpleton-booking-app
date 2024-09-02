@@ -25,15 +25,31 @@ class VenueList(generic.ListView):
      paginate_by = 6
 
 
-class BookingList(generic.ListView):
-     """
-     Displays all the instances of Booking :model: 'booking.Booking'
-     """
-     #model = Booking
-     queryset = Booking.objects.all()
-     template_name = "booking/booking_list.html"
+
+# class BookingList(generic.ListView):
+#      """
+#      Displays all the instances of Booking :model: 'booking.Booking'
+#      """
+#      #model = Booking
+#      queryset = Booking.objects.all()
+#      template_name = "booking/booking_list.html"
 
 
+# @login_required
+def view_bookings(request):
+     bookings = Booking.objects.all()
+     context = {
+          'bookings': bookings
+     }
+     
+     return render(
+          request,
+          'booking_list.html',
+          context
+     )
+
+
+# @login_required
 def list_approved_bookings(request):
      bookings = Booking.objects.filter(status=1)
      context = {
@@ -42,18 +58,18 @@ def list_approved_bookings(request):
      return render(request, 'booking/approved_bookings.html', context)
 
 
-def add_booking(request):
+def create_booking(request):
      if request.method == 'POST':
-          add_booking_form = BookingForm(request.POST)
-          if add_booking_form.is_valid:
-               add_booking_form.save()
+          create_booking_form = BookingForm(request.POST)
+          if create_booking_form.is_valid:
+               create_booking_form.save()
                messages.success(request, "Booking added successfully")
                return redirect('venue-hire')
-     add_booking_form = BookingForm()
+     create_booking_form = BookingForm()
      context = {
-          'add_booking_form': add_booking_form
+          'create_booking_form': create_booking_form
      }
-     return render(request, 'booking/add_booking.html', context)
+     return render(request, 'booking/create_booking.html', context)
      
 # Public pages
 def homepage(request):

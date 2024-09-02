@@ -3,12 +3,12 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-add new booking 
+create new booking 
 
 <!-- Add Booking Form -->
 <form method="POST">
 
-    {{ add_booking_form | crispy }}
+    {{ create_booking_form | crispy }}
 
     {% csrf_token %}
 

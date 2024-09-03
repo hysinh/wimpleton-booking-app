@@ -40,7 +40,7 @@ class VenueList(generic.ListView):
 
 @login_required()
 def booking_dashboard(request):
-    bookings = Booking.objects.all()
+    bookings = Booking.objects.filter(client_id=request.user)
     return render(
          request, 
          'user/booking_dashboard.html',
@@ -82,17 +82,18 @@ def create_booking(request):
      """
      Creates a new booking
      """
-     form = BookingForm()
-     if request.method == 'POST':
-          form = BookingForm(request.POST, request.FILES)
-          if form.is_valid:
-               form.instance.user = request.user
-               form.save()
-               messages.success(request, "Booking added successfully")
-               return redirect('booking-dashboard')
+     # form = BookingForm()
+     venues = Venue.objects.filter(status=1)
+     # if request.method == 'POST':
+     #      form = BookingForm(request.POST, request.FILES)
+     #      if form.is_valid:
+     #           form.instance.user = request.user
+     #           form.save()
+     #           messages.success(request, "Booking added successfully")
+     #           return redirect('booking-dashboard')
  
      context = {
-          'form': form
+          'venues': venues
      }
      return render(request, 'user/create_booking.html', context)
      

@@ -4,26 +4,52 @@
 {% block content %}
 create new booking 
 
-<!-- Add Booking Form -->
-<form id="booking-form" method="post" action="#">
-    {% csrf_token %}
-    {{ form.errors }}
-    <!-- Container with movies to select from -->
-    <div class="venue-container">
-        <label for="venue">Select your venue:</label>
-        <br>
-        <select id="venue" name="venue">
-            <option value="mansion">Formal Rooms in the Mansion</option>
-            <option value="conservatory">The Conservatory</option>
-            {% for venue in venues %}
-            <option value="{{ form.venue }}">{{ form.venue }}</option>
-            {% endfor %}
-        </select>
-    </div>
-    
-    <div class="total-text">
-        <h2>$ <span id="total-price">0.00</span></h2>
-        <button class="book-btn" type="submit">Book</button>
-    </div>
-</form>
+<!-- Booking Form -->
+<div class="create-booking-form-container">
+    <form id="booking-form" method="post" action="#">
+        {% csrf_token %}
+        {{ form.errors }}
+        <!-- Container with Venues to select from -->
+        <div class="venue-container">
+            <label for="venue">Select your venue:</label>
+            <br>
+            <select id="venue" name="venue">
+                {% for venue in venues %}
+                <option value="{{ venue.venue_name }}">{{ venue.venue_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Container with Dates to select from -->
+        <div class="date-container">
+            <label for="event-date">Select your date:</label>
+            <br>
+            needs to check date to see if it is already used
+            then will display error message that says date is already used
+            <select id="event-date" name="event-date">
+                {% for venue in venues %}
+                <option value="{{ venue.event_date }}">{{ venue.venue_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        <!-- Container with number of guests to input-->
+        <div class="guests-container">
+            <label for="venue">Number of guests:</label>
+            <br>
+            <!-- needs to check for maximum num of guests
+            prints limit next to field input and creates error message if exceeds or less than minimum -->
+            <select id="num-guests" name="num-guests">
+                {% for venue in venues %}
+                <option value="{{ venue.venue_name }}">{{ venue.venue_name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+
+        
+        <div class="">
+            <button class="" type="submit">Book</button>
+        </div>
+    </form>
+</div>
 {% endblock %}

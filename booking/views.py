@@ -1,8 +1,11 @@
+import datetime
+
 from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
 from django.contrib.auth.decorators import login_required, permission_required
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 from .models import Venue, Booking
 from .forms import BookingForm
 
@@ -45,18 +48,53 @@ def booking_dashboard(request):
      )
 
 
+# @login_required()
+# def create_booking(request):
+#      """
+#      Creates a new booking
+#      """
+#      # if this is a POST request then process the Form data
+#      # 'venue',
+#           #   'event_type',
+#           #   'event_date',
+#           #   'num_guests'
+#      if request.method == 'POST':
+#           venue = request.POST.get('venue')
+#           event_type = request.POST.get('event_type')
+#           event_date = request.POST.get('event_date')
+#           num_guests = request.POST.get('num_guests')
+          # event_date = request.POST.get("date")
+
+          # venue = Booking.objects.get(pk=venue)
+
+          # user = request.user
+          # booking = Booking.objects.create(
+          #      client_id = user,
+          #      venue=venue,
+          #      event_type = event_type,
+          #      event_date = event_date,
+          #      num_guests = num_guests
+          # )
+
+
+@login_required()
 def create_booking(request):
+     """
+     Creates a new booking
+     """
+     form = BookingForm()
      if request.method == 'POST':
-          create_booking_form = BookingForm(request.POST)
-          if create_booking_form.is_valid:
-               create_booking_form.save()
+          form = BookingForm(request.POST, request.FILES)
+          if form.is_valid:
+               form.instance.user = request.user
+               form.save()
                messages.success(request, "Booking added successfully")
-               return redirect('venue-hire')
-     create_booking_form = BookingForm()
+               return redirect('booking-dashboard')
+ 
      context = {
-          'create_booking_form': create_booking_form
+          'form': form
      }
-     return render(request, 'booking/create_booking.html', context)
+     return render(request, 'user/create_booking.html', context)
      
 # Public pages
 def homepage(request):

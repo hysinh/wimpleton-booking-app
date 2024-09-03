@@ -19,7 +19,7 @@ class Venue(models.Model):
     """
     Stores a single venue entry 
     """
-    venue_name = models.CharField(max_length=100)
+    venue_name = models.CharField(primary_key=True, max_length=100)
     staff_member = models.ForeignKey(
         User, on_delete=models.PROTECT, related_name="venue_listings"
     )

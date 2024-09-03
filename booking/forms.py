@@ -14,3 +14,6 @@ class BookingForm(forms.ModelForm):
             'event_date',
             'num_guests'
         ]
+
+    def __init__(self, *args, **kwargs):
+        super(BookingForm, self).__init__(*args, **kwargs)

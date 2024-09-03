@@ -202,6 +202,8 @@ body {
 
 /* Booking Sections */
 .booking-list {
+    width: 90vw;
+    margin: auto;
     display: block;
     padding: 10px;
 }

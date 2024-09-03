@@ -8,8 +8,8 @@
 <!-- List of all Bookings created by this user -->
 <div class="booking-list">
     
-    <p>Booking Dashboard</p>
-    <p>link to create booking</p>
+    <h2>Booking Dashboard</h2>
+    <p><a href="{% url 'create-booking' %}"><div class="button" style="background-color: orange; width: 150px; text-align: center; padding: 10px 5px">Create a New Booking</div></a></p>
     <p><span class="bold">Client Name:</span> {{ user.username }}</p>
     
     <p class="bold">Your Current Venue Bookings:</p>
@@ -23,9 +23,9 @@
           <p><span class="text-muted bold">Status:</span> {% if booking.status == 0 %}Approved{% else %}Pending Approval{% endif %}</p>
         </div>
         <a href="#" aria-label="Opens Edit Booking page">
-          <div class="button-orange">edit button</div>
+          <div class="button" style="background-color: orange; width: 150px; text-align: center; padding: 10px 5px;">edit button</div>
         </a>
-        <div>delete button</div>
+        <div style="background-color: red; width: 150px; text-align: center; padding: 10px 5px">delete button</div>
       </div>
       <!-- If object list is empty -->
       {% empty %}

@@ -1,28 +1,52 @@
 {% extends "base.html" %}
 {% load static %}
-{% load crispy_forms_tags %}
+
 
 {% block content %}
 
+
 <!-- List of all Bookings created by this user -->
 <div class="booking-list">
-    <!-- Iterate over booking object -->
+    
+    <p>Booking Dashboard</p>
+    <p>link to create booking</p>
     <p><span class="bold">Client Name:</span> {{ user.username }}</p>
+    
     <p class="bold">Your Current Venue Bookings:</p>
-    <!-- {% if user.is_authenticated == user %} -->
-      {% for booking in booking_list %}
+    <!-- Iterate over booking object -->
+      {% for booking in bookings %}
       <!-- Display Objects -->
-      <div>
+      <div class="booking-card-container">
         <div class="booking-card-individual">
           <p class="booking-venue text-muted">Venue: {{ booking.venue }}</p>
           <p><span class="text-muted bold">Booking date:</span> {{ booking.event_date }}</p>
           <p><span class="text-muted bold">Status:</span> {% if booking.status == 0 %}Approved{% else %}Pending Approval{% endif %}</p>
         </div>
+        <a href="#" aria-label="Opens Edit Booking page">
+          <div class="button-orange">edit button</div>
+        </a>
+        <div>delete button</div>
       </div>
       <!-- If object list is empty -->
       {% empty %}
       No bookings yet
       {% endfor %}
-    <!-- {% endif %} -->
+
 </div>
+<table>
+    <tr>
+        <td>Booking date</td>
+        <td>Venue name</td>
+        <td>number of guests</td>
+        <td>status</td>
+        <td>link to edit booking</td>
+        <td>link to delete booking</td>
+    </tr>
+</table>
+
+
+
+
+
+
 {% endblock %}

@@ -206,6 +206,12 @@ body {
     padding: 10px;
 }
 
+.booking-card-container {
+    display: block;
+    margin: 0;
+    padding-bottom: 100px;
+}
+
 .booking-card-individual {
     padding: 10px;
     margin-bottom: 10px;
@@ -214,6 +220,18 @@ body {
 
 .booking-venue {
     font-weight: bold;
+}
+
+.button-orange {
+    background-color: #ff8500;
+    /* width: 150px;
+    padding: .5rem;
+    margin: auto;
+    text-align: center;
+    color: #1A1A1A;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: medium; */
 }
 
 .footer {

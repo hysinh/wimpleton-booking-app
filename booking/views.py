@@ -35,27 +35,14 @@ class VenueList(generic.ListView):
 #      template_name = "booking/booking_list.html"
 
 
-@login_required
-def view_bookings(request):
-     bookings = Booking.objects.all()
-     context = {
-          'bookings': bookings
-     }
-     
-     return render(
-          request,
-          'booking_list.html',
-          context
+@login_required()
+def booking_dashboard(request):
+    bookings = Booking.objects.all()
+    return render(
+         request, 
+         'user/booking_dashboard.html',
+         {'bookings': bookings}
      )
-
-
-# @login_required
-def list_approved_bookings(request):
-     bookings = Booking.objects.filter(status=1)
-     context = {
-          'bookings': bookings
-     }
-     return render(request, 'booking/approved_bookings.html', context)
 
 
 def create_booking(request):
@@ -73,16 +60,14 @@ def create_booking(request):
      
 # Public pages
 def homepage(request):
-     return render(request, 'booking/index.html')
+     return render(request, 'public/index.html')
 
 def aboutpage(request):
-     return render(request, 'booking/about.html')
+     return render(request, 'public/about.html')
 
 def contactpage(request):
-     return render(request, 'booking/contact.html')
+     return render(request, 'public/contact.html')
 
-def venue_detail(request):
-     return HttpResponse("hello!")
 
 
 # def venue_detail(request,slug):

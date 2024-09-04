@@ -2,20 +2,20 @@
 {% load static %}
 
 {% block stylesheet %}
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+<!-- Fengyuan Chen's Datepicker -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/datepicker/1.0.10/datepicker.css" integrity="sha512-n/98Hzv7vnNVN8bL5s+hajql1X8LVhS/kPJIMxpXinGzcIVcM+SKTG54IKnRVz8vPIJmWWtyRyP3p4aK3vLiZw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 {% endblock %}
 
 {% block content %}
-create new booking 
-
 <!-- Booking Form -->
 <div class="create-booking-form-container">
+    <h2>Create a New Booking:</h2>
     <form id="booking-form" method="post" action="#">
         {% csrf_token %}
         {{ form.errors }}
         <!-- Container with Venues to select from -->
         <div class="venue-container">
-            <label for="venue">Select your venue:</label>
+            <label for="venue"><h5>Select your venue:</h5></label>
             <br>
             <select id="venue" name="venue" required>
                 {% for venue in venues %}
@@ -25,16 +25,15 @@ create new booking
         </div>
 
         <!-- Container with Dates to select from -->
+        <!-- Source: Datepicker https://github.com/fengyuanchen/datepicker -->
+        <!-- Tutorial source: https://simpleisbetterthancomplex.com/tutorial/2019/01/03/how-to-use-date-picker-with-django.html -->
         <div class="date-container">
             <label for="event-date">Select your date:</label>
+            <input id="datepicker" required>
             <br>
-            needs to check date to see if it is already used
-            then will display error message that says date is already used
-            <select id="event-date" name="event-date">
-                {% for venue in venues %}
-                <option value="{{ venue.event_date }}">{{ venue.venue_name }}</option>
-                {% endfor %}
-            </select>
+            <span style="font-style: italic;">needs to check date to see if it is already used
+            then will display error message that says date is already used</span>
+
         </div>
 
         <!-- Container with number of guests to input-->
@@ -43,10 +42,22 @@ create new booking
             <br>
             <!-- needs to check for maximum num of guests
             prints limit next to field input and creates error message if exceeds or less than minimum -->
-            <input id="guests" type="number" name="guests" min="10" max="50">
+            <input id="guests" type="number" name="guests" min="10" max="50" required>
         </div>
 
-        
+        <!-- Event type input -->
+        <div class="event-type-container">
+            <label for="event-type"><p>Event type:</p></label>
+            <select id="event-type" name="event-type" required>
+                <option value="WED">Wedding</option>
+                <option value="COR">Corporate Event</option>
+                <option value="GAL">Gala Event</option>
+                <option value="OCC">Special Occasion</option>
+                <option value="WSP">Workshop</option>
+                <option value="OTH">Other</option>
+            </select>
+        </div>
+
         <div class="">
             <button class="" type="submit">Book</button>
         </div>
@@ -55,8 +66,19 @@ create new booking
 {% endblock %}
 
 {% block extras %}
-<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+ <!-- jQuery -->
+ <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+ <!-- Fengyuan Chen's Datepicker -->
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js" integrity="sha256-/7FLTdzP6CfC1VBAj/rsp3Rinuuu9leMRGd354hvk0k=" crossorigin="anonymous"></script>
+
+
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<script>
+    $(function () {
+      $("#datepicker").datepicker();
+    });
+  </script>
+  
 <script src="{% static 'js/booking.js' %}"></script>
 {% endblock %}

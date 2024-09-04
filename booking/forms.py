@@ -1,4 +1,5 @@
 from django import forms
+from .widgets import FengyuanChenDatePickerInput
 from .models import Booking
 
 
@@ -17,3 +18,13 @@ class BookingForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(BookingForm, self).__init__(*args, **kwargs)
+
+
+class DateForm(forms.Form):
+    date = forms.DateField(input_formats=['%d/%m/%Y'])
+
+class DateForm(forms.Form):
+    date = forms.DateTimeField(
+        input_formats=['%d/%m/%Y %H:%M'], 
+        widget=FengyuanChenDatePickerInput()
+    )

@@ -200,7 +200,7 @@ body {
     color: #445261;
 }
 
-/* Booking Sections */
+/* Booking Dashboard Sections */
 .booking-list {
     width: 90vw;
     margin: auto;
@@ -222,6 +222,21 @@ body {
 
 .booking-venue {
     font-weight: bold;
+}
+
+/* Create Booking Page */
+.create-booking-form-container {
+    width: 90vw;
+    padding: 50px 20px;
+    margin: 25px auto;
+    background-color: #d9dcd6;
+}
+
+.venue-container, 
+.date-container,
+.guests-container,
+.event-type-container {
+    padding-bottom: 20px;
 }
 
 .button-orange {

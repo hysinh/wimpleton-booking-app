@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from .models import Venue, Booking
-#from .forms import BookingForm
+from .forms import BookingForm
 
 # Create your views here.
 class VenueList(generic.ListView):
@@ -48,6 +48,17 @@ def booking_dashboard(request):
      )
 
 
+@login_required()
+def request_booking(request):
+     venues = Venue.objects.filter(status=1)
+
+     context = {
+          "venues": venues
+     }
+          
+     return render(request, 'user/request_booking.html', context)
+
+
 # @login_required()
 # def create_booking(request):
 #      """
@@ -77,25 +88,81 @@ def booking_dashboard(request):
           # )
 
 
-@login_required()
-def create_booking(request):
-     """
-     Creates a new booking
-     """
-     # form = BookingForm()
-     venues = Venue.objects.filter(status=1)
-     # if request.method == 'POST':
-     #      form = BookingForm(request.POST, request.FILES)
-     #      if form.is_valid:
-     #           form.instance.user = request.user
-     #           form.save()
-     #           messages.success(request, "Booking added successfully")
-     #           return redirect('booking-dashboard')
+# @login_required()
+# def create_booking(request):
+#      """
+#      Creates a booking request.
+     
+#      """
+     
+#      venues = Venue.objects.filter(status=1)
+     # Process the form data if POST request
+     # if request.method == "POST":
+     #      #create a form instance and populate it with the data from the request:
+     #      form = BookingForm(request.POST)
+
+     #      # check if form is valid:
+     #      if form.is_valid():
+     #           venue = form.cleaned_data["venue"]
+     #           event_date = form.cleaned_data["datepicker"]
+     #           num_guests = form.cleaned_data["guests"]
+     #           event_type = form.cleaned_data["event-type"]
+
+     #           # process the data in form. cleaned_data is required
+     #           # ...
+     #           # redirect to a new URL:
+     #           return HttpResponseRedirect("/thanks")
+          
+     #      # if a GET (or any other method) create a blank form
+     #      else:
+     #           form = BookingForm()
+
+#           context = {
+# #           "form": form
+#           }
+          
+#           return render(request, 'user/create_booking.html', context)
+          
+     #      venue = request.POST.get("venue")
+     #      event_date = request.POST.get("datepicker")
+     #      num_guests = request.POST.get("guests")
+     #      event_type = request.POST.get("event-type")
+
+     #      user = request.user
+     #      booking = Booking.objects.create(
+     #           client_id=user,
+     #           venue=venue,
+     #           event_date=event_date,
+     #           num_guests=num_guests,
+     #           event_type=event_type,
+     #      )
+
+     #      return redirect("booking-dashboard")
+     
+     # return redirect("booking-dashboard")
+
+
+
+# @login_required()
+# def create_booking(request):
+#      """
+#      Creates a booking request.
+     
+#      """
+#      # form = BookingForm()
+#      venues = Venue.objects.filter(status=1)
+#      if request.method == 'POST':
+#           form = BookingForm(request.POST, request.FILES)
+#           if form.is_valid:
+#                form.instance.user = request.user
+#                form.save()
+#                messages.success(request, "Booking added successfully")
+#                return redirect('booking-dashboard')
  
-     context = {
-          'venues': venues
-     }
-     return render(request, 'user/create_booking.html', context)
+#      context = {
+#           'venues': venues
+#      }
+#      return render(request, 'user/create_booking.html', context)
      
 # Public pages
 def homepage(request):

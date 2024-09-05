@@ -1,5 +1,4 @@
 from django import forms
-from .widgets import FengyuanChenDatePickerInput
 from .models import Booking
 
 
@@ -16,8 +15,8 @@ class BookingForm(forms.ModelForm):
             'num_guests'
         ]
 
-    def __init__(self, *args, **kwargs):
-        super(BookingForm, self).__init__(*args, **kwargs)
+    # def __init__(self, *args, **kwargs):
+    #     super(BookingForm, self).__init__(*args, **kwargs)
 
 
 # class DateForm(forms.Form):

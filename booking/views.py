@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from .models import Venue, Booking
-from .forms import BookingForm
+#from .forms import BookingForm
 
 # Create your views here.
 class VenueList(generic.ListView):

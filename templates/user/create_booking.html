@@ -9,7 +9,7 @@
 {% block content %}
 <!-- Booking Form -->
 <div class="create-booking-form-container">
-    <h2>Create a New Booking:</h2>
+    <h2>Create a Booking Request:</h2>
     <form id="booking-form" method="post" action="#">
         {% csrf_token %}
         {{ form.errors }}
@@ -17,9 +17,10 @@
         <div class="venue-container">
             <label for="venue"><h5>Select your venue:</h5></label>
             <br>
-            <select id="venue" name="venue" required>
+            <select id="venue" name="venue" required onchange="getCapacity">
+                <option>Choose your desired venue</option>
                 {% for venue in venues %}
-                <option value="{{ venue.venue_name }}">{{ venue.venue_name }}</option>
+                <option class="selected-venue" value="{{ venue.venue_name }}">{{ venue.venue_name }}</option>
                 {% endfor %}
             </select>
         </div>
@@ -38,17 +39,19 @@
 
         <!-- Container with number of guests to input-->
         <div class="guests-container">
-            <label for="venue">Number of guests:</label>
+            <label for="guests">Number of guests:</label>
             <br>
             <!-- needs to check for maximum num of guests
             prints limit next to field input and creates error message if exceeds or less than minimum -->
-            <input id="guests" type="number" name="guests" min="10" max="50" required>
+            <input id="guests" type="number" name="guests" min="10" max="200" required >
+            <p>The maximum capacity for this venue is <span id="capacity" style="font-weight: bold; color: red;">Maximum Capacity</span></p>
         </div>
 
         <!-- Event type input -->
         <div class="event-type-container">
             <label for="event-type"><p>Event type:</p></label>
             <select id="event-type" name="event-type" required>
+                <option>Select the type of event</option>
                 <option value="WED">Wedding</option>
                 <option value="COR">Corporate Event</option>
                 <option value="GAL">Gala Event</option>

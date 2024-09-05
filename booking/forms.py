@@ -20,11 +20,11 @@ class BookingForm(forms.ModelForm):
         super(BookingForm, self).__init__(*args, **kwargs)
 
 
-class DateForm(forms.Form):
-    date = forms.DateField(input_formats=['%d/%m/%Y'])
+# class DateForm(forms.Form):
+#     date = forms.DateField(input_formats=['%d/%m/%Y'])
 
-class DateForm(forms.Form):
-    date = forms.DateTimeField(
-        input_formats=['%d/%m/%Y %H:%M'], 
-        widget=FengyuanChenDatePickerInput()
-    )
+# class DateForm(forms.Form):
+#     date = forms.DateTimeField(
+#         input_formats=['%d/%m/%Y %H:%M'], 
+#         widget=FengyuanChenDatePickerInput()
+#     )

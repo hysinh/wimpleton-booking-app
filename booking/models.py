@@ -63,7 +63,7 @@ class Booking(models.Model):
 
     class Meta:
         unique_together = ('venue', 'event_date')
-        ordering = ["-event_date", "-client_id"]
+        ordering = ["event_date", "-client_id"]
 
 
     def __str__ (self):

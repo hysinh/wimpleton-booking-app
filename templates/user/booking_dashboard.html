@@ -20,7 +20,7 @@
       <div class="booking-card-container">
         <div class="booking-card-individual">
           <p class="booking-venue text-muted">Venue: {{ booking.venue }}</p>
-          <p><span class="text-muted bold">Booking date:</span> {{ booking.event_date }}</p>
+          <p><span class="text-muted bold">Event date:</span> {{ booking.event_date }}</p>
           <p><span class="text-muted bold">Event type:</span> {{ booking.event_type }}</p>
           <p><span class="text-muted bold">Number of guests:</span> {{ booking.num_guests }}</p>
           <p><span class="text-muted bold">Status:</span> {% if booking.status == 0 %}Approved{% else %}Pending Approval{% endif %}</p>

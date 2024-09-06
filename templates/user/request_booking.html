@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% load static %}
 
 {% block stylesheet %}
@@ -10,13 +11,14 @@
 <!-- Booking Form -->
 <div class="create-booking-form-container">
     <h2>Create a Booking Request:</h2>
+
     <form id="booking-form" method="POST" action="{% url 'request-booking' %}">
         {% csrf_token %}
-        {{ form }}
+        
         <!-- Container with Venues to select from -->
         <div class="venue-container">
             <label for="venue"><h5>Select your venue:</h5></label>
-            <br>
+            {{ form | crispy }}
             <select id="venue" name="venue" required onchange="getCapacity">
                 <option>Choose your desired venue</option>
                 {% for venue in venues %}

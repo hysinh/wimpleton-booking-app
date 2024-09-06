@@ -7,7 +7,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from .models import Venue, Booking
-from .forms import BookingForm
+from .forms import BookingForm, RequestBookingForm
 
 # Create your views here.
 class VenueList(generic.ListView):
@@ -51,9 +51,10 @@ def booking_dashboard(request):
 @login_required()
 def request_booking(request):
      venues = Venue.objects.filter(status=1)
-
+     form = RequestBookingForm()
      context = {
-          "venues": venues
+          "venues": venues,
+          "form": form
      }
           
      return render(request, 'user/request_booking.html', context)

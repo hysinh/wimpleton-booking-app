@@ -41,25 +41,19 @@ def request_booking(request):
      Creates a booking request
      """
      if request.method == 'POST':
-          venue = request.POST.get('venue')
-          event_date = request.POST.get('event_date')
-          event_type = request.POST.get('event_type')
-          num_guests = request.POST.get('num_guests')
-          client=request.user
+          form = BookingForm(request.POST)
+          if form.is_valid():
+               booking = form.save(commit=False)
+               booking.client = request.user
+               booking.save()
           
-          form = Booking.objects.create(
-               client=client,
-               venue=venue,
-               event_date=event_date,
-               event_type=event_type,
-               num_guests=num_guests,
-          )
-
           return redirect('booking-dashboard')
      
      form = BookingForm()
+     venues = Venue.objects.filter(status=1)
      context = {
-          "form": form
+          "form": form,
+          "venues": venues
      }
           
      return render(request, 'user/request_booking.html', context)

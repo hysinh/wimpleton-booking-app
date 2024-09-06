@@ -34,4 +34,6 @@ class BookingForm(forms.ModelForm):
             'event_date': DatePickerInput()
         }
 
+    
+
 

@@ -1,5 +1,3 @@
-import datetime
-
 from django.contrib import messages
 from django.shortcuts import render, redirect, get_object_or_404
 from django.views import generic
@@ -7,7 +5,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.http import HttpResponse, HttpResponseRedirect
 from django.urls import reverse
 from .models import Venue, Booking
-from .forms import BookingForm, RequestBookingForm
+from .forms import BookingForm
 
 # Create your views here.
 class VenueList(generic.ListView):
@@ -22,20 +20,9 @@ class VenueList(generic.ListView):
      **Template:**
      :template:`blog/venue_list.html`
      """
-     #model = Venue
      queryset = Venue.objects.filter(status=1)
      template_name = "booking/venue_list.html"
      paginate_by = 6
-
-
-
-# class BookingList(generic.ListView):
-#      """
-#      Displays all the instances of Booking :model: 'booking.Booking'
-#      """
-#      #model = Booking
-#      queryset = Booking.objects.all()
-#      template_name = "booking/booking_list.html"
 
 
 @login_required()
@@ -50,10 +37,28 @@ def booking_dashboard(request):
 
 @login_required()
 def request_booking(request):
-     venues = Venue.objects.filter(status=1)
-     form = RequestBookingForm()
+     """
+     Creates a booking request
+     """
+     if request.method == 'POST':
+          venue = request.POST.get('venue')
+          event_date = request.POST.get('event_date')
+          event_type = request.POST.get('event_type')
+          num_guests = request.POST.get('num_guests')
+          client=request.user
+          
+          form = Booking.objects.create(
+               client=client,
+               venue=venue,
+               event_date=event_date,
+               event_type=event_type,
+               num_guests=num_guests,
+          )
+
+          return redirect('booking-dashboard')
+     
+     form = BookingForm()
      context = {
-          "venues": venues,
           "form": form
      }
           

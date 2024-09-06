@@ -4,12 +4,12 @@ from django.contrib.auth.models import User
 
 
 TYPE_OF_EVENT_CHOICES = {
-        ("WED", "Wedding"),
-        ("COR", "Corporate Event"),
-        ("GAL", "Gala Event"),
-        ("OCC", "Special Occasion"),
-        ("WSP", "Workshop"),
-        ("OTH", "Other"),
+        ("Wedding", "Wedding"),
+        ("Corporate", "Corporate Event"),
+        ("Gala", "Gala Event"),
+        ("Special Occasion", "Special Occasion"),
+        ("Workshop", "Workshop"),
+        ("Other", "Other"),
     }
 
 STATUS = ((0, "Pending"), (1, "Approved"))
@@ -52,7 +52,7 @@ class Booking(models.Model):
         User, on_delete=models.PROTECT, related_name="venue_bookings"
         )
     event_type = models.CharField(
-        max_length=3,
+        max_length=20,
         choices=TYPE_OF_EVENT_CHOICES
     )
     event_date = models.DateField()

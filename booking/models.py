@@ -1,5 +1,4 @@
 from django.db import models
-from django.forms import ModelForm
 from django.contrib.auth.models import User
 
 
@@ -68,5 +67,5 @@ class Booking(models.Model):
 
 
     def __str__ (self):
-        return f"{self.event_date}, {self.venue}, {self.client_id}"
+        return f"{self.venue}"
 

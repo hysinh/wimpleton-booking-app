@@ -14,6 +14,6 @@ class VenueAdmin(SummernoteModelAdmin):
 
 @admin.register(Booking)
 class BookingAdmin(SummernoteModelAdmin):
-    list_display = ('venue', 'event_date', 'event_type', 'client', )
+    list_display = ('venue', 'event_date', 'event_type', 'client', 'booking_id', )
     search_fields = ['venue']
     list_filter = ['venue']

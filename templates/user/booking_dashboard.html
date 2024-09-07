@@ -25,9 +25,13 @@
           <p><span class="text-muted bold">Number of guests:</span> {{ booking.num_guests }}</p>
           <p><span class="text-muted bold">Status:</span> {% if booking.status == 0 %}Approved{% else %}Pending Approval{% endif %}</p>
         </div>
-        <a href="#" aria-label="Opens Edit Booking page">
-          <div class="button" style="background-color: orange; width: 150px; text-align: center; padding: 10px 5px;">edit button</div>
-        </a>
+        <!-- Edit Booking Button -->
+        {% if user.is_authenticated and booking.client == user %}
+          <button class="btn- btn-edit" 
+            data-booking_id="'{{ booking.booking_id }}">Edit</button>
+        {% endif %}
+
+
         <div style="background-color: red; width: 150px; text-align: center; padding: 10px 5px">delete button</div>
       </div>
       <!-- If object list is empty -->
@@ -43,4 +47,8 @@
 
 
 
+{% endblock %}
+
+{% block extras %}
+  <script src="{% static 'js/comments.js' %}"></script>
 {% endblock %}

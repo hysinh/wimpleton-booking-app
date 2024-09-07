@@ -74,21 +74,20 @@ def edit_booking(request, booking_id):
      """
      if request.method == "POST":
 
-          queryset = Booking.objects.all()
-          booking = get_object_or_404(queryset, booking_id=booking_id)
-          booking_form = BookingForm(data=request.POST, instance=booking)
+        booking = get_object_or_404(Booking, pk=booking_id)
+        booking_form = BookingForm(data=request.POST, instance=booking)
 
-          if booking_form.is_valid() and booking.client == request.user:
-               booking = booking_form.save(commit=False)
-               booking.client = request.user
-               booking.status = False
-               booking.save()
-               messages.add_message(request, messages.SUCCESS, 'Booking updated')
-          else:
-               messages.add_message(request, messages.ERROR, 'Error updating booking')
+        if booking_form.is_valid() and booking.client == request.user:
+            booking = booking_form.save(commit=False)
+            booking.client = request.user
+            booking.status = False
+            booking.save()
+            messages.add_message(request, messages.SUCCESS, 'Booking Updated!')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating booking!')
 
-     return HttpResponseRedirect(reverse('booking-dashboard', args=[booking_id]))
-     
+     return HttpResponseRedirect(reverse('edit-booking', args=[booking_id]))     
+
 
 @login_required()
 def delete_comment(request, booking_id):

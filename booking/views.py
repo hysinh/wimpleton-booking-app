@@ -61,24 +61,57 @@ def request_booking(request):
 
 
 @login_required()
-def edit_booking(request, client, booking_id):
+def edit_booking(request, booking_id):
      """
      Edits an exiting booking related to User
 
      **Context**
      ``booking``
-          And instance of :model:'booking.Booking'
+          An instance of :model:'booking.Booking'
+     ``booking_form``
+          An instance of :form:`booking.BookingForm`
+
      """
-     booking = Booking.objects.filter(client=request.user)
+     if request.method == "POST":
 
-     context = {
-          "booking": booking
-     }
-          
-     return render(request, 'user/edit_booking.html', context)
+          queryset = Booking.objects.all()
+          booking = get_object_or_404(queryset, booking_id=booking_id)
+          booking_form = BookingForm(data=request.POST, instance=booking)
+
+          if booking_form.is_valid() and booking.client == request.user:
+               booking = booking_form.save(commit=False)
+               booking.client = request.user
+               booking.status = False
+               booking.save()
+               messages.add_message(request, messages.SUCCESS, 'Booking updated')
+          else:
+               messages.add_message(request, messages.ERROR, 'Error updating booking')
+
+     return HttpResponseRedirect(reverse('booking-dashboard', args=[booking_id]))
+     
+
+@login_required()
+def delete_comment(request, booking_id):
+     """
+     Delete an individual booking
+
+     **Context**
+     ``booking``
+          An instance of :model:'booking.Booking'
+     """
+     queryset = Booking.objects.all()
+     booking = get_object_or_404(queryset, pk=booking_id)
+
+     if booking.client == request.user:
+          booking.delete()
+          messages.add_message(request, messages.SUCCES, 'Booking deleted!')
+     else:
+          messages.add_message(request, messages.ERROR, 'You can only delete your own bookings!')
+
+     return HttpResponseRedirect(reverse('booking-dashboard'))
 
 
-  
+
 # Public pages
 def homepage(request):
      return render(request, 'public/index.html')

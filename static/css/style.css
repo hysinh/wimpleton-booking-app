@@ -239,8 +239,9 @@ body {
     padding-bottom: 20px;
 }
 
-.button-orange {
-    background-color: #ff8500;
+.btn-edit {
+    background-color: #188181;
+    color: #fff;
     /* width: 150px;
     padding: .5rem;
     margin: auto;
@@ -249,6 +250,11 @@ body {
     font-weight: 600;
     letter-spacing: 2px;
     font-size: medium; */
+}
+
+.btn-delete {
+    color: #fff;
+    background: #E84610;
 }
 
 .footer {

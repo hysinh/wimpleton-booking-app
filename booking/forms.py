@@ -35,11 +35,6 @@ class BookingForm(forms.ModelForm):
             'event_date': DatePickerInput()
         }
 
-        error_messages = {
-            NON_FIELD_ERRORS: {
-                "unique_together": "%Booking)s's %(event_date)s are not unique.",
-            }
-        }
 
     
 

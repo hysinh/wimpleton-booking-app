@@ -72,14 +72,20 @@ def edit_booking(request, booking_id):
           An instance of :form:`booking.BookingForm`
 
      """
-     booking_object = Booking.objects.get(pk=booking_id)
-     booking = get_object_or_404(Booking, pk=1)
-     form = BookingForm(booking.booking_id)
+     # original_booking = Booking.objects.get(pk=booking_id)
+     original_booking = get_object_or_404(Booking, pk=booking_id)
+     if request.method == 'POST':
+          form = BookingForm(request.POST, instance=original_booking)
+          if form.is_valid():
+               form.save()
+               messages.success(request, "Booking edited successfully")
+               return redirect('booking-dashboard')
+     
+     form = BookingForm(instance=original_booking)
 
      context = {
-          "booking": booking,
           "form": form,
-          "booking_object": booking_object
+          "original_booking": original_booking
      } 
 
      return render(request, 'user/edit_booking.html', context)    

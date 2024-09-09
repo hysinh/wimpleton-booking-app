@@ -5,8 +5,15 @@
 {% block content %}
 <div class="create-booking-form-container">
     <h2>Edit your booking:</h2>
-    {{ booking.booking_id }} | {{ booking.venue }} | {{ booking.event_date }}
+    <div>
+    {{ original_booking.booking_id }} | {{ original_booking.venue }} | {{ original_booking.event_date }}
 
     {{ form | crispy }}
+    </div>
+    <div class="">
+        <button class="" type="submit">Update Booking</button>
+    </div>
+    
 </div>
+
 {% endblock %}

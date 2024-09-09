@@ -1,6 +1,7 @@
 from .widgets import DatePickerInput
 from django import forms
-from .models import Booking, Venue
+from django.core.exceptions import NON_FIELD_ERRORS
+from .models import Booking
 
 TYPE_OF_EVENT_CHOICES = {
         ("WED", "Wedding"),
@@ -32,6 +33,12 @@ class BookingForm(forms.ModelForm):
 
         widgets = {
             'event_date': DatePickerInput()
+        }
+
+        error_messages = {
+            NON_FIELD_ERRORS: {
+                "unique_together": "%Booking)s's %(event_date)s are not unique.",
+            }
         }
 
     

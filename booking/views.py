@@ -46,6 +46,13 @@ def request_booking(request):
                booking = form.save(commit=False)
                booking.client = request.user
                booking.save()
+
+               messages.success(request, "Request for a Venue booking has been created successfully.")
+          else:
+            messages.error(
+               request, "That date is not available. Please try again."
+               )
+            return redirect('request-booking')
           
           return redirect('booking-dashboard')
      
@@ -82,7 +89,7 @@ def edit_booking(request, booking_id):
                return redirect('booking-dashboard')
           else:
             messages.error(
-               request, "Error updating booking. Please check the form."
+               request, "That Venue is not available for that date."
                )
      
      form = BookingForm(instance=original_booking)

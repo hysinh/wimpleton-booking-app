@@ -10,7 +10,13 @@
 
     <form id="booking-form" method="POST" action="{% url 'request-booking' %}">
         {% csrf_token %}
-        
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
         <!-- Container with Venues to select from -->
         <div class="venue-container">
             <label for="venue"><h5>Please complete this form to create a booking request:</h5></label>
@@ -19,6 +25,7 @@
         <div class="">
             <button class="" type="submit">Book</button>
         </div>
+        
     </form>
 </div>
 {% endblock %}

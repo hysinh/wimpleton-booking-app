@@ -9,10 +9,15 @@
 <div class="booking-list">
     
     <h2>Booking Dashboard</h2>
-    
-    <p><a href="{% url 'request-booking' %}"><div class="button" style="background-color: orange; width: 150px; text-align: center; padding: 10px 5px">Request a Booking</div></a></p>
     <p><span class="bold">Client Name:</span> {{ user.username }}</p>
-    
+    {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    <p><a href="{% url 'request-booking' %}"><div class="button" style="background-color: orange; width: 150px; text-align: center; padding: 10px 5px">Request a Booking</div></a></p>
     <p class="bold">Your Current Venue Bookings:</p>
     <!-- Iterate over booking object -->
       {% for booking in bookings %}

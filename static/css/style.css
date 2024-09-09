@@ -232,6 +232,11 @@ body {
     background-color: #d9dcd6;
 }
 
+.messages {
+    color: red;
+    font-weight: bold;
+}
+
 .venue-container, 
 .date-container,
 .guests-container,

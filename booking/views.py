@@ -72,21 +72,17 @@ def edit_booking(request, booking_id):
           An instance of :form:`booking.BookingForm`
 
      """
-     if request.method == "POST":
+     booking_object = Booking.objects.get(pk=booking_id)
+     booking = get_object_or_404(Booking, pk=1)
+     form = BookingForm(booking.booking_id)
 
-        booking = get_object_or_404(Booking, pk=booking_id)
-        booking_form = BookingForm(data=request.POST, instance=booking)
+     context = {
+          "booking": booking,
+          "form": form,
+          "booking_object": booking_object
+     } 
 
-        if booking_form.is_valid() and booking.client == request.user:
-            booking = booking_form.save(commit=False)
-            booking.client = request.user
-            booking.status = False
-            booking.save()
-            messages.add_message(request, messages.SUCCESS, 'Booking Updated!')
-        else:
-            messages.add_message(request, messages.ERROR, 'Error updating booking!')
-
-     return HttpResponseRedirect(reverse('edit-booking', args=[booking_id]))     
+     return render(request, 'user/edit_booking.html', context)    
 
 
 @login_required()

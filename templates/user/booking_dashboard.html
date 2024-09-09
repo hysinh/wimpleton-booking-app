@@ -27,9 +27,8 @@
         </div>
         <!-- Edit Booking Button -->
         {% if user.is_authenticated and booking.client == user %}
-          <a href="{% url 'edit-booking' booking.booking_id %}">
-            <button class="btn btn-edit" 
-            data-booking_id="{{ booking.booking_id }}">Edit</button>
+          <a href="{% url 'edit-booking' booking.booking_id %}" class="btn btn-edit" 
+            data-booking_id="{{ booking.booking_id }}">Edit Booking</button>
           </a>
           
           <button class="btn btn-delete" 

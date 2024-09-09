@@ -1,6 +1,12 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% load static %}
 
 {% block content %}
-edit booking form goes here
+<div class="create-booking-form-container">
+    <h2>Edit your booking:</h2>
+    {{ booking.booking_id }} | {{ booking.venue }} | {{ booking.event_date }}
+
+    {{ form | crispy }}
+</div>
 {% endblock %}

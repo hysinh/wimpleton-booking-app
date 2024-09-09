@@ -6,12 +6,18 @@
 <div class="create-booking-form-container">
     <h2>Edit your booking:</h2>
     <div>
-    {{ original_booking.booking_id }} | {{ original_booking.venue }} | {{ original_booking.event_date }}
-
-    {{ form | crispy }}
-    </div>
-    <div class="">
-        <button class="" type="submit">Update Booking</button>
+    <form id="booking-form" method="POST" action="{% url 'edit-booking' original_booking.booking_id %}">
+        {% csrf_token %}
+        
+        <!-- Container with Venues to select from -->
+        <div class="venue-container">
+            <label for="venue"><h5>Please update your information:</h5></label>
+            {{ form | crispy }}
+        </div>
+        <div class="">
+            <button class="" type="submit">Update Booking</button>
+        </div>
+    </form>
     </div>
     
 </div>

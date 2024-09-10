@@ -40,7 +40,7 @@
           <a href="{% url 'delete-booking' booking.booking_id %}" class="btn btn-delete">Delete Booking
           </a>
           
-          <button class="btn btn-delete" booking_id="{{ booking.booking_id }}">
+          <button class="btn btn-delete" data-booking_id="{{ booking.booking_id }}">
             Delete</button>
         {% endif %}
 

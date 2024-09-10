@@ -62,7 +62,6 @@ class Booking(models.Model):
 
 
     class Meta:
-        # unique_together = ['venue', 'event_date']
         ordering = ["event_date", "-client_id"]
         constraints = [
             models.UniqueConstraint(
@@ -72,7 +71,5 @@ class Booking(models.Model):
             ),
         ]
 
-
     def __str__ (self):
         return f"{self.venue}"
-

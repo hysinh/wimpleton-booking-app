@@ -33,6 +33,13 @@ class Venue(models.Model):
 
     class Meta:
         ordering = ["-venue_name"]
+        constraints = [
+            models.UniqueConstraint(
+                fields=['venue_name', 'venue_capacity'],
+                        name='unique_venue_key_capacity',
+                        violation_error_message='Number of guests exceeds venue capacity.',   
+            ),
+        ]
 
 
     def __str__ (self):
@@ -62,6 +69,7 @@ class Booking(models.Model):
 
 
     class Meta:
+        unique_together = [("venue", "num_guests")]
         ordering = ["event_date", "-client_id"]
         constraints = [
             models.UniqueConstraint(

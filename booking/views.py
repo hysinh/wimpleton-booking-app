@@ -103,7 +103,7 @@ def edit_booking(request, booking_id):
 
 
 @login_required()
-def delete_comment(request, booking_id):
+def delete_booking(request, booking_id):
      """
      Delete an individual booking
 
@@ -113,12 +113,14 @@ def delete_comment(request, booking_id):
      """
      queryset = Booking.objects.all()
      booking = get_object_or_404(queryset, pk=booking_id)
-
-     if booking.client == request.user:
+     if booking.client == request.user: 
           booking.delete()
-          messages.add_message(request, messages.SUCCES, 'Booking deleted!')
+          messages.success(request, "Booking deleted successfully")
+          return redirect('booking-dashboard')
      else:
-          messages.add_message(request, messages.ERROR, 'You can only delete your own bookings!')
+          messages.error(
+               request, "You do not have permissions to delete this booking."
+               )
 
      return HttpResponseRedirect(reverse('booking-dashboard'))
 

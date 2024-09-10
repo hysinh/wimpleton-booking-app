@@ -34,11 +34,14 @@
         <!-- Edit Booking Button -->
         {% if user.is_authenticated and booking.client == user %}
           <a href="{% url 'edit-booking' booking.booking_id %}" class="btn btn-edit" 
-            data-booking_id="{{ booking.booking_id }}">Edit Booking</button>
+            data-booking_id="{{ booking.booking_id }}">Edit Booking
           </a>
           
-          <button class="btn btn-delete" 
-            data-booking_id="{{ booking.booking_id }}">Delete</button>
+          <a href="{% url 'delete-booking' booking.booking_id %}" class="btn btn-delete">Delete Booking
+          </a>
+          
+          <button class="btn btn-delete" booking_id="{{ booking.booking_id }}">
+            Delete</button>
         {% endif %}
 
       </div>
@@ -49,29 +52,29 @@
 
       <!-- Delete Modal - Source: CI DJango Blog Project -->
       <!-- Delete confirmation modal -->
-    <div class="modal fade" id="deleteModal" tabindex="-1"
-      aria-labelledby="deleteModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title"
-              id="deleteModalLabel">Delete comment?</h5>
-            <button type="button" class="btn-close"
-              data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            Are you sure you want to delete your comment?
-            This action cannot be undone.
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary"
-              data-bs-dismiss="modal">Close</button>
-            <a id="deleteConfirm" href="#" class="btn
-              btn-danger">Delete</a>
+      <div class="modal fade" id="deleteModal" tabindex="-1"
+        aria-labelledby="deleteModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title"
+                id="deleteModalLabel">Delete comment?</h5>
+              <button type="button" class="btn-close"
+                data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Are you sure you want to delete your booking?
+              This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary"
+                data-bs-dismiss="modal">Close</button>
+              <a id="deleteConfirm" href="#" class="btn
+                btn-danger">Delete</a>
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
 </div>
 

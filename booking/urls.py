@@ -16,6 +16,7 @@ urlpatterns = [
 
     # registered user pages
     path('edit-booking/<int:booking_id>/', views.edit_booking, name='edit-booking'),
+    path('delete-booking/<int:booking_id>/', views.delete_booking, name='delete-booking'),
     path('request-booking/', views.request_booking, name='request-booking'),
     # path('create-booking/', views.create_booking, name='create-booking'),
     path('venue-hire/', views.VenueList.as_view(), name='venue-hire'),

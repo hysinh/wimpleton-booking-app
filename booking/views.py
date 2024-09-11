@@ -50,7 +50,7 @@ def request_booking(request):
                messages.success(request, "Request for a Venue booking has been created successfully.")
           else:
             messages.error(
-               request, "There was an error in your form. Please try again."
+               request, "This venue is not available for the date selected. Please choose a different date."
                )
             return redirect('request-booking')
           

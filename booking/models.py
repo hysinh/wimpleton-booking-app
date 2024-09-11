@@ -64,7 +64,13 @@ class Booking(models.Model):
     class Meta:
         unique_together = [("venue", "num_guests")]
         ordering = ["event_date", "-client_id"]
-
+        constraints = [
+            models.UniqueConstraint(
+                fields=['event_date', 'venue'],
+                        name='booking_unique_date_venue',
+                        violation_error_message='Booking with this Venue already exits.',   
+            ),
+        ]
 
     def __str__ (self):
         return f"{self.venue}"

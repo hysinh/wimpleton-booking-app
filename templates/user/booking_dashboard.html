@@ -17,7 +17,7 @@
             {% endfor %}
         </ul>
         {% endif %}
-    <p><a href="{% url 'request-booking' %}"><div class="button" style="background-color: orange; width: 150px; text-align: center; padding: 10px 5px">Request a Booking</div></a></p>
+    <p><a href="{% url 'request-booking' %}" class="btn btn-edit">Request a Booking</a></p>
     <p class="bold">Your Current Venue Bookings:</p>
     <!-- Iterate over booking object -->
       {% for booking in bookings %}
@@ -37,7 +37,7 @@
             data-booking_id="{{ booking.booking_id }}">Edit Booking
           </a>
            
-          <button class="btn btn-delete" data-booking_id="{{ booking.booking_id }}">
+          <button class="btn btn-danger" data-booking_id="{{ booking.booking_id }}">
             Delete</button>
         {% endif %}
 

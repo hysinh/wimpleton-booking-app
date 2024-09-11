@@ -288,12 +288,29 @@ body {
     }
 }
 
-
-
 /* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
     /* Home page */
     .featured-events {
         width: 350px;
     }
-}    
+
+    .booking-card-container {
+        display: flex;
+        width: 90vw;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .booking-card-individual {
+        width: 320px;
+        /*padding: 10px;
+        margin-bottom: 10px;
+        background-color: #d9dcd6;*/
+    }
+}  
+
+/* larger devices - laptops, desktops, and up (992px and up)  */
+@media screen and (min-width: 992px) {
+    /* General */
+}

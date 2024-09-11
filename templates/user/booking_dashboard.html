@@ -20,6 +20,11 @@
     <p><a href="{% url 'request-booking' %}" class="btn btn-edit">Request a Booking</a></p>
     <p class="bold">Your Current Venue Bookings:</p>
     
+    <div class="booking-container">
+      <div>
+        <p>container for individual bookings</p>
+      </div>
+    </div>
     <!-- Iterate over booking object -->
       {% for booking in bookings %}
       <!-- Display Objects -->
@@ -31,16 +36,17 @@
           <p><span class="text-muted bold">Event type:</span> {{ booking.event_type }}</p>
           <p><span class="text-muted bold">Number of guests:</span> {{ booking.num_guests }}</p>
           <p><span class="text-muted bold">Status:</span> {% if booking.status == 0 %}Approved{% else %}Pending Approval{% endif %}</p>
-        </div>
-        <!-- Edit Booking Button -->
-        {% if user.is_authenticated and booking.client == user %}
+          <!-- Edit Booking Button -->
+          {% if user.is_authenticated and booking.client == user %}
           <a href="{% url 'edit-booking' booking.booking_id %}" class="btn btn-edit" 
             data-booking_id="{{ booking.booking_id }}">Edit Booking
           </a>
-          
+          <!-- Delete Booking Button -->
           <button class="btn btn-delete" data-booking_id="{{ booking.booking_id }}">
-            Delete</button>
-        {% endif %}
+          Delete</button>
+      {% endif %}
+        </div>
+        
 
       </div>
       <!-- If object list is empty -->

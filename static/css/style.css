@@ -218,7 +218,6 @@ body {
     display: block;
     margin: 0;
     padding-bottom: 60px;
-    background-color: orange;
 }
 
 .booking-card-individual {
@@ -288,12 +287,6 @@ body {
         margin: 20px 20px;
     }
 
-    /* Booking Dashboard - Booking Cards Section */
-    .booking-card-container {
-        display: flex;
-        flex-flow: row wrap;
-    }
-    
 }
 
 /* Media query: tablets and larger (768px and up) */
@@ -330,16 +323,16 @@ body {
     /* Booking Dashboard - Booking Cards Section */
     .booking-card-container {
         display: flex;
-        flex-direction: row;
         flex-flow: row wrap;
         align-items: flex-start;
         justify-content: flex-start;
+        gap: 20px 20px;
     }
      
     .booking-card-individual {
         width: 320px;
-        /*padding: 10px;
-        margin-bottom: 10px;
+        padding: 10px;
+        /*margin-bottom: 10px;
         background-color: #d9dcd6;*/
     }
 }
@@ -350,6 +343,6 @@ body {
 
     /* Venue Listing page */
     .container-venues {
-        width: 90vw;
+        /* width: 90vw; */
     }
 }

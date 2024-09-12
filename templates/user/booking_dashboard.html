@@ -21,16 +21,17 @@
     <p class="bold">Your Current Venue Bookings:</p>
     
     <!-- Iterate over booking object -->
-      {% for booking in bookings %}
+      
       <!-- Display Objects -->
       <div class="booking-card-container">
+        {% for booking in bookings %}
         <div class="booking-card-individual">
           <p class="booking-venue text-muted">Venue: {{ booking.venue }}</p>
           <p><span class="text-muted bold">Booking ID:</span> {{ booking.booking_id }}</p>
           <p><span class="text-muted bold">Event date:</span> {{ booking.event_date }}</p>
           <p><span class="text-muted bold">Event type:</span> {{ booking.event_type }}</p>
           <p><span class="text-muted bold">Number of guests:</span> {{ booking.num_guests }}</p>
-          <p><span class="text-muted bold">Status:</span> {% if booking.status == 0 %}Approved{% else %}Pending Approval{% endif %}</p>
+          <p><span class="text-muted bold">Status:</span> {% if booking.status == 1 %}Approved{% else %}Pending Approval{% endif %}</p>
           <!-- Edit Booking Button -->
           {% if user.is_authenticated and booking.client == user %}
           <a href="{% url 'edit-booking' booking.booking_id %}" class="btn btn-edit" 
@@ -39,15 +40,15 @@
           <!-- Delete Booking Button -->
           <button class="btn btn-delete" data-booking_id="{{ booking.booking_id }}">
           Delete</button>
-      {% endif %}
+          {% endif %}
         </div>
-        
+        {% empty %}
+      No bookings yet
+      {% endfor %}
 
       </div>
       <!-- If object list is empty -->
-      {% empty %}
-      No bookings yet
-      {% endfor %}
+      
 
       <!-- Delete Modal - Source: CI DJango Blog Project -->
       <!-- Delete confirmation modal -->

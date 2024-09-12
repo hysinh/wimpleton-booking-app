@@ -158,15 +158,14 @@ body {
 }
 
 /* Venue Hire Page */
-.venues-container {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    padding: 60px 40px;
+.container-venues {
+    display: block;
+    justify-content: center;
+    padding: 60px 20px;
 }
 
 .container-venue-card {
-    width: 100%;
+    width: 320px;
 }
 
 .venue-image {
@@ -281,8 +280,16 @@ body {
 /* Media query for mobile devices and later (375px and up) */
 @media screen and (min-width: 375px)  {
     /* Venue Listing Page */
+    .container-venues {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: flex-start;
+        justify-content: center;
+        padding: 20px;
+    }
+    
     .container-venue-card {
-        /* width: 350px; */
+        margin: 20px 20px;
     }
 }
 
@@ -303,11 +310,9 @@ body {
 
     /* Venue Listing page */
     .container-venues {
-        flex-direction: row;
-    }
-
-    .container-venue-card {
-        width: 320px;
+        width: 768px;
+        margin: 0 auto;
+        justify-content: center;
     }
 
     /* Sign up / Sign out / Registration pages */
@@ -336,4 +341,9 @@ body {
 /* larger devices - laptops, desktops, and up (992px and up)  */
 @media screen and (min-width: 992px) {
     /* General */
+
+    /* Venue Listing page */
+    .container-venues {
+        width: 90vw;
+    }
 }

@@ -158,9 +158,15 @@ body {
 }
 
 /* Venue Hire Page */
-.container-venues {
-    width: 90vw;
-    padding: 60px 20px 60px;
+.venues-container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 40px;
+}
+
+.container-venue-card {
+    width: 100%;
 }
 
 .venue-image {
@@ -272,6 +278,13 @@ body {
     background-color: #445261;
 }
 
+/* Media query for mobile devices and later (375px and up) */
+@media screen and (min-width: 375px)  {
+    /* Venue Listing Page */
+    .container-venue-card {
+        /* width: 350px; */
+    }
+}
 
 /* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
@@ -288,24 +301,28 @@ body {
         align-items: center;
     }
 
+    /* Venue Listing page */
+    .container-venues {
+        flex-direction: row;
+    }
+
+    .container-venue-card {
+        width: 320px;
+    }
+
     /* Sign up / Sign out / Registration pages */
     .container-auth-box {
         width: 550px;
     }
-}
 
-/* Media query: tablets and larger (768px and up) */
-@media screen and (min-width: 768px) {
-    /* Home page */
     .featured-events {
         width: 350px;
     }
 
     .booking-card-container {
         display: flex;
-        width: 90vw;
-        justify-content: center;
-        align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
     }
     
     .booking-card-individual {
@@ -314,7 +331,7 @@ body {
         margin-bottom: 10px;
         background-color: #d9dcd6;*/
     }
-}  
+}
 
 /* larger devices - laptops, desktops, and up (992px and up)  */
 @media screen and (min-width: 992px) {

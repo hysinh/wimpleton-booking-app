@@ -20,11 +20,6 @@
     <p><a href="{% url 'request-booking' %}" class="btn btn-edit">Request a Booking</a></p>
     <p class="bold">Your Current Venue Bookings:</p>
     
-    <div class="booking-container">
-      <div>
-        <p>container for individual bookings</p>
-      </div>
-    </div>
     <!-- Iterate over booking object -->
       {% for booking in bookings %}
       <!-- Display Objects -->

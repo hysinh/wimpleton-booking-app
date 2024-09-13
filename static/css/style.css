@@ -176,6 +176,22 @@ body {
     align-items: center;
 }
 
+.about-image {
+    background: url("/static/images/featured_image_1600x900_courtyard.webp") no-repeat left/cover, 40px, #445261;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-image {
+    background: url("/static/images/featured_image_1600x900_gardens.webp") no-repeat left/cover, 40px, #445261;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .overlay-text-main {
     background-color: rgb(246, 250, 246, .5);
     font-size: 130%;
@@ -266,6 +282,7 @@ body {
 .btn-delete {
     color: #fff;
     background: red;
+    margin-top: 5px;
 }
 
 .footer {
@@ -302,6 +319,12 @@ body {
         width: 100vw;
         justify-content: center;
         align-items: center;
+    }
+
+    /* Featured sections at top of pages */
+    .featured-content {
+        width: 90vw;
+        margin: 0 auto;
     }
 
     /* Venue Listing page */

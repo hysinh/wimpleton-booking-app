@@ -17,7 +17,7 @@
             {% endfor %}
         </ul>
         {% endif %}
-    <p><a href="{% url 'request-booking' %}" class="btn btn-edit">Request a Booking</a></p>
+    <p><a href="{% url 'request-booking' %}" class="btn btn-edit btn-spacing">Request a Booking</a></p>
     <p class="bold">Your Current Venue Bookings:</p>
     
     <!-- Iterate over booking object -->
@@ -39,7 +39,7 @@
           </a>
           <!-- Delete Booking Button -->
           <button class="btn btn-delete" data-booking_id="{{ booking.booking_id }}">
-          Delete</button>
+          Delete Booking</button>
           {% endif %}
         </div>
         {% empty %}

@@ -158,19 +158,34 @@ body {
 }
 
 /* Venue Hire Page */
-.venues-container {
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    padding: 60px 40px;
+.container-venues {
+    display: block;
+    justify-content: center;
+    padding: 60px 20px;
 }
 
 .container-venue-card {
-    width: 100%;
+    width: 320px;
 }
 
 .venue-image {
     background: url("/static/images/featured_image_1600x900_chapel.webp") no-repeat left/cover, 40px, #445261;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-image {
+    background: url("/static/images/featured_image_1600x900_courtyard.webp") no-repeat left/cover, 40px, #445261;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-image {
+    background: url("/static/images/featured_image_1600x900_gardens.webp") no-repeat left/cover, 40px, #445261;
     height: 550px;
     display: flex;
     justify-content: center;
@@ -206,6 +221,11 @@ body {
     color: #445261;
 }
 
+.image-container {
+    width: 320px;
+    height: 275px;
+}
+
 /* Booking Dashboard Sections */
 .booking-list {
     width: 90vw;
@@ -214,16 +234,11 @@ body {
     padding: 10px;
 }
 
-.booking-container{
-    background-color: blue;
-}
-
 .booking-card-container {
     width: 100%;
     display: block;
     margin: 0;
-    padding-bottom: 100px;
-    background-color: orange;
+    padding-bottom: 60px;
 }
 
 .booking-card-individual {
@@ -272,6 +287,7 @@ body {
 .btn-delete {
     color: #fff;
     background: red;
+    margin-top: 5px;
 }
 
 .footer {
@@ -281,9 +297,18 @@ body {
 /* Media query for mobile devices and later (375px and up) */
 @media screen and (min-width: 375px)  {
     /* Venue Listing Page */
-    .container-venue-card {
-        /* width: 350px; */
+    .container-venues {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: flex-start;
+        justify-content: space-evenly;
+        padding: 20px;
     }
+    
+    .container-venue-card {
+        margin: 20px 20px;
+    }
+
 }
 
 /* Media query: tablets and larger (768px and up) */
@@ -301,13 +326,16 @@ body {
         align-items: center;
     }
 
-    /* Venue Listing page */
-    .container-venues {
-        flex-direction: row;
+    /* Featured sections at top of pages */
+    .featured-content {
+        width: 90vw;
+        margin: 0 auto;
     }
 
-    .container-venue-card {
-        width: 320px;
+    /* Venue Listing page */
+    .container-venues {
+        width: 768px;
+        margin: 0 auto;
     }
 
     /* Sign up / Sign out / Registration pages */
@@ -319,16 +347,19 @@ body {
         width: 350px;
     }
 
+    /* Booking Dashboard - Booking Cards Section */
     .booking-card-container {
         display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
+        flex-flow: row wrap;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 20px 20px;
     }
-    
+     
     .booking-card-individual {
         width: 320px;
-        /*padding: 10px;
-        margin-bottom: 10px;
+        padding: 10px;
+        /*margin-bottom: 10px;
         background-color: #d9dcd6;*/
     }
 }
@@ -336,4 +367,11 @@ body {
 /* larger devices - laptops, desktops, and up (992px and up)  */
 @media screen and (min-width: 992px) {
     /* General */
+
+    /* Venue Listing page */
+    .container-venues {
+        width: 90vw;
+        margin: 0 auto;
+        justify-content: space-evenly;
+    }
 }

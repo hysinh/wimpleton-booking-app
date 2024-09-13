@@ -14,15 +14,26 @@
 <!-- Venue Hire intro section -->
 <div class="featured-content-container">
     <div class="featured-content">
-      <p>
-        A little blurb here about the different type of celebrations and events possible
-      </p>
-      <p>Wimbledon House provides an ideal location to 
-        celebrate an exquisitely luxurious wedding or celebration 
-        or event. Whether celebrating with a small and intimate 
+        <h5>
+            Wimbledon House provides an ideal location to 
+            celebrate an exquisitely luxurious wedding or celebration 
+            or event.
+        </h5>
+        <p>
+        Whether celebrating with a small and intimate 
         group or for larger affairs, Wimpleton House can 
         accommodate your event needs.
+        </p>
+        <p>
+        Start the booking process
+        by registering and completing a booking request and a member 
+        of our Special Events team reach out to you and confirm the 
+        details of your event as well as work with you to make it unforgettable.
       </p>
+      <div>
+        <a class="{% if request.path == bookingdashboard_url %}active{% endif %} btn btn-edit" aria-current="page" 
+              href="{% url 'booking-dashboard' %}">Book your event today</a>
+      </div>
     </div>
   </div>
 
@@ -40,13 +51,11 @@
                   alt="{{ venue.venue_name }}">
               {% endif %}
         </div>
-        <a href="#" class="venue-link">
-            <h2 class="venue-title">{{ venue.venue_name }}</h2>
-        </a>
-        <p>{{ venue.venue_capacity }} guests</p>
-        <p class="card-text text-muted h6">{{ venue.venue_blurb }}
+        <h2 class="venue-title">{{ venue.venue_name }}</h2>
+        <p>Capacity: {{ venue.venue_capacity }} guests</p>
+        <p class="card-text">{{ venue.venue_blurb }}
         </p>
-        <div class="card-text text-muted h6">{{ venue.venue_description | safe }}
+        <div class="card-text">{{ venue.venue_description | safe }}
         </div>
     </div>
     {% if forloop.counter|divisibleby:3 %}

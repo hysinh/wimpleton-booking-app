@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 <!-- Featured Image -->
@@ -31,7 +32,13 @@
     {% for venue in venue_list %}
     <div class="container-venue-card">   
         <div class="image-container">
-            An image goes here
+            {% if "placeholder" in venue.featured_image.url %}
+                <img src="{% static 'images/default.webp' %}" class="scale" width="320"
+                  alt="placeholder image">
+              {% else %}
+                <img src="{{ venue.featured_image.url }}" class="scale" width="320"
+                  alt="{{ venue.venue_name }}">
+              {% endif %}
         </div>
         <a href="#" class="venue-link">
             <h2 class="venue-title">{{ venue.venue_name }}</h2>

@@ -1,4 +1,5 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
 
 
@@ -23,6 +24,7 @@ class Venue(models.Model):
     staff_member = models.ForeignKey(
         User, on_delete=models.PROTECT, related_name="venue_listings"
     )
+    featured_image = CloudinaryField('image', default='placeholder')
     venue_description = models.TextField()
     venue_blurb = models.TextField(blank=True)
     venue_capacity = models.IntegerField()

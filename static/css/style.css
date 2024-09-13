@@ -221,6 +221,11 @@ body {
     color: #445261;
 }
 
+.image-container {
+    width: 320px;
+    height: 275px;
+}
+
 /* Booking Dashboard Sections */
 .booking-list {
     width: 90vw;
@@ -296,7 +301,7 @@ body {
         display: flex;
         flex-flow: row wrap;
         align-items: flex-start;
-        justify-content: center;
+        justify-content: space-evenly;
         padding: 20px;
     }
     
@@ -331,7 +336,6 @@ body {
     .container-venues {
         width: 768px;
         margin: 0 auto;
-        justify-content: center;
     }
 
     /* Sign up / Sign out / Registration pages */
@@ -366,6 +370,8 @@ body {
 
     /* Venue Listing page */
     .container-venues {
-        /* width: 90vw; */
+        width: 90vw;
+        margin: 0 auto;
+        justify-content: space-evenly;
     }
 }

@@ -294,6 +294,10 @@ body {
     background-color: #445261;
 }
 
+.footer-text {
+    color: #ffffff;
+} 
+
 /* Media query for mobile devices and later (375px and up) */
 @media screen and (min-width: 375px)  {
     /* Venue Listing Page */

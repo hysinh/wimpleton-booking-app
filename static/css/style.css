@@ -291,6 +291,19 @@ body {
     margin-top: 5px;
 }
 
+
+/* About Page */
+#photos img {
+    width: 100%;
+    line-height: 1em;
+}
+
+#photos {
+    line-height: 0;
+}
+
+/* Footer */
+
 .footer {
     background-color: #445261;
 }

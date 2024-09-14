@@ -72,8 +72,14 @@ body {
 .featured-content {
     background-color: #d9dcd6;
     padding: 40px 25px;
-    font-size: .85em;
-    text-transform: uppercase;
+    font-size: 1em;
+}
+
+.featured-content a {
+    display: block;
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .event-type-container {
@@ -216,14 +222,9 @@ body {
     letter-spacing: 3px;
 }
 
-.venue-link {
-    text-decoration: none;
-    color: #445261;
-}
-
-.image-container {
+.image-container img {
     width: 320px;
-    height: 275px;
+    margin: 10px 0;
 }
 
 /* Booking Dashboard Sections */
@@ -290,9 +291,32 @@ body {
     margin-top: 5px;
 }
 
+
+/* About Page */
+#gallery {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#photos img {
+    width: 100%;
+    line-height: 1em;
+}
+
+#photos {
+    line-height: 0;
+}
+
+/* Footer */
+
 .footer {
     background-color: #445261;
 }
+
+.footer-text {
+    color: #ffffff;
+} 
 
 /* Media query for mobile devices and later (375px and up) */
 @media screen and (min-width: 375px)  {
@@ -306,7 +330,13 @@ body {
     }
     
     .container-venue-card {
-        margin: 20px 20px;
+        margin: 40px 20px;
+    }
+
+    /* About page */
+    /* Gallery */
+    #photos {
+        column-count: 2;
     }
 
 }
@@ -362,6 +392,13 @@ body {
         /*margin-bottom: 10px;
         background-color: #d9dcd6;*/
     }
+
+    /* About page gallery */
+    /* Gallery */
+    #photos {
+        column-count: 3;
+    }
+
 }
 
 /* larger devices - laptops, desktops, and up (992px and up)  */

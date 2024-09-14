@@ -36,6 +36,37 @@ def booking_dashboard(request):
 
 
 @login_required()
+def request_booking_test(request):
+     """
+     Creates a booking request
+     """
+     if request.method == 'POST':
+          form = BookingForm(request.POST)
+          if form.is_valid():
+               booking = form.save(commit=False)
+               booking.client = request.user
+               booking.save()
+
+               messages.success(request, "Request for a Venue booking has been created successfully.")
+          else:
+            messages.error(
+               request, "This venue is not available for the date selected. Please choose a different date."
+               )
+            return redirect('request-booking-test')
+          
+          return redirect('booking-dashboard')
+     
+     form = BookingForm()
+     venues = Venue.objects.filter(status=1)
+     context = {
+          "form": form,
+          "venues": venues
+     }
+          
+     return render(request, 'user/request_booking_test.html', context)
+
+
+@login_required()
 def request_booking(request):
      """
      Creates a booking request

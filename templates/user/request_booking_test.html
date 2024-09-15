@@ -7,17 +7,17 @@
 <!-- Booking Form -->
 <div class="create-booking-form-container">
     <!-- Test area -->
-    <!-- {% for venue in venues %}
+    {% for venue in venues %}
     <p>
         
-            {{ venue.venue_name}}
+            {{ venue.venue_name}}, {{ venue.id }}
         
     </p>
-    {% endfor %} -->
+    {% endfor %}
 
     {% for booking in bookings %}
     <p>
-        {{ booking.venue }}, Event Date: {{ booking.event_date }}
+        {{ booking.venue }}, Event Date: {{ booking.event_date }}, {{ booking.booking_id }}
     </p>
     {% endfor %}
     <!-- End Test area -->

@@ -1,6 +1,8 @@
 from django.contrib import messages
 from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.views import generic
+from django.core import serializers
+from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required, permission_required
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -41,29 +43,40 @@ def request_booking_test(request):
      Creates a booking request
      """
      bookings = Booking.objects.all()
+     venues = Venue.objects.filter(status=1)
      if request.method == 'POST':
           form = BookingForm(request.POST)
-          
+          event_date = request.POST.get("event_date")
+          selected_venue = request.POST.get("venue")
+          venue = get_object_or_404(Venue, pk=selected_venue)
+          data = serializers.serialize('json', bookings)
+          return JsonResponse(data, safe=False)
+          # messages.success(
+          #      request,
+          #      bookings[0].venue
+          # )
+
+          return redirect('request-booking-test')
           for booking in bookings:
-               event_date = request.POST.get("event_date")
-               venue = request.POST.get("venue")
-               if booking.venue == venue and booking.event_date != event_date:
-                    print(f'venue:', venue, 'booking.venue:', booking.venue, 'event date:', event_date, 'booking.event_date:', booking.event_date)
-                    messages.success(
-                         request,
-                         "The venue matches but the event date's do not match"
-                    )
-               # if form.is_valid() and venue == booking.venue and event_date != booking.event_date:
-               #      messages.error(
-               #           request,
-               #           "This venue is not available for the date selected. "
-               #           "Please choose another date."
-               #      )
-               else:
+               if booking.venue == selected_venue and event_date == booking.event_date:
                     messages.error(
                          request,
-                         "Something weird is happening"
+                         "This venue has already been booked for that date."
                     )
+
+                    return redirect('request-booking-test')
+
+          if form.is_valid():
+               booking = form.save(commit=False)
+               booking.client = request.user
+               booking.save()
+
+               messages.success(request, "Request for a Venue booking has been created successfully.")
+          else:
+               messages.error(
+                    request, "There is an error in the form. Please try again."
+                    )
+
                return redirect('request-booking-test')
           
           return redirect('booking-dashboard')

@@ -40,19 +40,31 @@ def request_booking_test(request):
      """
      Creates a booking request
      """
+     bookings = Booking.objects.all()
      if request.method == 'POST':
           form = BookingForm(request.POST)
-          if form.is_valid():
-               booking = form.save(commit=False)
-               booking.client = request.user
-               booking.save()
-
-               messages.success(request, "Request for a Venue booking has been created successfully.")
-          else:
-            messages.error(
-               request, "This venue is not available for the date selected. Please choose a different date."
-               )
-            return redirect('request-booking-test')
+          
+          for booking in bookings:
+               event_date = request.POST.get("event_date")
+               venue = request.POST.get("venue")
+               if booking.venue == venue and booking.event_date != event_date:
+                    print(f'venue:', venue, 'booking.venue:', booking.venue, 'event date:', event_date, 'booking.event_date:', booking.event_date)
+                    messages.success(
+                         request,
+                         "The venue matches but the event date's do not match"
+                    )
+               # if form.is_valid() and venue == booking.venue and event_date != booking.event_date:
+               #      messages.error(
+               #           request,
+               #           "This venue is not available for the date selected. "
+               #           "Please choose another date."
+               #      )
+               else:
+                    messages.error(
+                         request,
+                         "Something weird is happening"
+                    )
+               return redirect('request-booking-test')
           
           return redirect('booking-dashboard')
      
@@ -60,7 +72,8 @@ def request_booking_test(request):
      venues = Venue.objects.filter(status=1)
      context = {
           "form": form,
-          "venues": venues
+          "venues": venues,
+          "bookings": bookings
      }
           
      return render(request, 'user/request_booking_test.html', context)

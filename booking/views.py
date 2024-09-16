@@ -77,40 +77,21 @@ def request_booking_test(request):
                     return redirect('request-booking-test')
                
           else:
-               messages.success(
-                    request,
-                    "This date for this venue is free!"
-                    # event_date_object
-                    # booking.event_date
-                    # event_date_object
-               )
+               if form.is_valid():
+                    booking = form.save(commit=False)
+                    booking.client = request.user
+                    booking.save()
 
-               return redirect('request-booking-test')
+                    messages.success(request, "Request for a Venue booking has been created successfully.")
+                    return redirect('booking-dashboard')
+                    
+               else:
+                    messages.error(
+                         request, "There is an error in the form. Please try again."
+                         )
 
-
-          # messages.success(
-          #      request,
-          #      "This date for this venue is free!"
-          #      # event_date
-          #      # booking.event_date
-          # )
-
-          # return redirect('request-booking-test')
-
-          # if form.is_valid():
-          #      booking = form.save(commit=False)
-          #      booking.client = request.user
-          #      booking.save()
-
-          #      messages.success(request, "Request for a Venue booking has been created successfully.")
-          # else:
-          #      messages.error(
-          #           request, "There is an error in the form. Please try again."
-          #           )
-
-          #      return redirect('request-booking-test')
-          
-          
+                    return redirect('request-booking-test')
+       
      
      form = BookingForm()
      venues = Venue.objects.filter(status=1)

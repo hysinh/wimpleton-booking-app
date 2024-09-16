@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
+from django.core.exceptions import ValidationError
 from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
 
@@ -68,6 +69,12 @@ class Booking(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)
+
+    # Tried this for validation error - not working 
+    def save(self, *args, **kwargs):
+        if self.num_guests > 500:
+            raise ValidationError("Guest count cannot exceed 500 guests")
+        super(Booking, self).save(*args, **kwargs)
 
 
     class Meta:

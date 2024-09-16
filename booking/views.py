@@ -109,27 +109,47 @@ def request_booking(request):
      """
      Creates a booking request
      """
+     bookings = Booking.objects.all()
+     venues = Venue.objects.filter(status=1)
      if request.method == 'POST':
           form = BookingForm(request.POST)
-          if form.is_valid():
-               booking = form.save(commit=False)
-               booking.client = request.user
-               booking.save()
+          event_date = request.POST.get("event_date")
+          event_date_object = datetime.strptime(event_date, "%Y-%m-%d").date()
+          selected_venue = request.POST.get("venue")
+          venue = get_object_or_404(Venue, pk=selected_venue)
+          bookings_with_venue = Booking.objects.filter(venue=selected_venue)
+          for booking in bookings_with_venue:
+               if booking.event_date == event_date_object:
+                    messages.success(
+                         request,
+                         "This venue date is not free! Please choose a different date for this venue."
+                    )
 
-               messages.success(request, "Request for a Venue booking has been created successfully.")
+                    return redirect('request-booking')
+               
           else:
-            messages.error(
-               request, "This venue is not available for the date selected. Please choose a different date."
-               )
-            return redirect('request-booking')
-          
-          return redirect('booking-dashboard')
+               if form.is_valid():
+                    booking = form.save(commit=False)
+                    booking.client = request.user
+                    booking.save()
+
+                    messages.success(request, "Request for a Venue booking has been created successfully.")
+                    return redirect('booking-dashboard')
+                    
+               else:
+                    messages.error(
+                         request, "There is an error in the form. Please try again."
+                         )
+
+                    return redirect('request-booking')
+       
      
      form = BookingForm()
      venues = Venue.objects.filter(status=1)
      context = {
           "form": form,
-          "venues": venues
+          "venues": venues,
+          "bookings": bookings
      }
           
      return render(request, 'user/request_booking.html', context)

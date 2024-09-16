@@ -3,6 +3,7 @@ from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.views import generic
 from django.core import serializers
 from django.http import JsonResponse
+from datetime import datetime
 from django.contrib.auth.decorators import login_required, permission_required
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -47,6 +48,7 @@ def request_booking_test(request):
      if request.method == 'POST':
           form = BookingForm(request.POST)
           event_date = request.POST.get("event_date")
+          event_date_object = datetime.strptime(event_date, "%Y-%m-%d").date()
           selected_venue = request.POST.get("venue")
           venue = get_object_or_404(Venue, pk=selected_venue)
           bookings_with_venue = Booking.objects.filter(venue=selected_venue)
@@ -65,23 +67,35 @@ def request_booking_test(request):
           # return redirect('request-booking-test')
 
           for booking in bookings_with_venue:
-               if booking.event_date != event_date:
+               if booking.event_date == event_date_object:
                     messages.success(
                          request,
-                         booking.event_date
+                         "This venue date is not free! Please choose a different date for this venue."
+                         # booking.event_date
                     )
 
                     return redirect('request-booking-test')
                
-               else:
-                    messages.error(
+          else:
+               messages.success(
                     request,
-                    "This venue is already booked for that date!"
-                    # event_date
+                    "This date for this venue is free!"
+                    # event_date_object
                     # booking.event_date
+                    # event_date_object
                )
 
-          return redirect('request-booking-test')
+               return redirect('request-booking-test')
+
+
+          # messages.success(
+          #      request,
+          #      "This date for this venue is free!"
+          #      # event_date
+          #      # booking.event_date
+          # )
+
+          # return redirect('request-booking-test')
 
           # if form.is_valid():
           #      booking = form.save(commit=False)

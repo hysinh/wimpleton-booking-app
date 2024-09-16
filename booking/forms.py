@@ -29,6 +29,7 @@ class DateInput(forms.DateInput):
         attrs.setdefault('min', now().strftime('%Y-%m-%d'))
         return super().get_context(name, value, attrs)
      
+     
 class BookingForm(forms.ModelForm):
     class Meta:
         model = Booking

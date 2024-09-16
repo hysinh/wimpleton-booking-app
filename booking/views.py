@@ -49,35 +49,42 @@ def request_booking_test(request):
           event_date = request.POST.get("event_date")
           selected_venue = request.POST.get("venue")
           venue = get_object_or_404(Venue, pk=selected_venue)
-          data = serializers.serialize('json', bookings)
-          return JsonResponse(data, safe=False)
-          # messages.success(
-          #      request,
-          #      bookings[0].venue
-          # )
+          bookings_with_venue = Booking.objects.filter(venue=selected_venue)
+
+          # Creates a json file of the data objects
+          # data = serializers.serialize('json', bookings_with_venue)
+          # return JsonResponse(data, safe=False)
+
+          # Prints the object values
+          messages.success(
+               request,
+               len(bookings_with_venue)
+               # venue.id
+          )
 
           return redirect('request-booking-test')
-          for booking in bookings:
-               if booking.venue == selected_venue and event_date == booking.event_date:
-                    messages.error(
-                         request,
-                         "This venue has already been booked for that date."
-                    )
 
-                    return redirect('request-booking-test')
+          # for booking in bookings:
+          #      if booking.venue == selected_venue and event_date == booking.event_date:
+          #           messages.error(
+          #                request,
+          #                "This venue has already been booked for that date."
+          #           )
 
-          if form.is_valid():
-               booking = form.save(commit=False)
-               booking.client = request.user
-               booking.save()
+          #           return redirect('request-booking-test')
 
-               messages.success(request, "Request for a Venue booking has been created successfully.")
-          else:
-               messages.error(
-                    request, "There is an error in the form. Please try again."
-                    )
+          # if form.is_valid():
+          #      booking = form.save(commit=False)
+          #      booking.client = request.user
+          #      booking.save()
 
-               return redirect('request-booking-test')
+          #      messages.success(request, "Request for a Venue booking has been created successfully.")
+          # else:
+          #      messages.error(
+          #           request, "There is an error in the form. Please try again."
+          #           )
+
+          #      return redirect('request-booking-test')
           
           return redirect('booking-dashboard')
      

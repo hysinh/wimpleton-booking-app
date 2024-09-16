@@ -61,8 +61,8 @@ class Booking(models.Model):
     num_guests = models.IntegerField(
         default=20,
         validators=[
-            MaxValueValidator(500),
-            MinValueValidator(20)
+            MaxValueValidator(500, message="Guest count cannot exceed 500 guests"),
+            MinValueValidator(20, message="Guest count requires a mimum of 20 guests")
         ]
      )
     status = models.IntegerField(choices=STATUS, default=0)

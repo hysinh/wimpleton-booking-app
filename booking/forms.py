@@ -1,5 +1,6 @@
 from .widgets import DatePickerInput
 from django import forms
+from django.core.validators import MaxValueValidator
 from django.utils.timezone import now
 from django.core.exceptions import NON_FIELD_ERRORS
 from .models import Booking
@@ -41,10 +42,24 @@ class BookingForm(forms.ModelForm):
         ]
 
         widgets = {
-            # 'event_date': DatePickerInput(),
             'event_date': DateInput()
         }
 
+    
+    # def clean(self):
+    #     if self.cleaned_data.get('num_guests') > 500:
+    #         raise BookingForm.ValidationError('Guest count exceeds maximum!')
+    #     return self.cleaned_data
+
+    # def __init__(self, *args, **kwargs):
+    #     super(BookingForm, self).__init__(*args, **kwargs)
+
+    #     # adds custom error messages
+    #     self.fields['num_guests'].error_messages.update({'Guest count cannot exceed 500 people nor be less than 20 people'})
+    
+    # def __init__(self, *args, **kwargs):
+    #     super().__init__(*args, **kwargs)
+    #     self.fields['num_guests'].validators.append(MaxValueValidator(500))
 
     
 

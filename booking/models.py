@@ -1,4 +1,5 @@
 from django.db import models
+from django.core.validators import MaxValueValidator, MinValueValidator
 from cloudinary.models import CloudinaryField
 from django.contrib.auth.models import User
 
@@ -57,7 +58,13 @@ class Booking(models.Model):
         choices=TYPE_OF_EVENT_CHOICES
     )
     event_date = models.DateField()
-    num_guests = models.IntegerField()
+    num_guests = models.IntegerField(
+        default=20,
+        validators=[
+            MaxValueValidator(500),
+            MinValueValidator(20)
+        ]
+     )
     status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)

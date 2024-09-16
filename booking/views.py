@@ -56,22 +56,32 @@ def request_booking_test(request):
           # return JsonResponse(data, safe=False)
 
           # Prints the object values
-          messages.success(
-               request,
-               len(bookings_with_venue)
-               # venue.id
-          )
+          # messages.success(
+          #      request,
+          #      len(bookings_with_venue)
+          #      # venue.id
+          # )
+
+          # return redirect('request-booking-test')
+
+          for booking in bookings_with_venue:
+               if booking.event_date != event_date:
+                    messages.success(
+                         request,
+                         booking.event_date
+                    )
+
+                    return redirect('request-booking-test')
+               
+               else:
+                    messages.error(
+                    request,
+                    "This venue is already booked for that date!"
+                    # event_date
+                    # booking.event_date
+               )
 
           return redirect('request-booking-test')
-
-          # for booking in bookings:
-          #      if booking.venue == selected_venue and event_date == booking.event_date:
-          #           messages.error(
-          #                request,
-          #                "This venue has already been booked for that date."
-          #           )
-
-          #           return redirect('request-booking-test')
 
           # if form.is_valid():
           #      booking = form.save(commit=False)
@@ -86,7 +96,7 @@ def request_booking_test(request):
 
           #      return redirect('request-booking-test')
           
-          return redirect('booking-dashboard')
+          
      
      form = BookingForm()
      venues = Venue.objects.filter(status=1)

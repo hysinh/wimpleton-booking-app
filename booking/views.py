@@ -76,13 +76,14 @@ def request_booking_test(request):
                          "bookings": bookings
                     }
 
+                    return render(request, 'user/request_booking_test.html', context)
                     # messages.error(
                     #      request,
                     #      "This venue date is not free! Please choose a different date for this venue."
                     #      # booking.event_date
                     # )
 
-                    return render(request, 'user/request_booking_test.html', context)
+                   
                
           else:
                if form.is_valid():
@@ -121,6 +122,8 @@ def request_booking(request):
      """
      # bookings = Booking.objects.all()
      # venues = Venue.objects.filter(status=1)
+     form = BookingForm()
+     context = {}
      if request.method == 'POST':
           form = BookingForm(request.POST)
           event_date = request.POST.get("event_date")
@@ -132,12 +135,11 @@ def request_booking(request):
           bookings_with_venue = Booking.objects.filter(venue=selected_venue)
           for booking in bookings_with_venue:
                if booking.event_date == event_date_object:
-                    messages.success(
-                         request,
-                         "This venue date is not free! Please choose a different date for this venue."
-                    )
+                    context = {
+                         "form": form,
+                    }
 
-                    return redirect('request-booking')
+                    return render(request, 'user/request_booking_test.html', context)
 
           # checks guests count doesn't exceed maximum     
           if num_guests > 500:
@@ -172,7 +174,7 @@ def request_booking(request):
                     return redirect('request-booking')
        
      
-     form = BookingForm()
+     
      venues = Venue.objects.filter(status=1)
      context = {
           "form": form,

@@ -37,7 +37,7 @@ class Venue(models.Model):
 
     class Meta:
         ordering = ["-venue_name"]
-        
+
         
     def __str__ (self):
         return f"{self.venue_name}"

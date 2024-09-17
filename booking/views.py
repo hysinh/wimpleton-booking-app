@@ -146,7 +146,7 @@ def request_booking(request):
           if form.is_valid():
                booking = form.save(commit=False)
                
-               # find all bookings that have the same venue as selected
+               # find all bookings that have the same venue and event date as selected
                already_booked_with_venue = Booking.objects.filter(venue=booking.venue, event_date=booking.event_date)
                if already_booked_with_venue:
                     context = {
@@ -204,7 +204,7 @@ def edit_booking(request, booking_id):
           "original_booking": original_booking
      } 
 
-     return render(request, 'user/edit_booking.html', context)    
+     return render(request, 'user/edit_booking.html', context)   
 
 
 @login_required()

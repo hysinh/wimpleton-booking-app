@@ -78,7 +78,6 @@ class Booking(models.Model):
 
 
     class Meta:
-        unique_together = [("venue", "num_guests")]
         ordering = ["event_date", "-client_id"]
         constraints = [
             models.UniqueConstraint(

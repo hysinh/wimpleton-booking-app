@@ -45,6 +45,8 @@ def request_booking_test(request):
      """
      bookings = Booking.objects.all()
      venues = Venue.objects.filter(status=1)
+     form = BookingForm()
+     context = {}
      if request.method == 'POST':
           form = BookingForm(request.POST)
           event_date = request.POST.get("event_date")
@@ -68,16 +70,23 @@ def request_booking_test(request):
 
           for booking in bookings_with_venue:
                if booking.event_date == event_date_object:
-                    messages.success(
-                         request,
-                         "This venue date is not free! Please choose a different date for this venue."
-                         # booking.event_date
-                    )
+                    context = {
+                         "form": form,
+                         "venues": venues,
+                         "bookings": bookings
+                    }
 
-                    return redirect('request-booking-test')
+                    # messages.error(
+                    #      request,
+                    #      "This venue date is not free! Please choose a different date for this venue."
+                    #      # booking.event_date
+                    # )
+
+                    return render(request, 'user/request_booking_test.html', context)
                
           else:
                if form.is_valid():
+                    context['is_valid'] = True
                     booking = form.save(commit=False)
                     booking.client = request.user
                     booking.save()
@@ -86,14 +95,15 @@ def request_booking_test(request):
                     return redirect('booking-dashboard')
                     
                else:
+                    context['is_valid'] = False
                     messages.error(
                          request, "There is an error in the form. Please try again."
                          )
 
-                    return redirect('request-booking-test')
+                    return render(request, 'user/request_booking_test.html', context)
        
      
-     form = BookingForm()
+     
      venues = Venue.objects.filter(status=1)
      context = {
           "form": form,
@@ -109,8 +119,8 @@ def request_booking(request):
      """
      Creates a booking request
      """
-     bookings = Booking.objects.all()
-     venues = Venue.objects.filter(status=1)
+     # bookings = Booking.objects.all()
+     # venues = Venue.objects.filter(status=1)
      if request.method == 'POST':
           form = BookingForm(request.POST)
           event_date = request.POST.get("event_date")
@@ -166,8 +176,8 @@ def request_booking(request):
      venues = Venue.objects.filter(status=1)
      context = {
           "form": form,
-          "venues": venues,
-          "bookings": bookings
+          # "venues": venues,
+          # "bookings": bookings
      }
           
      return render(request, 'user/request_booking.html', context)

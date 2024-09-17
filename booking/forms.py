@@ -46,6 +46,20 @@ class BookingForm(forms.ModelForm):
         }
 
     
+    # def clean_num_guests(self):
+    #     data = self.cleaned_data['num_guests']
+    #     if data > 500:
+    #         raise ValidationError("Guest count exceeds maximum. Please adjust to 500 guests or less")
+    # assign error message to num_guest field - not working
+    # def clean(self):
+    #     cleaned_data = super().clean()
+    #     num_guests = cleaned_data.get("num_guests")
+
+        # if num_guests > 500:
+        #     msg = "Guest count exceeds maximum!"
+        #     self.add_error("num_guests", msg)
+
+
     # def clean(self):
     #     if self.cleaned_data.get('num_guests') > 500:
     #         raise BookingForm.ValidationError('Guest count exceeds maximum!')

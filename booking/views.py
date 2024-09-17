@@ -114,9 +114,11 @@ def request_booking(request):
      if request.method == 'POST':
           form = BookingForm(request.POST)
           event_date = request.POST.get("event_date")
+          num_guests = int(request.POST.get("num_guests"))
           event_date_object = datetime.strptime(event_date, "%Y-%m-%d").date()
           selected_venue = request.POST.get("venue")
-          venue = get_object_or_404(Venue, pk=selected_venue)
+          # venue = get_object_or_404(Venue, pk=selected_venue)
+          # gets all the bookings with the matching venue
           bookings_with_venue = Booking.objects.filter(venue=selected_venue)
           for booking in bookings_with_venue:
                if booking.event_date == event_date_object:
@@ -126,6 +128,22 @@ def request_booking(request):
                     )
 
                     return redirect('request-booking')
+
+          # checks guests count doesn't exceed maximum     
+          if num_guests > 500:
+               messages.error(
+                    request, "Maximum guest count exceeded. Please change your guest count"
+               )
+
+               return redirect('request-booking')
+
+          # checks guests count meets mimimum guest count   
+          if num_guests < 20:
+               messages.error(
+                    request, "Booking requests require a minimum of 20 guests. Please change your guest count"
+               )
+
+               return redirect('request-booking')
                
           else:
                if form.is_valid():

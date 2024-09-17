@@ -52,7 +52,7 @@ def request_booking_test(request):
           if form.is_valid():
                booking = form.save(commit=False)
                already_booked_with_venue = Booking.objects.filter(venue=booking.venue, event_date=booking.event_date)
-               if already_booked:
+               if already_booked_with_venue:
                     context = {
                          "form": form,
                          "venues": venues,
@@ -139,66 +139,33 @@ def request_booking(request):
      """
      Creates a booking request
      """
-     # bookings = Booking.objects.all()
-     # venues = Venue.objects.filter(status=1)
      form = BookingForm()
      context = {}
      if request.method == 'POST':
           form = BookingForm(request.POST)
-          event_date = request.POST.get("event_date")
-          num_guests = int(request.POST.get("num_guests"))
-          event_date_object = datetime.strptime(event_date, "%Y-%m-%d").date()
-          selected_venue = request.POST.get("venue")
-          # venue = get_object_or_404(Venue, pk=selected_venue)
-          # gets all the bookings with the matching venue
-          bookings_with_venue = Booking.objects.filter(venue=selected_venue)
-          for booking in bookings_with_venue:
-               if booking.event_date == event_date_object:
+          if form.is_valid():
+               booking = form.save(commit=False)
+               
+               # find all bookings that have the same venue as selected
+               already_booked_with_venue = Booking.objects.filter(venue=booking.venue, event_date=booking.event_date)
+               if already_booked_with_venue:
                     context = {
-                         "form": form,
+                         "form": form
                     }
 
-                    return render(request, 'user/request_booking_test.html', context)
+                    return render(request, 'user/request_booking.html', context)
 
-          # checks guests count doesn't exceed maximum     
-          if num_guests > 500:
-               messages.error(
-                    request, "Maximum guest count exceeded. Please change your guest count"
-               )
-
-               return redirect('request-booking')
-
-          # checks guests count meets mimimum guest count   
-          if num_guests < 20:
-               messages.error(
-                    request, "Booking requests require a minimum of 20 guests. Please change your guest count"
-               )
-
-               return redirect('request-booking')
-               
-          else:
-               if form.is_valid():
-                    booking = form.save(commit=False)
+               else:
                     booking.client = request.user
                     booking.save()
 
                     messages.success(request, "Request for a Venue booking has been created successfully.")
                     return redirect('booking-dashboard')
-                    
-               else:
-                    messages.error(
-                         request, "There is an error in the form. Please try again."
-                         )
-
-                    return redirect('request-booking')
-       
      
      
      venues = Venue.objects.filter(status=1)
      context = {
           "form": form,
-          # "venues": venues,
-          # "bookings": bookings
      }
           
      return render(request, 'user/request_booking.html', context)

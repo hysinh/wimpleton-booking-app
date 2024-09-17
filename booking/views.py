@@ -49,11 +49,30 @@ def request_booking_test(request):
      context = {}
      if request.method == 'POST':
           form = BookingForm(request.POST)
-          event_date = request.POST.get("event_date")
-          event_date_object = datetime.strptime(event_date, "%Y-%m-%d").date()
-          selected_venue = request.POST.get("venue")
-          venue = get_object_or_404(Venue, pk=selected_venue)
-          bookings_with_venue = Booking.objects.filter(venue=selected_venue)
+          if form.is_valid():
+               booking = form.save(commit=False)
+               already_booked_with_venue = Booking.objects.filter(venue=booking.venue, event_date=booking.event_date)
+               if already_booked:
+                    context = {
+                         "form": form,
+                         "venues": venues,
+                         "bookings": bookings
+                    }
+
+                    return render(request, 'user/request_booking_test.html', context)
+
+               else:
+                    booking.client = request.user
+                    booking.save()
+
+                    messages.success(request, "Request for a Venue booking has been created successfully.")
+                    return redirect('booking-dashboard')
+
+          # event_date = request.POST.get("event_date")
+          # event_date_object = datetime.strptime(event_date, "%Y-%m-%d").date()
+          # selected_venue = request.POST.get("venue")
+          # venue = get_object_or_404(Venue, pk=selected_venue)
+          # bookings_with_venue = Booking.objects.filter(venue=selected_venue)
 
           # Creates a json file of the data objects
           # data = serializers.serialize('json', bookings_with_venue)
@@ -68,15 +87,15 @@ def request_booking_test(request):
 
           # return redirect('request-booking-test')
 
-          for booking in bookings_with_venue:
-               if booking.event_date == event_date_object:
-                    context = {
-                         "form": form,
-                         "venues": venues,
-                         "bookings": bookings
-                    }
+          # for booking in bookings_with_venue:
+          #      if booking.event_date == event_date_object:
+          #           context = {
+          #                "form": form,
+          #                "venues": venues,
+          #                "bookings": bookings
+          #           }
 
-                    return render(request, 'user/request_booking_test.html', context)
+          #           return render(request, 'user/request_booking_test.html', context)
                     # messages.error(
                     #      request,
                     #      "This venue date is not free! Please choose a different date for this venue."
@@ -85,23 +104,23 @@ def request_booking_test(request):
 
                    
                
-          else:
-               if form.is_valid():
-                    context['is_valid'] = True
-                    booking = form.save(commit=False)
-                    booking.client = request.user
-                    booking.save()
+          # else:
+          #      if form.is_valid():
+          #           context['is_valid'] = True
+          #           booking = form.save(commit=False)
+          #           booking.client = request.user
+          #           booking.save()
 
-                    messages.success(request, "Request for a Venue booking has been created successfully.")
-                    return redirect('booking-dashboard')
+          #           messages.success(request, "Request for a Venue booking has been created successfully.")
+          #           return redirect('booking-dashboard')
                     
-               else:
-                    context['is_valid'] = False
-                    messages.error(
-                         request, "There is an error in the form. Please try again."
-                         )
+          #      else:
+          #           context['is_valid'] = False
+          #           messages.error(
+          #                request, "There is an error in the form. Please try again."
+          #                )
 
-                    return render(request, 'user/request_booking_test.html', context)
+          #           return render(request, 'user/request_booking_test.html', context)
        
      
      

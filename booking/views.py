@@ -186,6 +186,14 @@ def edit_booking(request, booking_id):
      """
      # original_booking = Booking.objects.get(pk=booking_id)
      original_booking = get_object_or_404(Booking, pk=booking_id)
+     
+     # redirects the user back to the booking dashboard if they do not own the booking
+     if original_booking.client != request.user: 
+          messages.error(
+               request, "You do not have permissions to edit this booking."
+          )
+          return redirect('booking-dashboard')
+     
      if request.method == 'POST':
           form = BookingForm(request.POST, instance=original_booking)
           if form.is_valid():

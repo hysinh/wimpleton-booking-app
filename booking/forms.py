@@ -2,6 +2,7 @@ from .widgets import DatePickerInput
 from django import forms
 from django.core.validators import MaxValueValidator
 from django.utils.timezone import now
+from datetime import timedelta
 from django.core.exceptions import NON_FIELD_ERRORS
 from .models import Booking
 
@@ -27,7 +28,10 @@ class DateInput(forms.DateInput):
     input_type = 'date'
 
     def get_context(self, name, value, attrs):
+        today = now()
+        two_years = today + timedelta(days=730)
         attrs.setdefault('min', now().strftime('%Y-%m-%d'))
+        attrs.setdefault('max', two_years.strftime('%Y-%m-%d'))
         return super().get_context(name, value, attrs)
      
      

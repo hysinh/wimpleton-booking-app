@@ -37,6 +37,14 @@ body {
     padding: 0px;
 }
 
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
+}
+
 /* Sign in / Sign out / Register pages */
 
 .container-authentication {

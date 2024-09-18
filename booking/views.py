@@ -30,11 +30,17 @@ class VenueList(generic.ListView):
 
 @login_required()
 def booking_dashboard(request):
-    bookings = Booking.objects.filter(client_id=request.user)
+    pending_bookings = Booking.objects.filter(client_id=request.user, status=0)
+    approved_bookings = Booking.objects.filter(client_id=request.user, status=1)
+
+    context = {
+          'pending_bookings': pending_bookings,
+          'approved_bookings': approved_bookings,
+     }
     return render(
          request, 
          'user/booking_dashboard.html',
-         {'bookings': bookings}
+         context
      )
 
 

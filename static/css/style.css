@@ -389,7 +389,7 @@ body {
     .booking-card-container {
         display: flex;
         flex-flow: row wrap;
-        align-items: flex-start;
+        align-items: stretch;
         justify-content: flex-start;
         gap: 20px 20px;
     }

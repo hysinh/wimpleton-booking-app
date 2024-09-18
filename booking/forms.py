@@ -29,8 +29,9 @@ class DateInput(forms.DateInput):
 
     def get_context(self, name, value, attrs):
         today = now()
+        first_available_date = today + timedelta(days=5)
         two_years = today + timedelta(days=730)
-        attrs.setdefault('min', now().strftime('%Y-%m-%d'))
+        attrs.setdefault('min', first_available_date.strftime('%Y-%m-%d'))
         attrs.setdefault('max', two_years.strftime('%Y-%m-%d'))
         return super().get_context(name, value, attrs)
      

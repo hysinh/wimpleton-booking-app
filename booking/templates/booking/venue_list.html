@@ -58,9 +58,7 @@
         </p>
         <div class="card-text">{{ venue.venue_description | safe }}
         </div>
-        <div>
-            <a href="{% url 'request-booking-test' venue.id %}" class="btn btn-edit btn-spacing">Booking Now</a>
-        </div>
+       
     </div>
     {% if forloop.counter|divisibleby:3 %}
     {% endif %}

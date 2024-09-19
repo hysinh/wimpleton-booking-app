@@ -44,48 +44,48 @@ def booking_dashboard(request):
      )
 
 
-@login_required()
-def request_booking_test(request, id):
-     """
-     Creates a booking request
-     """
+# @login_required()
+# def request_booking_test(request, id):
+#      """
+#      Creates a booking request
+#      """
 
-     # get the venue 
-     venue = get_object_or_404(Venue, pk=id)
-     form = BookingForm(initial={"id": id})
-     #contact_form = ContactForm(initial={"id": id})
-     # context = {}
-     # if request.method == 'POST':
-     #      form = BookingForm(request.POST)
-     #      if form.is_valid():
-     #           booking = form.save(commit=False)
-     #           already_booked_with_venue = Booking.objects.filter(venue=booking.venue, event_date=booking.event_date)
-     #           if already_booked_with_venue:
-     #                context = {
-     #                     "form": form,
-     #                     "venues": venues,
-     #                     "bookings": bookings
-     #                }
+#      # get the venue 
+#      venue = get_object_or_404(Venue, pk=id)
+#      form = BookingForm(initial={"id": id})
+#      #contact_form = ContactForm(initial={"id": id})
+#      # context = {}
+#      # if request.method == 'POST':
+#      #      form = BookingForm(request.POST)
+#      #      if form.is_valid():
+#      #           booking = form.save(commit=False)
+#      #           already_booked_with_venue = Booking.objects.filter(venue=booking.venue, event_date=booking.event_date)
+#      #           if already_booked_with_venue:
+#      #                context = {
+#      #                     "form": form,
+#      #                     "venues": venues,
+#      #                     "bookings": bookings
+#      #                }
 
-     #                return render(request, 'user/request_booking_test.html', context)
+#      #                return render(request, 'user/request_booking_test.html', context)
 
-     #           else:
-     #                booking.client = request.user
-     #                booking.save()
+#      #           else:
+#      #                booking.client = request.user
+#      #                booking.save()
 
-     #                messages.success(request, "Request for a Venue booking has been created successfully.")
-     #                return redirect('booking-dashboard')
+#      #                messages.success(request, "Request for a Venue booking has been created successfully.")
+#      #                return redirect('booking-dashboard')
      
      
-     # venues = Venue.objects.filter(status=1)
-     context = {
-          "form": form,
-          "venue": venue
-          # "venue": venue,
-          # "bookings": bookings
-     }
+#      # venues = Venue.objects.filter(status=1)
+#      context = {
+#           "form": form,
+#           "venue": venue
+#           # "venue": venue,
+#           # "bookings": bookings
+#      }
           
-     return render(request, 'user/request_booking_test.html', context)
+#      return render(request, 'user/request_booking_test.html', context)
 
 
 @login_required()

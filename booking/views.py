@@ -45,41 +45,44 @@ def booking_dashboard(request):
 
 
 @login_required()
-def request_booking_test(request):
+def request_booking_test(request, id):
      """
      Creates a booking request
      """
-     bookings = Booking.objects.all()
-     venues = Venue.objects.filter(status=1)
-     form = BookingForm()
-     context = {}
-     if request.method == 'POST':
-          form = BookingForm(request.POST)
-          if form.is_valid():
-               booking = form.save(commit=False)
-               already_booked_with_venue = Booking.objects.filter(venue=booking.venue, event_date=booking.event_date)
-               if already_booked_with_venue:
-                    context = {
-                         "form": form,
-                         "venues": venues,
-                         "bookings": bookings
-                    }
 
-                    return render(request, 'user/request_booking_test.html', context)
+     # get the venue 
+     venue = get_object_or_404(Venue, pk=id)
+     form = BookingForm(initial={"id": id})
+     #contact_form = ContactForm(initial={"id": id})
+     # context = {}
+     # if request.method == 'POST':
+     #      form = BookingForm(request.POST)
+     #      if form.is_valid():
+     #           booking = form.save(commit=False)
+     #           already_booked_with_venue = Booking.objects.filter(venue=booking.venue, event_date=booking.event_date)
+     #           if already_booked_with_venue:
+     #                context = {
+     #                     "form": form,
+     #                     "venues": venues,
+     #                     "bookings": bookings
+     #                }
 
-               else:
-                    booking.client = request.user
-                    booking.save()
+     #                return render(request, 'user/request_booking_test.html', context)
 
-                    messages.success(request, "Request for a Venue booking has been created successfully.")
-                    return redirect('booking-dashboard')
+     #           else:
+     #                booking.client = request.user
+     #                booking.save()
+
+     #                messages.success(request, "Request for a Venue booking has been created successfully.")
+     #                return redirect('booking-dashboard')
      
      
-     venues = Venue.objects.filter(status=1)
+     # venues = Venue.objects.filter(status=1)
      context = {
           "form": form,
-          "venues": venues,
-          "bookings": bookings
+          "venue": venue
+          # "venue": venue,
+          # "bookings": bookings
      }
           
      return render(request, 'user/request_booking_test.html', context)
@@ -98,6 +101,7 @@ def request_booking(request):
                booking = form.save(commit=False)
                
                # find all bookings that have the same venue and event date as selected
+               # checks to see if there is already a booking with the same venue and date
                already_booked_with_venue = Booking.objects.filter(venue=booking.venue, event_date=booking.event_date)
                if already_booked_with_venue:
                     context = {

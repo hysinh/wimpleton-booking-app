@@ -7,19 +7,12 @@
 <!-- Booking Form -->
 <div class="create-booking-form-container">
     <!-- Test area -->
-    {% for venue in venues %}
+     {% for venue in venues %}
     <p>
-        
             {{ venue.venue_name}}, {{ venue.id }}
-        
     </p>
     {% endfor %}
-
-    {% for booking in bookings %}
-    <p>
-        {{ booking.venue }}, Event Date: {{ booking.event_date }}, {{ booking.booking_id }}
-    </p>
-    {% endfor %}
+    
     <!-- End Test area -->
     <h2>TEST Booking Request:</h2>
     <p>Booking requests reserve your venue and date. Once we have received your request,
@@ -29,7 +22,7 @@
     </p>
     
 
-    <form id="booking-form" method="POST" action="{% url 'request-booking-test/<int:id>/' %}">
+    <form id="booking-form" method="POST" action="{% url 'request-booking-test' %}">
         {% csrf_token %}
         {% if messages %}
         <ul class="messages">

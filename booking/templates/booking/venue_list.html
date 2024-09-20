@@ -44,6 +44,7 @@
     {% for venue in venue_list %}
     <div class="container-venue-card">   
         <div class="image-container">
+            <hr>
             {% if "placeholder" in venue.featured_image.url %}
                 <img src="{% static 'images/default.webp' %}" class="scale" width="320"
                   alt="placeholder image">

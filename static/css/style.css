@@ -15,8 +15,8 @@ body {
     text-decoration: none;
     padding-top: .3125rem;
     padding-bottom: .3125rem;
-    margin-right: 1rem;
-    white-space: nowrap;
+    /* margin-right: 1rem; */
+    /* white-space: nowrap; */
     font-size: .95rem;
     font-weight: 700;
     letter-spacing: 3px;
@@ -28,15 +28,19 @@ body {
 }
 
 .navbar {
-    width: 100vw;
+    /* width: 100vw; */
 }
 
 .nav-background {
     background-color: #445261;
 }
 
+.navbar-toggler {
+    border: none;
+}
+
 .container {
-    width: 100vw;
+    /* width: 100vw; */
     margin: 0px;
     padding: 0px;
 }
@@ -77,15 +81,29 @@ body {
 }
 
 /* Home page: Featured content section */
+.new-featured-content-container{
+    display: block;
+    /* background-color: yellow; */
+    /* padding: 20px 0; */
+}
+
+.new-featured-content {
+    /* background-color: pink; */
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
 .featured-content-container {
-    background-color: aqua;
-    width: 100vw;
-    padding: 40px 0;
+    /* background-color: aqua; */
+    width: 90vw;
+    padding: 20px 0;
+    margin: 0 auto;
 }
 
 .featured-content {
-    background-color: orange;
-    /* background-color: #d9dcd6; */
+    /* background-color: orange; */
+    background-color: #d9dcd6;
     padding: 40px 25px;
     font-size: 1em;
 }
@@ -100,8 +118,8 @@ body {
 .event-type-container {
     display: block;
     justify-content: center;
-    background-color: purple;
-    /* background-color: #ffffff; */
+    /* background-color: purple; */
+    background-color: #ffffff;
     width: 100vw;
 }
 
@@ -111,12 +129,12 @@ body {
 }
 
 .featured-events {
-    /* width: 100vw; */
+    width: 100vw;
     display: block;
     justify-content: center;
     padding: 15px 15px;
-    background-color: pink;
-    /* background-color: #ffffff; */
+    /* background-color: pink; */
+    background-color: #ffffff;
 }
 
 .featured-events h2 {
@@ -191,7 +209,9 @@ body {
 }
 
 .container-venue-card {
-    width: 320px;
+    width: 300px;
+    padding-bottom: 30px;
+    margin: 0 auto;
 }
 
 .venue-image {
@@ -242,7 +262,7 @@ body {
 }
 
 .image-container img {
-    width: 320px;
+    width: 300px;
     margin: 10px 0;
 }
 
@@ -331,7 +351,7 @@ body {
 
 .footer {
     background-color: #445261;
-    width: 100vw;
+    /* width: 100vw; */
 }
 
 .footer-text {
@@ -350,7 +370,7 @@ body {
     }
     
     .container-venue-card {
-        margin: 40px 20px;
+        margin: 10px 0px 30px;
     }
 
     /* About page */

@@ -1,7 +1,6 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Venue, Booking
-
+from .models import Venue, Booking, Email
 # Register your models here.
 @admin.register(Venue)
 class VenueAdmin(SummernoteModelAdmin):
@@ -17,3 +16,10 @@ class BookingAdmin(SummernoteModelAdmin):
     list_display = ('venue', 'event_date', 'event_type', 'client', 'booking_id', )
     search_fields = ['venue']
     list_filter = ['venue']
+
+
+@admin.register(Email)
+class EmailAdmin(SummernoteModelAdmin):
+    list_display = ('name', 'email', 'read', )
+    search_fields = ['name']
+    list_filter = ['read']

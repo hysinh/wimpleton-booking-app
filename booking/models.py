@@ -89,3 +89,17 @@ class Booking(models.Model):
 
     def __str__ (self):
         return f"{self.venue}"
+    
+
+
+class Email(models.Model):
+    """
+    Stores a single booking entry
+    """
+    name = models.CharField(max_length=250)
+    email = models.EmailField()
+    message = models.TextField()
+    read = models.BooleanField(default=False)
+
+    def __str__(self):
+        return f"Email Inquiry from {self.name}"

@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load crispy_forms_tags %}
 {% load static %}
 
 {% block content %}
@@ -52,6 +53,27 @@
           <p>Complete the form below to contact us with any questions about Wimpleton House
             or your event:
           </p>
+          <form id="email-form" method="POST" action="{% url 'contact' %}">
+            {% csrf_token %}
+            {% if messages %}
+            
+            <ul class="messages">
+                {% for message in messages %}
+                <!-- <li>{{ form.non_field_errors }}</li> -->
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>
+                {% endfor %}    
+            </ul>
+            {% endif %}
+            <!-- Container with Venues to select from -->
+            <div class="">
+                <label for="email-form"><h5>Please complete this form to create a booking request:</h5></label>
+                {{ email_form | crispy }}
+            </div>
+            <div class="">
+                <button class="btn btn-secondary" type="submit">Send</button>
+            </div>
+            
+        </form>
       </div>
       
     </div>

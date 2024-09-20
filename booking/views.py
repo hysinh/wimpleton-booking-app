@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 from .models import Venue, Booking
-from .forms import BookingForm
+from .forms import BookingForm, EmailForm
 
 # Create your views here.
 class VenueList(generic.ListView):
@@ -98,6 +98,8 @@ def request_booking(request):
                
                # find all bookings that have the same venue and event date as selected
                # checks to see if there is already a booking with the same venue and date
+               # Sandeep Aggarwal, my mentor, assisted me with this code. I had a much messier
+               # and convoluted version
                already_booked_with_venue = Booking.objects.filter(venue=booking.venue, event_date=booking.event_date)
                if already_booked_with_venue:
                     context = {
@@ -199,7 +201,31 @@ def aboutpage(request):
      return render(request, 'public/about.html')
 
 def contactpage(request):
-     return render(request, 'public/contact.html')
+     """
+     Renders an email form that allows users to send an inquiry
+     to the Wimpleton House staff
+     Displays the EmailForm
+     """
+     email_form = EmailForm()
+     context = {}
+     if request.method == 'POST':
+          email_form = EmailForm(request.POST)
+          if email_form.is_valid():
+               email_form.save()  
+
+               messages.success(request, "Thank you for your message. Someone from our team with contact you shortly.")
+               return redirect('contact')
+
+          else:
+               messages.error(request, "There is an error in the form.")
+               return render(request, 'public/contact.html', context)
+     
+
+     context = {
+          "email_form": email_form,
+     } 
+
+     return render(request, 'public/contact.html', context)   
 
 
 

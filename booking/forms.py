@@ -4,7 +4,7 @@ from django.core.validators import MaxValueValidator
 from django.utils.timezone import now
 from datetime import timedelta
 from django.core.exceptions import NON_FIELD_ERRORS
-from .models import Booking
+from .models import Booking, Email
 
 TYPE_OF_EVENT_CHOICES = {
         ("WED", "Wedding"),
@@ -82,4 +82,12 @@ class BookingForm(forms.ModelForm):
 
     
 
+class EmailForm(forms.ModelForm):
+    class Meta:
+        model = Email
+        fields = [
+            'name',
+            'email',
+            'message'
+        ]
 

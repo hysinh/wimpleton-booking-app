@@ -15,8 +15,8 @@ body {
     text-decoration: none;
     padding-top: .3125rem;
     padding-bottom: .3125rem;
-    margin-right: 1rem;
-    white-space: nowrap;
+    /* margin-right: 1rem; */
+    /* white-space: nowrap; */
     font-size: .95rem;
     font-weight: 700;
     letter-spacing: 3px;
@@ -27,14 +27,30 @@ body {
     text-decoration: none;
 }
 
+.navbar {
+    /* width: 100vw; */
+}
+
 .nav-background {
     background-color: #445261;
 }
 
+.navbar-toggler {
+    border: none;
+}
+
 .container {
-    width: 100vw;
+    /* width: 100vw; */
     margin: 0px;
     padding: 0px;
+}
+
+.green {
+    color: green;
+}
+
+.red {
+    color: red;
 }
 
 /* Sign in / Sign out / Register pages */
@@ -55,7 +71,8 @@ body {
 
 /* Home page: Featured image styles */
 .featured-image-container {
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
+    width: 100vw;
 }
 
 .home-image {
@@ -64,12 +81,28 @@ body {
 }
 
 /* Home page: Featured content section */
+.new-featured-content-container{
+    display: block;
+    /* background-color: yellow; */
+    /* padding: 20px 0; */
+}
+
+.new-featured-content {
+    /* background-color: pink; */
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
 .featured-content-container {
-    background-color: #ffffff;
-    padding: 40px 25px;
+    /* background-color: aqua; */
+    width: 90vw;
+    padding: 20px 0;
+    margin: 0 auto;
 }
 
 .featured-content {
+    /* background-color: orange; */
     background-color: #d9dcd6;
     padding: 40px 25px;
     font-size: 1em;
@@ -85,7 +118,9 @@ body {
 .event-type-container {
     display: block;
     justify-content: center;
+    /* background-color: purple; */
     background-color: #ffffff;
+    width: 100vw;
 }
 
 .authenticated-user {
@@ -97,7 +132,8 @@ body {
     width: 100vw;
     display: block;
     justify-content: center;
-    padding: 15px 2px;
+    padding: 15px 15px;
+    /* background-color: pink; */
     background-color: #ffffff;
 }
 
@@ -108,11 +144,13 @@ body {
     font-weight: 700;
     letter-spacing: 3px;
     padding-top: 35px;
+    text-align: center;
 }
 
 .featured-events p {
     font-size: 1rem;
-    padding: 20px 25px;
+    padding: 20px 10px;
+    text-align: center;
 }
 
 #featured-events-img-weddings {
@@ -171,7 +209,9 @@ body {
 }
 
 .container-venue-card {
-    width: 320px;
+    width: 300px;
+    padding-bottom: 30px;
+    margin: 0 auto;
 }
 
 .venue-image {
@@ -204,7 +244,7 @@ body {
     letter-spacing: 10px;
     text-transform: uppercase;
     width: auto;
-    height: 75px;
+    height: 100px;
     text-align: center;
     padding: 20px;
 }
@@ -215,7 +255,6 @@ body {
     text-decoration: none;
     padding-top: .3125rem;
     padding-bottom: .3125rem;
-    margin-right: 1rem;
     /*white-space: nowrap;*/
     font-size: 1.15rem;
     font-weight: 700;
@@ -223,7 +262,7 @@ body {
 }
 
 .image-container img {
-    width: 320px;
+    width: 300px;
     margin: 10px 0;
 }
 
@@ -312,6 +351,7 @@ body {
 
 .footer {
     background-color: #445261;
+    /* width: 100vw; */
 }
 
 .footer-text {
@@ -330,7 +370,7 @@ body {
     }
     
     .container-venue-card {
-        margin: 40px 20px;
+        margin: 10px 0px 30px;
     }
 
     /* About page */
@@ -349,11 +389,17 @@ body {
         background-position: center;
     }
 
+    .event-container {
+        width: 100vw;
+    }
+
     .event-type-container {
         display: flex;
-        width: 100vw;
+        /* width: 100vw; */
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
     }
 
     /* Featured sections at top of pages */
@@ -363,6 +409,10 @@ body {
     }
 
     /* Venue Listing page */
+    .overlay-text-main {
+        height: 75px;
+    }
+    
     .container-venues {
         width: 768px;
         margin: 0 auto;
@@ -374,14 +424,14 @@ body {
     }
 
     .featured-events {
-        width: 350px;
+        width: 325px;
     }
 
     /* Booking Dashboard - Booking Cards Section */
     .booking-card-container {
         display: flex;
         flex-flow: row wrap;
-        align-items: flex-start;
+        align-items: stretch;
         justify-content: flex-start;
         gap: 20px 20px;
     }
@@ -389,8 +439,6 @@ body {
     .booking-card-individual {
         width: 320px;
         padding: 10px;
-        /*margin-bottom: 10px;
-        background-color: #d9dcd6;*/
     }
 
     /* About page gallery */

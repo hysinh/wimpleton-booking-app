@@ -27,6 +27,10 @@ body {
     text-decoration: none;
 }
 
+.navbar {
+    width: 100vw;
+}
+
 .nav-background {
     background-color: #445261;
 }
@@ -63,7 +67,8 @@ body {
 
 /* Home page: Featured image styles */
 .featured-image-container {
-    background-color: #ffffff;
+    /* background-color: #ffffff; */
+    width: 100vw;
 }
 
 .home-image {
@@ -73,8 +78,8 @@ body {
 
 /* Home page: Featured content section */
 .featured-content-container {
-    background-color: #ffffff;
-    padding: 40px 25px;
+    width: 100vw;
+    padding: 40px 0;
 }
 
 .featured-content {
@@ -223,7 +228,6 @@ body {
     text-decoration: none;
     padding-top: .3125rem;
     padding-bottom: .3125rem;
-    margin-right: 1rem;
     /*white-space: nowrap;*/
     font-size: 1.15rem;
     font-weight: 700;
@@ -320,6 +324,7 @@ body {
 
 .footer {
     background-color: #445261;
+    width: 100vw;
 }
 
 .footer-text {
@@ -397,8 +402,6 @@ body {
     .booking-card-individual {
         width: 320px;
         padding: 10px;
-        /*margin-bottom: 10px;
-        background-color: #d9dcd6;*/
     }
 
     /* About page gallery */

@@ -429,9 +429,15 @@ body {
         justify-content: space-evenly;
     }
 
-    .footer p {
+    .footer-content {
+        background-color: orange;
+    }
+    
+    .footer-content p {
         padding: 20px 0;
     }
+
+    
 
 }
 

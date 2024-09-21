@@ -378,6 +378,15 @@ body {
     margin: 0 auto;
 }
 
+.address {
+    padding-right: 35px;
+}
+
+.map {
+    text-align: center;
+    padding: 60px 0px;
+}
+
 /* Footer */
 .footer {
     background-color: #445261;
@@ -488,6 +497,14 @@ body {
         display: flex;
         flex-direction: row;
         margin: 0 auto;
+    }
+
+    .address {
+        width: 50%;
+    }
+    
+    .map {
+        width: 50%;
     }
 
     .contact-form-container {

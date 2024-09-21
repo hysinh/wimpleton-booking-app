@@ -16,9 +16,9 @@
 <!-- About Wimpleton House blurb -->
 <div class="featured-content-container-contact">
     <div class="featured-content-contact">
-      
+      <!-- <div class="row featured-content-contact align-items-center"> -->
       <div class="address-block">
-        <div>
+        <div class="address">
           <p>
             <h4>Contact Information</h4>
           </p>
@@ -48,11 +48,8 @@
             ></iframe>
         </div>
       </div>
+      <hr>
       <div class="contact-form-container">
-        
-          <p>Complete the form below to contact us with any questions about Wimpleton House
-            or your event:
-          </p>
           <form id="email-form" method="POST" action="{% url 'contact' %}">
             {% csrf_token %}
             {% if messages %}
@@ -66,7 +63,10 @@
             {% endif %}
             <!-- Container with Venues to select from -->
             <div class="">
-                <label for="email-form"><h5>Please complete this form to create a booking request:</h5></label>
+                <label for="email-form">
+                  <h5>Complete the form below to contact us with any questions about Wimpleton House
+                  or your event:</h5>
+                </label>
                 {{ email_form | crispy }}
             </div>
             <div class="">

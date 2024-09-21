@@ -348,7 +348,7 @@ body {
 
 /* About Page */
 #gallery {
-    padding: 0;
+    padding: 40px 0 0;
     margin: 0;
     box-sizing: border-box;
 }
@@ -378,10 +378,19 @@ body {
     margin: 0 auto;
 }
 
+.address {
+    padding-right: 35px;
+}
+
+.map {
+    text-align: center;
+    padding: 60px 0px;
+}
+
 /* Footer */
 .footer {
     background-color: #445261;
-    /* width: 100vw; */
+    padding: 60px 0;
 }
 
 .footer-text {
@@ -428,8 +437,10 @@ body {
         /* width: 100vw; */
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-evenly;
         align-items: flex-start;
+        width: 768px;
+        margin: 0 auto;
     }
 
     /* Featured sections at top of pages */
@@ -490,6 +501,14 @@ body {
         margin: 0 auto;
     }
 
+    .address {
+        width: 50%;
+    }
+    
+    .map {
+        width: 50%;
+    }
+
     .contact-form-container {
         padding-top: 30px;
     }
@@ -502,8 +521,17 @@ body {
 
     /* Venue Listing page */
     .container-venues {
-        width: 90vw;
+        width: 992px;
         margin: 0 auto;
         justify-content: space-evenly;
+    }
+}
+
+
+/* larger devices - laptops, desktops, and up (1366px and up)  */
+@media screen and (min-width: 1366px) {
+    /* Home page */
+    .event-type-container {
+        width: 100%;
     }
 }

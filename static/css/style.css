@@ -214,6 +214,10 @@ body {
     margin: 0 auto;
 }
 
+.container-venue-card-content {
+    padding: 5px 10px;
+}
+
 .venue-image {
     background: url("/static/images/featured_image_1600x900_chapel.webp") no-repeat left/cover, 40px, #445261;
     height: 550px;

@@ -53,19 +53,21 @@
                   alt="{{ venue.venue_name }}">
               {% endif %}
         </div>
-        <h2 class="venue-title">{{ venue.venue_name }}</h2>
-        <p>Capacity: {{ venue.venue_capacity }} guests</p>
-        <p class="card-text">{{ venue.venue_blurb }}
-        </p>
-        <div class="card-text">{{ venue.venue_description | safe }}
-        </div>
-        <div>
-            <form action="{% url 'request-booking' %}" method="POST" id="venue{{ venue.id }}">
-                {% csrf_token %}
-                <button type="submit" name="venue" value="{{ venue.id }}" form="venue{{ venue.id }}" class="btn btn-edit">
-                    Book Now
-                </button>
-            </form>
+        <div class="container-venue-card-content">
+            <h2 class="venue-title">{{ venue.venue_name }}</h2>
+            <!-- <p>Capacity: {{ venue.venue_capacity }} guests</p> -->
+            <p class="card-text">{{ venue.venue_blurb }}
+            </p>
+            <div class="card-text">{{ venue.venue_description | safe }}
+            </div>
+            <div>
+                <form action="{% url 'request-booking' %}" method="POST" id="venue{{ venue.id }}">
+                    {% csrf_token %}
+                    <button type="submit" name="venue" value="{{ venue.id }}" form="venue{{ venue.id }}" class="btn btn-edit">
+                        Book Now
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
     {% if forloop.counter|divisibleby:3 %}

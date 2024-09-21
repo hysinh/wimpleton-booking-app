@@ -214,6 +214,10 @@ body {
     margin: 0 auto;
 }
 
+.container-venue-card-content {
+    padding: 5px 10px;
+}
+
 .venue-image {
     background: url("/static/images/featured_image_1600x900_chapel.webp") no-repeat left/cover, 40px, #445261;
     height: 550px;
@@ -239,6 +243,17 @@ body {
 }
 
 .overlay-text-main {
+    background-color: rgb(246, 250, 246, .5);
+    font-size: 130%;
+    letter-spacing: 10px;
+    text-transform: uppercase;
+    width: auto;
+    height: 75px;
+    text-align: center;
+    padding: 20px;
+}
+
+.overlay-text-about {
     background-color: rgb(246, 250, 246, .5);
     font-size: 130%;
     letter-spacing: 10px;
@@ -347,8 +362,23 @@ body {
     line-height: 0;
 }
 
-/* Footer */
 
+/* Contact Page */
+.featured-content-container-contact {
+    display: block;
+    padding: 20px 0;
+}
+
+.featured-content-contact {
+    display: block;
+    background-color: #d9dcd6;
+    padding: 40px 25px;
+    font-size: 1em;
+    width: 90vw;
+    margin: 0 auto;
+}
+
+/* Footer */
 .footer {
     background-color: #445261;
     /* width: 100vw; */
@@ -409,10 +439,10 @@ body {
     }
 
     /* Venue Listing page */
-    .overlay-text-main {
+    .overlay-text-about {
         height: 75px;
     }
-    
+
     .container-venues {
         width: 768px;
         margin: 0 auto;
@@ -445,6 +475,23 @@ body {
     /* Gallery */
     #photos {
         column-count: 3;
+    }
+
+    /* Contact Page */
+    .featured-content-contact {
+        display: block;
+        margin: 0 auto;
+        width: 85vw;
+    }
+
+    .address-block {
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+    }
+
+    .contact-form-container {
+        padding-top: 30px;
     }
 
 }

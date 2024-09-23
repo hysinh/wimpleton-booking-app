@@ -128,8 +128,28 @@
     <!-- Footer -->
     <footer class="footer mt-auto py-3 dark-bg">
         <div class="footer-content text-center">
+          <p><a class="brand" href="{% url 'home' %}"><span class="brand">Wimpleton House</span></a></p>
           <p>
-            Venue Hire | Book Your Event | About | Contact
+            <a href="{% url 'home' %}" 
+              aria-label="Home page, Wimpleton House"
+              >Home
+            </a>
+            <a href="{% url 'venue-hire' %}" 
+              aria-label="Venue Hire page, Wimpleton House"
+              >Venue Hire
+            </a>
+            <a href="{% url 'request-booking' %}" 
+              aria-label="Booking Form page, Wimpleton House"
+              >Book Your Event
+            </a>
+            <a href="{% url 'about' %}" 
+              aria-label="About page, Wimpleton House"
+              >About
+            </a>
+            <a href="{% url 'contact' %}" 
+            aria-label="Contact page, Wimpleton House"
+            >Contact
+          </a>
           </p>
 
           <p class="text-white">Follow us: 

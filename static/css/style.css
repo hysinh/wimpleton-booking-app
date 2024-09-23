@@ -15,7 +15,7 @@ body {
     text-decoration: none;
     padding-top: .3125rem;
     padding-bottom: .3125rem;
-    /* margin-right: 1rem; */
+    margin-right: 1rem;
     /* white-space: nowrap; */
     font-size: .95rem;
     font-weight: 700;
@@ -395,10 +395,16 @@ body {
     color: #ffffff;
 }
 
+.footer-content {
+    padding-top: 35px;
+}
+
 .footer a {
     text-decoration: none;
     color: #ffffff;
+    padding: 20px 10px 0px;
 }
+
 
 /* Media query for mobile devices and later (375px and up) */
 @media screen and (min-width: 375px)  {

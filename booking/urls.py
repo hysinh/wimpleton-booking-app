@@ -1,9 +1,14 @@
 from . import views
 from django.views import generic
 from django.urls import path
-from .views import (
-    booking_dashboard
-)
+from .views import booking_dashboard
+from django.conf.urls import handler403, handler404, handler500
+from .views import custom_404, custom_500
+
+
+# Handlers for custome errors
+handler404 = custom_404
+handler500 = custom_500
 
 
 urlpatterns = [

@@ -231,7 +231,21 @@ def contactpage(request):
           "email_form": email_form,
      } 
 
-     return render(request, 'public/contact.html', context)   
+     return render(request, 'public/contact.html', context)
+
+
+def custom_404(request, exception):
+    """
+    Custom 404 error view.
+    """
+    return render(request, "404.html", status=404)
+
+
+def custom_500(request):
+    """
+    Custom 500 error view.
+    """
+    return render(request, "500.html", status=500)
 
 
 

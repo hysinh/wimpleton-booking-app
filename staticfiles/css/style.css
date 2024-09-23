@@ -390,12 +390,15 @@ body {
 /* Footer */
 .footer {
     background-color: #445261;
-    padding: 60px 0;
+    padding: 200px 0;
+    display: block;
+    color: #ffffff;
 }
 
-.footer-text {
+.footer a {
+    text-decoration: none;
     color: #ffffff;
-} 
+}
 
 /* Media query for mobile devices and later (375px and up) */
 @media screen and (min-width: 375px)  {
@@ -417,6 +420,24 @@ body {
     #photos {
         column-count: 2;
     }
+
+    /* Footer */
+    .footer {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: flex-start;
+        justify-content: space-evenly;
+    }
+
+    .footer-content {
+        background-color: orange;
+    }
+    
+    .footer-content p {
+        padding: 20px 0;
+    }
+
+    
 
 }
 

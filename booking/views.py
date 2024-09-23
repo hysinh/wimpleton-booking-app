@@ -3,7 +3,6 @@ from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.views import generic
 from django.core import serializers
 from django.http import JsonResponse
-from datetime import datetime
 from django.contrib.auth.decorators import login_required, permission_required
 from django.http import HttpResponseRedirect
 from django.urls import reverse
@@ -32,10 +31,12 @@ class VenueList(generic.ListView):
 def booking_dashboard(request):
     pending_bookings = Booking.objects.filter(client_id=request.user, status=0)
     approved_bookings = Booking.objects.filter(client_id=request.user, status=1)
+    all_bookings = Booking.objects.filter(client_id=request.user)
 
     context = {
           'pending_bookings': pending_bookings,
           'approved_bookings': approved_bookings,
+          'all_bookings': all_bookings
      }
     return render(
          request, 
@@ -50,10 +51,14 @@ def request_booking_test(request):
      Creates a booking request from the venue page with the venue auto selected
      """
      form = BookingForm()
+     venue_selected = request.POST.get('venue', None)
      # venues = Venue.objects.all()
-     context = {}
+     context = {"form": form}
+     context['venue_selected'] = venue_selected
      if request.method == 'POST':
+          form = BookingForm()          
           form = BookingForm(request.POST)
+
           if form.is_valid():
                booking = form.save(commit=False)
                
@@ -78,7 +83,7 @@ def request_booking_test(request):
      venues = Venue.objects.filter(status=1)
      context = {
           "form": form,
-          "venues": venues
+          "venues": venues,
      }
           
      return render(request, 'user/request_booking_test.html', context)
@@ -119,6 +124,7 @@ def request_booking(request):
      venues = Venue.objects.filter(status=1)
      context = {
           "form": form,
+          "venues": venues,
      }
           
      return render(request, 'user/request_booking.html', context)

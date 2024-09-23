@@ -2,6 +2,7 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 from django.core.exceptions import ValidationError
 from cloudinary.models import CloudinaryField
+from datetime import date
 from django.contrib.auth.models import User
 
 
@@ -69,6 +70,19 @@ class Booking(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     created_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now_add=True)
+
+
+    # determines if the event is in the past
+    @property
+    def is_inactive(self):
+        return date.today() > self.event_date
+    
+
+    # determines if booking is today or in the future
+    @property
+    def is_active(self):
+        return date.today() <= self.event_date
+    
 
     # Tried this for validation error - not working 
     def save(self, *args, **kwargs):

@@ -18,73 +18,94 @@
         </ul>
         {% endif %}
     <p><a href="{% url 'request-booking' %}" class="btn btn-edit btn-spacing">Request a Booking</a></p>
+    <hr>
     <p class="bold">Your Approved Bookings:</p>
-    
-    <!-- Iterate over booking object -->
-      
-      <!-- Display Objects -->
+      <!-- Displays Active Approved Bookings -->
       <div class="booking-card-container">
         {% for booking in approved_bookings %}
-        <div class="booking-card-individual">
-          <p class="booking-venue text-muted">Venue: {{ booking.venue }}</p>
-          <p><span class="text-muted bold">Booking ID:</span> {{ booking.booking_id }}</p>
-          <p><span class="text-muted bold">Event date:</span> {{ booking.event_date }}</p>
-          <p><span class="text-muted bold">Event type:</span> {{ booking.event_type }}</p>
-          <p><span class="text-muted bold">Number of guests:</span> {{ booking.num_guests }}</p>
-          <p><span class="text-muted bold">Status:</span> {% if booking.status == 1 %}<span class="green bold">Approved</span>{% else %}<span class="red bold">Pending Approval</span>{% endif %}</p>
-          <!-- Edit Booking Button -->
-          <div>
-          {% if user.is_authenticated and booking.client == user %}
-            <a href="{% url 'edit-booking' booking.booking_id %}" class="btn btn-edit" 
-              data-booking_id="{{ booking.booking_id }}">Edit Booking
-            </a>
-          </div>
-          <div>
-            <!-- Delete Booking Button -->
-            <button class="btn btn-delete" data-booking_id="{{ booking.booking_id }}">
-            Delete Booking</button>
+        {% if booking.is_active %}
+          <div class="booking-card-individual">
+            <p class="booking-venue text-muted">Venue: {{ booking.venue }}</p>
+            <p><span class="text-muted bold">Booking ID:</span> {{ booking.booking_id }}</p>
+            <p><span class="text-muted bold">Event date:</span> {{ booking.event_date }}</p>
+            <p><span class="text-muted bold">Event type:</span> {{ booking.event_type }}</p>
+            <p><span class="text-muted bold">Number of guests:</span> {{ booking.num_guests }}</p>
+            <p><span class="text-muted bold">Status:</span> {% if booking.status == 1 %}<span class="green bold">Approved</span>{% else %}<span class="red bold">Pending Approval</span>{% endif %}</p>
+            <!-- Edit Booking Button -->
+            <div>
+            {% if user.is_authenticated and booking.client == user %}
+              <a href="{% url 'edit-booking' booking.booking_id %}" class="btn btn-edit" 
+                data-booking_id="{{ booking.booking_id }}">Edit Booking
+              </a>
+            </div>
+            <div>
+              <!-- Delete Booking Button -->
+              <button class="btn btn-delete" data-booking_id="{{ booking.booking_id }}">
+              Delete Booking</button>
+            </div>
+            {% endif %}
           </div>
           {% endif %}
-        </div>
-        {% empty %}
+          {% empty %}
+        
       No bookings yet
       {% endfor %}
 
       </div>
       <!-- Expired bookings -->
+      <hr>
       <p class="bold">Your Bookings Pending Approval:</p>
       <div class="booking-card-container">
         {% for booking in pending_bookings %}
-        <div class="booking-card-individual">
-          <p class="booking-venue text-muted">Venue: {{ booking.venue }}</p>
-          <p><span class="text-muted bold">Booking ID:</span> {{ booking.booking_id }}</p>
-          <p><span class="text-muted bold">Event date:</span> {{ booking.event_date }}</p>
-          <p><span class="text-muted bold">Event type:</span> {{ booking.event_type }}</p>
-          <p><span class="text-muted bold">Number of guests:</span> {{ booking.num_guests }}</p>
-          <p><span class="text-muted bold">Status:</span> {% if booking.status == 1 %}<span class="green bold">Approved</span>{% else %}<span class="red bold">Pending Approval</span>{% endif %}</p>
-          <!-- Edit Booking Button -->
-          <div>
-          {% if user.is_authenticated and booking.client == user %}
-            <a href="{% url 'edit-booking' booking.booking_id %}" class="btn btn-edit" 
-              data-booking_id="{{ booking.booking_id }}">Edit Booking
-            </a>
+        {% if booking.is_active %}
+          <div class="booking-card-individual">
+            <p class="booking-venue text-muted">Venue: {{ booking.venue }}</p>
+            <p><span class="text-muted bold">Booking ID:</span> {{ booking.booking_id }}</p>
+            <p><span class="text-muted bold">Event date:</span> {{ booking.event_date }}</p>
+            <p><span class="text-muted bold">Event type:</span> {{ booking.event_type }}</p>
+            <p><span class="text-muted bold">Number of guests:</span> {{ booking.num_guests }}</p>
+            <p><span class="text-muted bold">Status:</span> {% if booking.status == 1 %}<span class="green bold">Approved</span>{% else %}<span class="red bold">Pending Approval</span>{% endif %}</p>
+            <!-- Edit Booking Button -->
+            <div>
+            {% if user.is_authenticated and booking.client == user %}
+              <a href="{% url 'edit-booking' booking.booking_id %}" class="btn btn-edit" 
+                data-booking_id="{{ booking.booking_id }}">Edit Booking
+              </a>
+            </div>
+            <div>
+              <!-- Delete Booking Button -->
+              <button class="btn btn-delete" data-booking_id="{{ booking.booking_id }}">
+              Delete Booking</button>
+            </div>
+            {% endif %}
           </div>
-          <div>
-            <!-- Delete Booking Button -->
-            <button class="btn btn-delete" data-booking_id="{{ booking.booking_id }}">
-            Delete Booking</button>
-          </div>
-          {% endif %}
-        </div>
+        {% endif %}  
         {% empty %}
       No bookings yet
       {% endfor %}
 
       </div>
       <!-- Expired bookings -->
+      <hr>
       <p class="bold">Expired Bookings:</p>
-      
-
+      <div class="booking-card-container">
+        {% for booking in pending_bookings %}
+        {% if booking.is_inactive %}
+          <div class="booking-card-individual">
+            <p class="booking-venue text-muted">Venue: {{ booking.venue }}</p>
+            <p><span class="text-muted bold">Booking ID:</span> {{ booking.booking_id }}</p>
+            <p><span class="text-muted bold">Event date:</span> {{ booking.event_date }}</p>
+            <p><span class="text-muted bold">Event type:</span> {{ booking.event_type }}</p>
+            <p><span class="text-muted bold">Number of guests:</span> {{ booking.num_guests }}</p>
+            <p><span class="text-muted bold">Status: </span> <span class="red bold">EXPIRED</span></p>
+            <!-- Edit Booking Button -->
+          </div>
+        {% endif %}  
+        {% empty %}
+      No bookings yet
+      {% endfor %}
+      </div>
+            
       <!-- Delete Modal - Source: CI DJango Blog Project -->
       <!-- Delete confirmation modal -->
       <div class="modal fade" id="deleteModal" tabindex="-1"

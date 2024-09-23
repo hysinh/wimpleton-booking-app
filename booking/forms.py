@@ -24,6 +24,7 @@ VENUES = {
 
 # DateInput Source: 
 # https://stackoverflow.com/questions/74227268/how-to-make-a-date-picker-that-does-not-select-previous-dates-in-django
+# Assistance in figuring out how to use timedelta and setting a max time limit by CI Mentor, Sandeep Aggarwal
 class DateInput(forms.DateInput):
     input_type = 'date'
 

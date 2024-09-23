@@ -1,4 +1,3 @@
-from .widgets import DatePickerInput
 from django import forms
 from django.core.validators import MaxValueValidator
 from django.utils.timezone import now

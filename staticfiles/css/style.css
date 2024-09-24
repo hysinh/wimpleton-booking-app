@@ -23,10 +23,6 @@ body {
     color: #d9dcd6;
 }
 
-.brand a {
-    text-decoration: none;
-}
-
 .navbar {
     /* width: 100vw; */
 }
@@ -433,7 +429,7 @@ body {
 }
 
 .footer a:hover {
-    color: orange;
+    color: #d9dcd6;
 }
 
 

@@ -19,7 +19,7 @@
         {% endif %}
     <p><a href="{% url 'request-booking' %}" class="btn btn-edit btn-spacing">Request a Booking</a></p>
     <hr>
-    <p class="bold">Your Approved Bookings:</p>
+    <h5 class="bold">Your Approved Bookings:</h5>
       <!-- Displays Active Approved Bookings -->
       <div class="booking-card-container">
         {% for booking in approved_bookings %}
@@ -54,7 +54,7 @@
       </div>
       <!-- Expired bookings -->
       <hr>
-      <p class="bold">Your Bookings Pending Approval:</p>
+      <h5 class="bold">Your Bookings Pending Approval:</h5>
       <div class="booking-card-container">
         {% for booking in pending_bookings %}
         {% if booking.is_active %}
@@ -87,7 +87,7 @@
       </div>
       <!-- Expired bookings -->
       <hr>
-      <p class="bold">Expired Bookings:</p>
+      <h5 class="bold">Expired Bookings:</h5>
       <div class="booking-card-container">
         {% for booking in pending_bookings %}
         {% if booking.is_inactive %}

@@ -6,7 +6,7 @@ from django.conf.urls import handler403, handler404, handler500
 from .views import display_404, display_500
 
 
-# 404 and 500 error pages
+# 404 and 500 custom error pages
 handler404 = display_404
 handler500 = display_500
 

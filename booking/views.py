@@ -29,9 +29,6 @@ class VenueList(generic.ListView):
 
 @login_required()
 def booking_dashboard(request):
-    all_objs = Booking.objects.all()
-    data = serializers.serialize('json', all_objs)
-    return JsonResponse(data, safe=False)
     pending_bookings = Booking.objects.filter(client_id=request.user, status=0)
     approved_bookings = Booking.objects.filter(client_id=request.user, status=1)
     all_bookings = Booking.objects.filter(client_id=request.user)

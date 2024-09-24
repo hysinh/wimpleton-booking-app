@@ -29,6 +29,7 @@ class TestBookingForm(TestCase):
     def test_booking_form_is_valid(self):
         """
         Test the Booking form with valid data
+        A portion of this test was writting by Jason Holt Smith
         """
         user: User = User()
         user.save()

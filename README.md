@@ -1,14 +1,14 @@
 # Wimpleton House Booking Application
-  ![screenshot of landing page](docs/documentation/screenshot_amiresponsive.png)
+  ![screenshot of landing page](documentation/readme/screenshot_amiresponsive.webp)
 
   [View Live Project Here](https://wimpleton-booking-edd90b3067af.herokuapp.com/)
 
 ## Introduction
-Wimpleton House intro blurb
+Wimpleton House Booking website is a full-stack web application created with HTML, CSS, JS, Python, the Django web framework and the Bootstrap library. This website application allows users to view a fictional Irish country estate that hires out it's buildings and grounds for special events. Visitors to the website are able to view the different venue hire options. Upon registering as a user of the website and logging in, users are then able to request to book a particular venue option for a specific date. This booking request reserves the chosen venue for the chosen date and prevents another user from booking the same venue for the same date. Users have access to a Booking Dashboard which allows them to view and manage their bookings.
 
 ## CONTENTS  
   
-* [User Experience)](#user-experience)
+* [User Experience](#user-experience)
   * [User Stories](#user-stories) 
 * [Data Model](#data-model)
   * [Design](#design)
@@ -40,9 +40,11 @@ Wimpleton House intro blurb
 ---   
 
 ## User Experience
-The goal of this Mortgage Comparison tool is to allow the user an easy way to compare mortgages whether they are looking to purchase a home, refinance a home, or want to make overpayments on an existing loan. 
+The goal of the Wimpleton House Booking website is to provide a business tool that allows the business to engage meaningfully with potential clients. The website offers information about the different Venue hire options for the estate and then allows visitors to register as users and create, view, edit, and delete booking requests with the estate.
+
+Although some events may be one-off events like a wedding, the estate has a goal of creating ongoing relationships with event planners, businesses, corporations, and communities for events that potentially could be annual, bi-annual, quarterly, or even more frequent and facilitates clients managing their bookings and review past booking records.
 - ### Visitor Goal
-  As a user, I want an easy way to view, compare, and manipulate potential mortgage scenarios to inform future financial decisions or goals.
+  As a user, I want to easily view potential venue hire options at the Wimpleton House estate, to create a booking, and to view and manage all my bookings.
 - ### User stories
   1. User looking to purchase a home and wants to compare different mortgages by percentage rate, loan length, lifetime interest, and monthly payment.
   2. User looking to refinance a home and wanting to compare current loan data with new potential loans by loan length, monthly payment, and overall cost of the loan.

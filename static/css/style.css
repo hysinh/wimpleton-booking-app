@@ -121,7 +121,9 @@ body {
 
 .authenticated-user {
     background-color: #445261;
-    color: #d9dcd6;
+    color: orange;
+    /* color: rgba(255, 255, 255, .55); */
+    padding: .5rem 0;
 }
 
 .featured-events {

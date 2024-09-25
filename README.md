@@ -46,10 +46,10 @@ Although some events may be one-off events like a wedding, the estate has a goal
 - ### Visitor Goal
   As a user, I want to easily view potential venue hire options at the Wimpleton House estate, to create a booking, and to view and manage all my bookings.
 - ### User stories
-  1. User looking to purchase a home and wants to compare different mortgages by percentage rate, loan length, lifetime interest, and monthly payment.
-  2. User looking to refinance a home and wanting to compare current loan data with new potential loans by loan length, monthly payment, and overall cost of the loan.
-  3. User wanting to add a loan for comparison.
-  4. User wanting to compare how monthly payments affects their loan.
+  1. As a vistor, I can access the main, public pages and navigate easily through the website.
+  2. As a visitor, I can easily register as a user to the website.
+  3. As a user, I can log into the website to access my account.
+  4. As a user
   5. User wanting to compare how a lump principal affects their loan.
   6. User wanting to save loans they want to keep for comparison.
   7. User wanting to see the amortization schedule of a loan that they have entered. 

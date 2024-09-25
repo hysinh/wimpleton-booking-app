@@ -65,8 +65,9 @@ Although some events may be one-off events like a wedding, the estate has a goal
   6. As a site owner/administrator, I can view messages sent through the email contact form via the website.
 
 
-## Data Model
-### Design 
+## Agile Methodology
+The Agile Methodology was the project management approach used for this project. I attempted to break the project into phases and followed a cycle of planning, executing, and evaluating.
+### Kanban Board 
   This project utilizes Object Oriented Programming and centers around one main class, Mortgage.
 
   The majority of the calculations are done via methods on that Mortgage class. 

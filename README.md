@@ -47,12 +47,22 @@ Although some events may be one-off events like a wedding, the estate has a goal
   As a user, I want to easily view potential venue hire options at the Wimpleton House estate, to create a booking, and to view and manage all my bookings.
 - ### User stories
   1. As a vistor, I can access the main, public pages and navigate easily through the website.
-  2. As a visitor, I can easily register as a user to the website.
-  3. As a user, I can log into the website to access my account.
-  4. As a user
-  5. User wanting to compare how a lump principal affects their loan.
-  6. User wanting to save loans they want to keep for comparison.
-  7. User wanting to see the amortization schedule of a loan that they have entered. 
+  2. As a visitor, I can easily review the venue hire options available at the Wimpleton house.
+  3. As a visitor, I can easily register as a user to the website.
+  4. As a user, I can log into the website to access my account.
+  5. As a user, I can see that I am logged into the website on the navbar.
+  6. As a user, I can easily access the Booking Dashboard and view my current and expired bookings.
+  7. As a user, I can easily book a specific venue for a specific date either via the Booking dashboard or directly from the Venue Hire page.
+  8. As a logged in user, I can securely end by session by logging out.
+  9. As a visitor, I can see customized error pages for 404 and 500 errors so that I can understand what happened and take the appropriate action.
+
+- ### Site Admin
+  1. As a site owner/administrator, I can create a user account for a client.
+  2. As a site owner/administrator, I can create, read, update, and delete Venue options and descriptions.
+  3. As a site owner/administrator, I can create, read, update, and delete Bookings for clients.
+  4. As a site owner/administrator, I can read, update, and delete existing Bookings for a client.
+  5. As a site owner/administrator, I can approve a booking, which in theory, initializes the next step for the client for the booking (i.e. initialises an event consultation, contract creation, and deposit payment).
+  6. As a site owner/administrator, I can view messages sent through the email contact form via the website.
 
 
 ## Data Model

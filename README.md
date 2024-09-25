@@ -45,7 +45,7 @@ The goal of the Wimpleton House Booking website is to provide a business tool th
 Although some events may be one-off events like a wedding, the estate has a goal of creating ongoing relationships with event planners, businesses, corporations, and communities for events that potentially could be annual, bi-annual, quarterly, or even more frequent and facilitates clients managing their bookings and review past booking records.
 - ### Visitor Goal
   As a user, I want to easily view potential venue hire options at the Wimpleton House estate, to create a booking, and to view and manage all my bookings.
-- ### User stories
+- ### User Stories
   1. As a vistor, I can access the main, public pages and navigate easily through the website.
   2. As a visitor, I can easily review the venue hire options available at the Wimpleton house.
   3. As a visitor, I can easily register as a user to the website.
@@ -56,7 +56,7 @@ Although some events may be one-off events like a wedding, the estate has a goal
   8. As a logged in user, I can securely end by session by logging out.
   9. As a visitor, I can see customized error pages for 404 and 500 errors so that I can understand what happened and take the appropriate action.
 
-- ### Site Admin
+- ### Site Admin Stories
   1. As a site owner/administrator, I can create a user account for a client.
   2. As a site owner/administrator, I can create, read, update, and delete Venue options and descriptions.
   3. As a site owner/administrator, I can create, read, update, and delete Bookings for clients.
@@ -68,9 +68,7 @@ Although some events may be one-off events like a wedding, the estate has a goal
 ## Agile Methodology
 The Agile Methodology was the project management approach used for this project. I attempted to break the project into phases and followed a cycle of planning, executing, and evaluating.
 ### Kanban Board 
-  This project utilizes Object Oriented Programming and centers around one main class, Mortgage.
-
-  The majority of the calculations are done via methods on that Mortgage class. 
+  Something about kanban boards
 
 ### Flowchart
   Created in draw.io, the following flowchart provides a visualization of the planning process for this application. During the development of the application, it became apparent that additional inputs, functionality, and outputs were required for the implementation for some of the calculations required and to better organise the options in a way that made sense to the user.

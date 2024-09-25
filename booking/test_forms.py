@@ -1,4 +1,5 @@
 from django.test import TestCase
+from .models import Booking, Email, Venue
 from .forms import BookingForm, EmailForm
 from django.contrib.auth.models import User
 import json
@@ -43,17 +44,17 @@ class TestBookingForm(TestCase):
         A portion of this test was writting by Jason Holt Smith
         """
         # Code below written by Jason Holt Smith
-        user: User = User() 
-        user.save() 
-        chapel: Venue = Venue( 
-            venue_name="The Chapel", 
-            venue_capacity=5, 
+        user: User = User()
+        user.save()
+        chapel: Venue = Venue(
+            venue_name="The Chapel",
+            venue_capacity=5,
             staff_member=user
         )
         chapel.save()
         # End of JHS Code
         data = {
-            "venue": chapel.id,
+            "venue": chapel,
             "event_type": "Wedding",
             "event_date": "2024-09-18",
             "num_guests": 350,

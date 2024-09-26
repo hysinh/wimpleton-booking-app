@@ -52,49 +52,65 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
 
     ![Venue Hire page](documentation/testing/html/screenshot_html_validation_venuehirepage.png)
     </details>
-    <details >
+    <details>
     <summary>About page (about.html)</summary>  
 
     ![About page](documentation/testing/html/screenshot_html_validation_aboutpage.png)
     </details>
-    <details >
+    <details>
     <summary>Contact page (contact.html)</summary>  
 
     ![Contact page](documentation/testing/html/screenshot_html_validation_contactpage.png)
     </details>
+    <details>
+    <summary>Register page (signup.html) - ERRORS Detail - See bug in Table</summary>  
+
+    ![Register page](documentation/testing/html/screenshot_html_signup_errors1.png)
+    </details>
+    <details>
+    <summary>Register page (signup.html) - ERRORS Detail 2 - See bug in Table</summary>  
+
+    ![Register page](documentation/testing/html/screenshot_html_signup_errors2.png)
+    </details>
+    <details>
+    <summary>Login page (signin.html)</summary>  
+
+    ![Login page](documentation/testing/html/screenshot_html_signin.png)
+    </details>
+    
 
     #### Registered User Pages (Logged in)
     <details >
     <summary>Booking Dashboard page (booking_dashboard.html)</summary>  
 
-    ![Booking Dashboard page](link)
+    ![Booking Dashboard page](documentation/testing/html/screenshot_html_validation_bookingdashboard.png)
     </details>
     <details >
     <summary>Request Booking page (request_booking.html)</summary>  
 
-    ![Request Booking page](link)
+    ![Request Booking page](documentation/testing/html/screenshot_html_validation_bookingrequestpage.png)
     </details>
     <details >
     <summary>Edit Booking page (edit_booking.html)</summary>  
 
-    ![Edit Booking page](link)
+    ![Edit Booking page](documentation/testing/html/screenshot_html_validation_editbooking.png)
     </details>
-    <details >
-    <summary>Delete Booking page (delete_booking.html)</summary>  
+    <details>
+    <summary>Signout page (signout.html)</summary>  
 
-    ![Delete Booking page](link)
+    ![Signout page](documentation/testing/html/screenshot_html_validation_signout.png)
     </details>
-
+    
     #### Custom Error Pages
     <details >
     <summary>404 Error Page (404.html)</summary>  
 
-    ![404 Error page](link)
+    ![404 Error page](documentation/testing/html/screenshot_html_404page.png)
     </details>
     <details >
     <summary>500 Error page (500.html)</summary>  
 
-    ![500 page](link)
+    ![500 page](documentation/testing/html/screenshot_html_404page.png)
     </details>
     
   - #### Python3 Validation

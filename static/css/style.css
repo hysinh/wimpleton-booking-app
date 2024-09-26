@@ -569,6 +569,7 @@ body {
         padding-top: 30px;
     }
 
+
     /* 404 & 500 Error pages */
     .container-error-box {
         width: 550px;
@@ -580,6 +581,10 @@ v
 /* larger devices - laptops, desktops, and up (992px and up)  */
 @media screen and (min-width: 992px) {
     /* General */
+    .authenticated-user {
+        padding: .75rem .5rem 0rem;
+        font-size: .75rem;
+    }
 
     /* Venue Listing page */
     .container-venues {
@@ -589,6 +594,14 @@ v
     }
 }
 
+/* larger devices - laptops, desktops, and up (1280px and up)  */
+@media screen and (min-width: 1280px) {
+    /* General */
+    .authenticated-user {
+        padding: .5rem .5rem;
+        font-size: 1rem;
+    }
+}
 
 /* larger devices - laptops, desktops, and up (1366px and up)  */
 @media screen and (min-width: 1366px) {

@@ -56,7 +56,7 @@
   <!-- Code source: https://getbootstrap.com/docs/5.3/components/navbar/-->
   <nav class="navbar navbar-expand-lg navbar-dark nav-background">
     <div class="container-fluid">
-      <a class="brand" href="{% url 'home' %}"><span class="brand">Wimpleton House</span></a>
+      <a class="brand" href="{% url 'home' %}" aria-label="Home page, Wimpleton House"><span class="brand">Wimpleton House</span></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
         aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -65,27 +65,28 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-              href="{% url 'home' %}">Home</a>
+              href="{% url 'home' %}" aria-label="Home page, Wimpleton House">Home</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {% if request.path == venue_hire_url %}active{% endif %}"
-              href="{% url 'venue-hire' %}">Venue Hire</a>
+              href="{% url 'venue-hire' %}" aria-label="Venue Hire page, Wimpleton House">Venue Hire</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link {% if request.path == about_url %}active{% endif %}" href="{% url 'about' %}">About</a>
+            <a class="nav-link {% if request.path == about_url %}active{% endif %}" 
+              href="{% url 'about' %}" aria-label="About page, Wimpleton House">About</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {% if request.path == contact_url %}active{% endif %}"
-              href="{% url 'contact' %}">Contact</a>
+              href="{% url 'contact' %}" aria-label="Contact page, Wimpleton House">Contact</a>
           </li>
           {% if user.is_authenticated %}
           <li class="nav-item">
             <a class="nav-link {% if request.path == bookingdashboard_url %}active{% endif %}" aria-current="page"
-              href="{% url 'booking-dashboard' %}">Venue Bookings</a>
+              href="{% url 'booking-dashboard' %}" aria-label="Venue Bookings page, Wimpleton House">Venue Bookings</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
-              href="{% url 'account_logout' %}">Log out</a>
+              href="{% url 'account_logout' %}" aria-label="Log Out page, Wimpleton House">Logout</a>
           </li>
           <li class="authenticated-user">
             Logged in as {{ user }}
@@ -93,11 +94,11 @@
           {% else %}
           <li class="nav-item">
             <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
-              href="{% url 'account_signup' %}">Register</a>
+              href="{% url 'account_signup' %}" aria-label="Register page, Wimpleton House">Register</a>
           </li>
           <li class="nav-item">
             <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
-              href="{% url 'account_login' %}">Login</a>
+              href="{% url 'account_login' %}" aria-label="Log in page, Wimpleton House">Login</a>
           </li>
           {% endif %}
         </ul>

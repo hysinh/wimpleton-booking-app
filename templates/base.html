@@ -6,7 +6,6 @@
 {% url 'contact' as contact_url %}
 {% url 'account_login' as login_url %}
 {% url 'booking-dashboard' as bookingdashboard_url %}
-<!-- {% url 'create-booking' as createbooking_url %} -->
 {% url 'request-booking' as createbooking_url %}
 {% url 'edit-booking/<int:booking_id>' as editbooking_url %}
 {% url 'account_signup' as signup_url %}
@@ -17,190 +16,146 @@
 <html class="h-100" lang="en">
 
 <head>
-    <title>Wimpleton House</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" >
-    <!-- Meta tags for search engines -->
-    <meta 
-      name="description"
-      content="Wimpleton House - A stunning Irish estate located in Wicklow County, Ireland. A stunning backdrop to your special event or wedding."
-    >
-    <meta
-      name="keywords"
-      content="Wimpleton House, Wimpleton, Irish estates, wedding, venue hire, wedding venue, special events"
-    >
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon_32x32.png' %}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon_16x16.png' %}">
+  <title>Wimpleton House</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Meta tags for search engines -->
+  <meta name="description"
+    content="Wimpleton House - A stunning Irish estate located in Wicklow County, Ireland. A stunning backdrop to your special event or wedding.">
+  <meta name="keywords"
+    content="Wimpleton House, Wimpleton, Irish estates, wedding, venue hire, wedding venue, special events">
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon/favicon_32x32.png' %}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon/favicon_16x16.png' %}">
 
-    <!-- Google Fonts CSS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <!-- Google Fonts CSS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
-    {% block stylesheet %}
-    {% endblock %}
+  {% block stylesheet %}
+  {% endblock %}
 
-    <!-- Custom CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
 
-    <!-- Navigation -->
-    <!-- Code source: https://getbootstrap.com/docs/5.3/components/navbar/-->
-    <nav class="navbar navbar-expand-lg navbar-dark nav-background">
-      <div class="container-fluid">
-        <a class="brand" href="{% url 'home' %}"><span class="brand">Wimpleton House</span></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-                aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page" href="{% url 'home' %}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {% if request.path == venue_hire_url %}active{% endif %}" href="{% url 'venue-hire' %}">Venue Hire</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {% if request.path == about_url %}active{% endif %}" href="{% url 'about' %}">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {% if request.path == contact_url %}active{% endif %}" href="{% url 'contact' %}">Contact</a>
-            </li>
-            {% if user.is_authenticated %}
-            <li class="nav-item">
-              <a class="nav-link {% if request.path == bookingdashboard_url %}active{% endif %}" aria-current="page" 
+  <!-- Navigation -->
+  <!-- Code source: https://getbootstrap.com/docs/5.3/components/navbar/-->
+  <nav class="navbar navbar-expand-lg navbar-dark nav-background">
+    <div class="container-fluid">
+      <a class="brand" href="{% url 'home' %}"><span class="brand">Wimpleton House</span></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
+              href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == venue_hire_url %}active{% endif %}"
+              href="{% url 'venue-hire' %}">Venue Hire</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == about_url %}active{% endif %}" href="{% url 'about' %}">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == contact_url %}active{% endif %}"
+              href="{% url 'contact' %}">Contact</a>
+          </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == bookingdashboard_url %}active{% endif %}" aria-current="page"
               href="{% url 'booking-dashboard' %}">Venue Bookings</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page" 
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == logout_url %}active{% endif %}" aria-current="page"
               href="{% url 'account_logout' %}">Log out</a>
-            </li>
-            <li class="authenticated-user">
-              Logged in as {{ user }}
-            </li>
-            {% else %}
-            <li class="nav-item">
-              <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
+          </li>
+          <li class="authenticated-user">
+            Logged in as {{ user }}
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == signup_url %}active{% endif %}" aria-current="page"
               href="{% url 'account_signup' %}">Register</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page" 
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if request.path == login_url %}active{% endif %}" aria-current="page"
               href="{% url 'account_login' %}">Login</a>
-            </li>
-            {% endif %}
-          </ul>
-        </div>
+          </li>
+          {% endif %}
+        </ul>
       </div>
-    </nav>
-    <!-- Navigation end -->
+    </div>
+  </nav>
+  <!-- Navigation end -->
 
-   
-    <!-- displaying Django messages -->
-    <!-- <div class="container">
-        <div class="row">
-        <div class="col-md-8 offset-md-2">
-            {% for message in messages %}
-            <div class="alert {{ message.tags }} alert-dismissible
-            fade show" id="msg" role="alert">
-            {{ message | safe }}
-            <button type="button" class="btn-close"
-                data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-            {% endfor %}
-        </div>
-        </div>
-    </div> -->
-    <!-- <div class="authenticated-user">
-      {% if user.is_authenticated %}
-          <p class="text-end m-3">You are logged in as {{ user }}</p>
-      {% else %}
-          <p class="text-end m-3">You are not logged in</p>
-      {% endif %}
-    </div> -->
-    <main class="flex-shrink-0 main-bg">
-      
-        {% block content %}
-        <!-- Content Goes here -->
-        {% endblock content %}
+  <main class="flex-shrink-0 main-bg">
 
-    </main>
+    {% block content %}
+    <!-- Content Goes here -->
+    {% endblock content %}
 
-    <!-- Footer -->
-    <footer class="footer mt-auto py-3 dark-bg">
-        <div class="footer-content text-center">
-          <p><a class="footer-brand" href="{% url 'home' %}"><span class="brand">Wimpleton House</span></a></p>
-          <p>
-            <a href="{% url 'home' %}" 
-              aria-label="Home page, Wimpleton House"
-              >Home
-            </a>
-            <a href="{% url 'venue-hire' %}" 
-              aria-label="Venue Hire page, Wimpleton House"
-              >Venue Hire
-            </a>
-            <a href="{% url 'request-booking' %}" 
-              aria-label="Booking Form page, Wimpleton House"
-              >Book Your Event
-            </a>
-            <a href="{% url 'about' %}" 
-              aria-label="About page, Wimpleton House"
-              >About
-            </a>
-            <a href="{% url 'contact' %}" 
-            aria-label="Contact page, Wimpleton House"
-            >Contact
-          </a>
-          </p>
+  </main>
 
-          <p class="text-white">Follow us: 
-            <a href="http://www.facebook.com/"
-              target="_blank"
-              rel="noopener"
-              aria-label="Opens Facebook in a new tab"
-              ><i class="fab fa-facebook-square ms-3"></i>
-          </a>
-            <a href="http://www.instagram.com/"
-              target="_blank"
-              rel="noopener"
-              aria-label="Opens Instagram in a new tab"
-            ><i class="fab fa-instagram-square ms-3"></i>
-            </a>
-        </p>
+  <!-- Footer -->
+  <footer class="footer mt-auto py-3 dark-bg">
+    <div class="footer-content text-center">
+      <p><a class="footer-brand" href="{% url 'home' %}"><span class="brand">Wimpleton House</span></a></p>
+      <p>
+        <a href="{% url 'home' %}" aria-label="Home page, Wimpleton House">Home
+        </a>
+        <a href="{% url 'venue-hire' %}" aria-label="Venue Hire page, Wimpleton House">Venue Hire
+        </a>
+        <a href="{% url 'request-booking' %}" aria-label="Booking Form page, Wimpleton House">Book Your Event
+        </a>
+        <a href="{% url 'about' %}" aria-label="About page, Wimpleton House">About
+        </a>
+        <a href="{% url 'contact' %}" aria-label="Contact page, Wimpleton House">Contact
+        </a>
+      </p>
 
-        <p>
-          Copyright 2024. Wimpleton House. All rights
-          reserved.
-        </p>
-        </div>
-        <!-- <p class="m-0 text-center text-white">{% block copyright %} Made by Code Instituters {% endblock %}</p>  -->
-        <!-- <p class="m-0 text-center text-white">Follow us: <i class="fab fa-facebook-square ms-3"></i>
-            <i class="fab fa-twitter-square ms-3"></i>
-            <i class="fab fa-instagram-square ms-3"></i>
-            <i class="fab fa-youtube-square ms-3"></i>
-        </p> -->
-    </footer>
+      <p class="text-white">Follow us:
+        <a href="http://www.facebook.com/" target="_blank" rel="noopener" aria-label="Opens Facebook in a new tab"><i
+            class="fab fa-facebook-square ms-3"></i>
+        </a>
+        <a href="http://www.instagram.com/" target="_blank" rel="noopener" aria-label="Opens Instagram in a new tab"><i
+            class="fab fa-instagram-square ms-3"></i>
+        </a>
+      </p>
 
-    
-    <!-- Bootstrap 5.0.1 -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      <p>
+        Copyright 2024. Wimpleton House. All rights
+        reserved.
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- Bootstrap 5.0.1 -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-    </script>
+  </script>
 
-    {% block extras %}
-        
-    {% endblock %}
+  {% block extras %}
+
+  {% endblock %}
 </body>
 
 </html>

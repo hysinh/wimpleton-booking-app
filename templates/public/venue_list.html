@@ -10,52 +10,49 @@
             <h2>Venue Hire</h2>
         </div>
     </div>
-  </div>
+</div>
 <!-- Venue Hire intro section -->
 <div class="featured-content-container">
     <div class="featured-content">
         <h5>
-            Wimbledon House provides an ideal backdrop to 
-            celebrate an exquisitely luxurious wedding or celebration 
+            Wimbledon House provides an ideal backdrop to
+            celebrate an exquisitely luxurious wedding or celebration
             or event.
         </h5>
         <p>
-            Whether you envision a gala fundraiser that encompass the Wimpleton 
-            grounds and gardens or a intimate reception in the Mansion Formal rooms, 
-            the Wimpleton House offers limitless possibilities for your special event 
+            Whether you envision a gala fundraiser that encompass the Wimpleton
+            grounds and gardens or a intimate reception in the Mansion Formal rooms,
+            the Wimpleton House offers limitless possibilities for your special event
             or occasion
         </p>
         <p>
-        Start the booking process
-        by registering and completing a booking request and a member 
-        of our Special Events team reach out to you and confirm the 
-        details of your event as well as work with you to make it unforgettable.
-      </p>
-      <div>
-        <a class="{% if request.path == bookingdashboard_url %}active{% endif %} btn btn-edit" aria-current="page" 
-              href="{% url 'booking-dashboard' %}">Book your event today</a>
-      </div>
+            Start the booking process
+            by registering and completing a booking request and a member
+            of our Special Events team reach out to you and confirm the
+            details of your event as well as work with you to make it unforgettable.
+        </p>
+        <div>
+            <a class="{% if request.path == bookingdashboard_url %}active{% endif %} btn btn-edit" aria-current="page"
+                href="{% url 'booking-dashboard' %}">Book your event today</a>
+        </div>
     </div>
-  </div>
+</div>
 
 
 <!-- Venue Hire content starts here -->
 <div class="container-venues">
     {% for venue in venue_list %}
-    <div class="container-venue-card">   
+    <div class="container-venue-card">
         <div class="image-container">
             <hr>
             {% if "placeholder" in venue.featured_image.url %}
-                <img src="{% static 'images/default.webp' %}" class="scale" width="320"
-                  alt="placeholder image">
-              {% else %}
-                <img src="{{ venue.featured_image.url }}" class="scale" width="320"
-                  alt="{{ venue.venue_name }}">
-              {% endif %}
+            <img src="{% static 'images/default.webp' %}" class="scale" width="320" alt="placeholder image">
+            {% else %}
+            <img src="{{ venue.featured_image.url }}" class="scale" width="320" alt="{{ venue.venue_name }}">
+            {% endif %}
         </div>
         <div class="container-venue-card-content">
             <h2 class="venue-title">{{ venue.venue_name }}</h2>
-            <!-- <p>Capacity: {{ venue.venue_capacity }} guests</p> -->
             <p class="card-text">{{ venue.venue_blurb }}
             </p>
             <div class="card-text">{{ venue.venue_description | safe }}
@@ -63,7 +60,8 @@
             <div>
                 <form action="{% url 'request-booking' %}" method="POST" id="venue{{ venue.id }}">
                     {% csrf_token %}
-                    <button type="submit" name="venue" value="{{ venue.id }}" form="venue{{ venue.id }}" class="btn btn-edit">
+                    <button type="submit" name="venue" value="{{ venue.id }}" form="venue{{ venue.id }}"
+                        class="btn btn-edit">
                         Book Now
                     </button>
                 </form>
@@ -73,48 +71,18 @@
     {% if forloop.counter|divisibleby:3 %}
     {% endif %}
     {% endfor %}
-        <!-- Blog Entries Column
-        <div class="col-12 mt-3 left">
-            <div class="row">
-                {% for venue in venue_list %}
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <div class="image-container">
-                                An image goes here
-                            </div>
-                            
-                            <a href="#" class="post-link">
-                                <h2 class="card-title">{{ venue.venue_name }}</h2>
-                            </a>
-
-                            <hr />
-                            <p class="card-text text-muted h6">{{ venue.venue_blurb}}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                {% if forloop.counter|divisibleby:3 %}
-            </div>
-            <div class="row">
-                {% endif %}
-                {% endfor %}
-
-            </div>
-        </div> -->
-    </div>
-    {% if is_paginated %}
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            {% if page_obj.has_previous %}
-            <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
-            {% endif %}
-            {% if page_obj.has_next %}
-            <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
-            {% endif %}
-        </ul>
-    </nav>
-    {% endif %}
+{% if is_paginated %}
+<nav aria-label="Page navigation">
+    <ul class="pagination justify-content-center">
+        {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}" class="page-link">&laquo; PREV </a></li>
+        {% endif %}
+        {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}" class="page-link"> NEXT &raquo;</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endif %}
 </div>
 
 <!-- Venue Hire content ends here -->

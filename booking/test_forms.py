@@ -4,6 +4,7 @@ from .forms import BookingForm, EmailForm
 from django.contrib.auth.models import User
 import json
 
+
 # Create your tests here.
 class TestEmailForm(TestCase):
     """
@@ -21,7 +22,6 @@ class TestEmailForm(TestCase):
         form = EmailForm(data=data)
         self.assertTrue(form.is_valid())
 
-    
     def test_email_form_with_invalid_data(self):
         """
         Test the Email contact form with invalid data
@@ -62,7 +62,6 @@ class TestBookingForm(TestCase):
         }
         form = BookingForm(data=data)
         self.assertTrue(form.is_valid(), json.dumps(form.errors))
-
 
     def test_booking_with_invalid_data(self):
         """

@@ -156,30 +156,40 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
     </details>
     <details><summary>forms.py</summary>
 
-    ![forms.py](link)
+    ![forms.py](documentation/testing/python/screenshot_python_booking_forms.png)
     </details>
     <details><summary>admin.py</summary>
 
-    ![admin.py](link)
+    ![admin.py](documentation/testing/python/screenshot_python_booking_admin.png)
     </details>
     <details><summary>test_forms.py</summary>
 
-    ![test_forms.py](link)
+    ![test_forms.py](documentation/testing/python/screenshot_python_booking_test_forms.png)
     </details>
     <details><summary>test_views.py</summary>
 
-    ![test_views.py](link)
+    ![test_views.py](documentation/testing/python/screenshot_python_booking_test_views.png)
     </details>
 
 
+  ### Unit Testing
+  I was able to successfully execute unit testing on the booking form and the email contact form. 
 
+  #### Unit Tests Run
+  - Forms: Test EmailForm .is_valid()
+  - Forms: Test EmailForm if no data
+  - Forms: Test BookingForm .is_valid()
+  - Forms: Test BookingForm if not data
 
-
+  <details><summary>Unit Testing Results</summary>
+  
+  ![unit testing](documentation/testing/unit_test/screenshot_unit_test.png)
+  </details>
 
 
 
   ### Manual Testing
-  Manual testing was performed on the website checking for print errors, content errors, and any errors in the flow of the application or in it's calculations.
+  Manual testing was performed on the website checking to ensure pages rendered correctly, input forms worked correctly, and a user was able to create, view, edit, and delete their bookings.
 
   #### Browsers
   1. Microsoft Edge
@@ -189,10 +199,12 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   #### The results of testing are as follows:
   | Page | Test | Pass/Fail |
   | ---- | ---- | --------- |
-  | Intro/Logo  | Does the Logo page load and allow the user to progress to the Main Menu? | Pass |
-  | Main Menu  | Does the Main menu display correctly | Pass |
-  | Main Menu  | Is the input validation for the Main Menu working correctly? | Pass |
-  | Main Menu  | If the user selects an option from the Main Menu, does it direct the user to that option correctly? | Pass |
+  | Home page  | Does the Home page load correctly? | ? |
+  | Home page (base.html) | Do all the navigation links work? | ? |
+  |Home page (base.html) | Do all the footer links work? | ? |
+  | Venue Hire page  | Does the Venue Hire page load? | ? |
+  | Venue Hire page  | Do all the venues render correctly? | ? |
+  | Venue Hire page  | Does the generic booking link take you the booking form page? | ? |
   | Add Mortgage  | On the Add Mortgage page, does it allow the user to create a Mortgage profile? | Pass |
   | Add Mortgage  | Is the input validation on the Add Mortgage page working? | Pass |
   | Add Mortgage  | Is a Mortgage profile added correctly if the user selects this option? | Pass |

@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
 from .models import Venue, Booking, Email
+
 # Register your models here.
 @admin.register(Venue)
 class VenueAdmin(SummernoteModelAdmin):

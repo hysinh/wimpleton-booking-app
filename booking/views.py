@@ -76,7 +76,7 @@ def request_booking_test(request):
 
                 messages.success(
                     request,
-                    "Request for a Venue booking has been created successfully.",
+                    "Request for a booking has been created successfully.",
                 )
                 return redirect("booking-dashboard")
 
@@ -118,7 +118,7 @@ def request_booking(request):
 
                 messages.success(
                     request,
-                    "Request for a Venue booking has been created successfully.",
+                    "Request for a booking has been created successfully.",
                 )
                 return redirect("booking-dashboard")
 
@@ -143,7 +143,6 @@ def edit_booking(request, booking_id):
          An instance of :form:`booking.BookingForm`
 
     """
-    # original_booking = Booking.objects.get(pk=booking_id)
     original_booking = get_object_or_404(Booking, pk=booking_id)
 
     # redirects the user back to the booking dashboard if they do not have

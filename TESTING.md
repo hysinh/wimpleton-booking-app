@@ -152,7 +152,7 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
     </details>
     <details><summary>models.py</summary>
 
-    ![models.py](link)
+    ![models.py](documentation/testing/python/screenshot_python_booking_models.png)
     </details>
     <details><summary>forms.py</summary>
 

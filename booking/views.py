@@ -51,12 +51,10 @@ def request_booking_test(request):
      Creates a booking request from the venue page with the venue auto selected
      """
      form = BookingForm()
+     context = {}
      venue_selected = request.POST.get('venue', None)
-     # venues = Venue.objects.all()
-     context = {"form": form}
-     context['venue_selected'] = venue_selected
-     if request.method == 'POST':
-          form = BookingForm()          
+     form.venue = venue_selected
+     if request.method == 'POST':        
           form = BookingForm(request.POST)
 
           if form.is_valid():
@@ -80,10 +78,8 @@ def request_booking_test(request):
                     return redirect('booking-dashboard')
      
      
-     venues = Venue.objects.filter(status=1)
      context = {
           "form": form,
-          "venues": venues,
      }
           
      return render(request, 'user/request_booking_test.html', context)

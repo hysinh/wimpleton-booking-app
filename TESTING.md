@@ -4,12 +4,12 @@
 ## Testing Overview
 ## CONTENTS  
   
-* [User Story Testing](#user-experience)
+* [User Story Testing](#user-story-testing)
 * [Validator Testing](#validator-testing)
-  * [HTML](#html)
-  * [CSS](#css)
-  * [Javascript](#javascript)
-  * [Python](#python)
+  * [HTML Validation](#html-validation)
+  * [CSS Validation](#css-validation)
+  * [Javascript Validation](#javascript-validation)
+  * [Python Validation](#python-validation)
 * [Unit Testing](#unit-testing)
 * [Error Handling](#error-handling)
 * [Manual Testing](#manual-testing)
@@ -35,6 +35,8 @@
 
   
 ---   
+
+## User Story Testing
 
 ## Testing
 ### Validator Testing
@@ -113,21 +115,21 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
     ![500 page](documentation/testing/html/screenshot_html_404page.png)
     </details>
     
-  - #### Python3 Validation
-    I used the Code Institute PEP8 Python Linter for code validation.
+  - #### CSS Validation
+    [W3C Jigsaw](https://jigsaw.w3.org/css-validator/) was used for CSS validation.
     <details >
-    <summary>Python Validation</summary>  
+    <summary>CSS Validation</summary>  
 
-    ![screenshot of PEP8 Python code validation](docs\documentation\screenshot_pep8_validation.png)
+    ![screenshot of CSS validation](documentation/testing/css/screenshot_css_validation.png)
     </details>
-  - #### Python3 Validation
-    I used the Code Institute PEP8 Python Linter for code validation.
+  - #### Javascript Validation
+    [Jshint Linter](https://jshint.com/) was used for Javascript code validation.
     <details >
-    <summary>Python Validation</summary>  
+    <summary>Javascript Validation</summary>  
 
-    ![screenshot of PEP8 Python code validation](docs\documentation\screenshot_pep8_validation.png)
+    ![screenshot of Javascript code validation](docs\documentation\screenshot_pep8_validation.png)
     </details>
-  - #### Python3 Validation
+  - #### Python Validation
     I used the Code Institute PEP8 Python Linter for code validation.
     <details >
     <summary>Python Validation</summary>  

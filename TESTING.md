@@ -127,7 +127,7 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
     <details >
     <summary>Javascript Validation</summary>  
 
-    ![screenshot of Javascript code validation](docs\documentation\screenshot_pep8_validation.png)
+    ![screenshot of Javascript code validation](documentation/testing/js/screenshot_javascript_validation.png)
     </details>
   - #### Python Validation
     I used the Code Institute PEP8 Python Linter for code validation.

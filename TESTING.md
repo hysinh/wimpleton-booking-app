@@ -42,7 +42,7 @@
 ### Validator Testing
 This application was developed with HTML, CSS, Javascript, and Python using the Django Web Framework.
   - #### HTML Validation
-    The [W3C HTML validator](https://validator.w3.org/) was used for the HTML validation.
+    The [W3C HTML validator](https://validator.w3.org/) was used for the HTML validation. I copied the page source of the fully rendered page into the validator for testing.
     #### Public Pages
     <details >
     <summary>Home page (base.html and index.html)</summary>  
@@ -116,26 +116,65 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
     </details>
     
   - #### CSS Validation
-    [W3C Jigsaw](https://jigsaw.w3.org/css-validator/) was used for CSS validation.
+    I used the [W3C Jigsaw](https://jigsaw.w3.org/css-validator/) for CSS validation.
     <details >
     <summary>CSS Validation</summary>  
 
     ![screenshot of CSS validation](documentation/testing/css/screenshot_css_validation.png)
     </details>
   - #### Javascript Validation
-    [Jshint Linter](https://jshint.com/) was used for Javascript code validation.
+    I used the [Jshint Linter](https://jshint.com/) for Javascript code validation.
     <details >
     <summary>Javascript Validation</summary>  
 
     ![screenshot of Javascript code validation](documentation/testing/js/screenshot_javascript_validation.png)
     </details>
   - #### Python Validation
-    I used the Code Institute PEP8 Python Linter for code validation.
-    <details >
-    <summary>Python Validation</summary>  
+    I used the [Code Institute PEP8 Python Linter](https://pep8ci.herokuapp.com/) for code validation. Unresolved bugs are noted in the bug table.
+    #### Wimpleton Project
+    <details><summary>urls.py</summary>
 
-    ![screenshot of PEP8 Python code validation](docs\documentation\screenshot_pep8_validation.png)
+    ![urls.py](documentation/testing/python/screenshot_python_wimpleton_urls.png)
     </details>
+    <details><summary>settings.py</summary>
+
+    ![urls.py](documentation/testing/python/screenshot_python_wimpleton_settings.png)
+    </details>
+
+    #### Booking App
+    <details><summary>urls.py</summary>
+
+    ![urls.py](documentation/testing/python/screenshot_python_booking_urls.png)
+    </details>
+    <details><summary>views.py</summary>
+
+    ![views.py](documentation/testing/python/screenshot_python_booking_views.png)
+    </details>
+    <details><summary>models.py</summary>
+
+    ![models.py](link)
+    </details>
+    <details><summary>forms.py</summary>
+
+    ![forms.py](link)
+    </details>
+    <details><summary>admin.py</summary>
+
+    ![admin.py](link)
+    </details>
+    <details><summary>test_forms.py</summary>
+
+    ![test_forms.py](link)
+    </details>
+    <details><summary>test_views.py</summary>
+
+    ![test_views.py](link)
+    </details>
+
+
+
+
+
 
 
 

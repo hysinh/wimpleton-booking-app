@@ -1,3 +1,6 @@
+/*jshint esversion: 6 */
+/*globals bootstrap */
+
 /* Modal Code Source: Code Institute Django Blog Walk Through Project */
 const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
 const deleteButtons = document.getElementsByClassName("btn-delete");

@@ -214,9 +214,12 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   | Venue Bookings page | Does the Request a booking button work correctly? | ? |
   | Venue Bookings page | Do the edit and delete bookings buttons work correctly? | ? |
   | Request Booking page | Does the Request Booking page render correctly? | ? |
-  | Request Booking page | Does the Request Booking form work correctly and allow a user to request a booking? | ? |
-  | Request Booking page | Do the form error messages display correctly? | ? |
-  | Request Booking page | Does a successfully request redirect correctly to the booking dashboard and display a success message? | ? |
+  | | Does the Request Booking form work correctly and allow a user to request a booking? | ? |
+  | | Do the form error messages display correctly? | ? |
+  | | Does a successful request redirect correctly to the booking dashboard and display a success message? | ? |
+  | | Does the event date input validated and display the correct error handling? | ? |
+  | | Does the event date input validated and display the correct error handling? | ? |
+  | | Does the number of guests input validated and display the correct error handling? | ? |
   | Edit Booking page | Does the Edit booking page render correctly? | ? |
   | Edit Booking page | Does the Edit booking page allow the user to edit a specific existing booking? | ? |
   | Delete Booking button | Does the Delete booking button open a Deletion modal correctly? | ? |

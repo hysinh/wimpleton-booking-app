@@ -167,18 +167,24 @@ The Edit booking page is an option for any current and existing booking for that
 
 ![Edit Booking Page](documentation/readme/features/screenshot_edit_booking_success.png)
 </details>
+<details>
+<summary>Edit Booking error message</summary>
+
+![Edit Booking Page](documentation/readme/features/screenshot_edit_booking_error.png)
+</details>
+
 
 ### Delete Booking
 A user can only delete bookings that both exist and are current. Expired bookings are not deletable by the user. When the user clicks on the delete button, a modal will open and the user must confirm that they wish to delete the booking or they are given the option to cancel the request. Once the user confirms, they are then redirected back to the Booking dashboard and will see a confirmation that they deleted their booking.
 <details>
 <summary>Delete Booking</summary>
 
-![Delete Booking](link)
+![Delete Booking](documentation/readme/features/screenshot_delete_booking.png)
 </details>
 <details>
 <summary>Delete Booking Confirmation</summary>
 
-![Delete Booking confirmation](link)
+![Delete Booking confirmation](documentation/readme/features/screenshot_delete_booking_confirmation.png)
 </details>
 
 ### Sign In Page
@@ -194,7 +200,7 @@ The user can sign out at any point.
 <details>
 <summary>Sign Out Page</summary>
 
-![sign out](link)
+![sign out](documentation/readme/features/screenshot_signout.png)
 </details>
 
 ### Register Page
@@ -202,7 +208,7 @@ If the user wishes to make a booking and clicks on any of the booking buttons, t
 <details>
 <summary>Register Page</summary>
 
-![Register](link)
+![Register](documentation/readme/features/screenshot_register.png)
 </details>
 
 ### Footer
@@ -218,7 +224,7 @@ If the user attempts to navigate to a non-existing page, the 404 Error page will
 <details>
 <summary>404 Error Page</summary>
 
-![404 Error](link)
+![404 Error](documentation/readme/features/screenshot_404error.png)
 </details>
 
 ### 500 Error Page
@@ -226,7 +232,7 @@ If there is a server error, a 500 Error page will display.
 <details>
 <summary>500 Error Page</summary>
 
-![500 Error](link)
+![500 Error](documentation/readme/features/screenshot_500error.png)
 </details>
 
 ### Future Development

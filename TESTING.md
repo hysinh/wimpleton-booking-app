@@ -177,20 +177,20 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   | ---- | ---- | --------- |
   | Home page | Does the Home page load correctly? | Yes |
   | Home page (base.html) | Do all the navigation links work? | Yes |
-  | Home page (base.html) | Do all the footer links work? | Yes |
-  | Home page (base.html) | Is the user able to see a notification in the navbar that they are currently logged in? | Yes |
+  | | Do all the footer links work? | Yes |
+  | | Is the user able to see a notification in the navbar that they are currently logged in? | Yes |
   | Venue Hire page | Does the Venue Hire page render correctly? | Yes |
-  | Venue Hire page | Do all the venues render correctly? | Yes |
-  | Venue Hire page | Does the generic booking link take you the booking form page (or Sign in page if not signed in? | Yes |
-  | Venue Hire page | Do each of the booking links at the bottom of each venue link correctly to the Booking form page and set the initial value for the venue in the form? | Yes |
+  | | Do all the venues render correctly? | Yes |
+  | | Does the generic booking link take you the booking form page (or Sign in page if not signed in? | Yes |
+  | | Do each of the booking links at the bottom of each venue link correctly to the Booking form page and set the initial value for the venue in the form? | Yes |
   | About page | Does the About page render correctly? | Yes |
   | Contact page | Does the Contact page render correctly? | Yes |
-  | Contact page | Does the Contact Email Contact form work correctly? | Yes |
-  | Contact page | Does the Contact Email Contact form display error and confirmation messages appropriately? | Yes |
+  | | Does the Contact Email Contact form work correctly? | Yes |
+  | | Does the Contact Email Contact form display error and confirmation messages appropriately? | Yes |
   | Venue Bookings page | Does the Venue Booking page correctly render the Booking Dashboard | Yes |
-  | Venue Bookings page | Do approved, pending approval, and expired bookings display in the correct sections? | Yes |
-  | Venue Bookings page | Does the Request a booking button work correctly? | Yes |
-  | Venue Bookings page | Do the edit and delete bookings buttons work correctly? | Yes |
+  | | Do approved, pending approval, and expired bookings display in the correct sections? | Yes |
+  | | Does the Request a booking button work correctly? | Yes |
+  | | Do the edit and delete bookings buttons work correctly? | Yes |
   | Request Booking page | Does the Request Booking page render correctly? | ? |
   | | Does the Request Booking form work correctly and allow a user to request a booking? | Yes |
   | | Do the form error messages display correctly? | Yes |
@@ -200,16 +200,15 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   | Edit Booking page | Does the Edit booking page render correctly? | Yes |
   | | Does the Edit booking page allow the user to edit a specific existing booking? | Yes |
   | | Is the input validated and display an error messages when not valid? | Yes |
-  | Delete Booking button | Does the Delete booking button open a Deletion modal correctly? | ? |
-  | Delete Booking button | Does the Delete booking button allow the user to delete a selected booking associated that user? | ? |
-  | Register page | Does the Register user page render correctly? | ? |
-  | Register page | Does the Register user page allow a visitor to register as a user? | ? |
-  | Sign out page | Does the Sign out page render correctly? | ? |
-  | Sign out page  | Does the sign out page allow a user to sign out? | ? |
-  | 404 Error page | Does the 404 error page render correctly when visitor attempts to navigate to a page that doesn't exist? | ? |
-  | 500 Error page | Does the 500 error page render correctly when there is a server error | ? |
+  | Delete Booking button | Does the Delete booking button open a Deletion modal correctly? | Yes |
+  | | Does the Delete booking button allow the user to delete a selected booking associated that user? | Yes |
+  | Register page | Does the Register user page render correctly? | Yes |
+  | Register page | Does the Register user page allow a visitor to register as a user? | Yes |
+  | Sign out page | Does the Sign out page render correctly? | Yes |
+  | Sign out page  | Does the sign out page allow a user to sign out? | Yes |
+  | 404 Error page | Does the 404 error page render correctly when visitor attempts to navigate to a page that doesn't exist? | Yes |
+  | 500 Error page | Does the 500 error page render correctly when there is a server error | Yes |
   | Admin panel | Can only access the admin panel if any authorised user? | Yes |
-  | Admin | Does the 500 error page render correctly when there is a server error | ? |
   
 
 
@@ -218,6 +217,7 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   | Bug | Page | Fix |
   | --- | ---- | --- |
   | Error message in Edit Booking form is displaying incorrect message | Edit booking page | Updated error message to be more appropriate |
+  | 500 Error message has wrong copy | 500 Error page | Updated error message to be more appropriate |
   
 
   

@@ -128,15 +128,21 @@ The Contact page features basic contact information for the Wimplton House inclu
 ![contact page](link)
 </details>
 
-
-
-### Compare Mortgages
+### Booking Dashboard
+The Booking Dashboard is the hub for the user to create, manage, and delete bookings. The Booking Dashboard displays bookings dependent on their status (e.g. Approved, Pending approval, and Expired). The dashboard also features a button that direct the user to the Request Booking form. Once the user has created a booking request, the booking will be displayed in the dashboard in the appropriate section. The user should then be able edit or delete any active bookings with the status of Approved or Pending. Expired bookings are not editable by the user although they can be edited by an admin via the Admin panel.
 <details>
-<summary></summary>
+<summary>Booking Dashboard</summary>
 
-![screenshot of footer](docs/documentation/screenshot_compare_mortgages.png)
+![booking dashboard](link)
 </details>
-When the user has saved a minimum of two Mortgages, they can view a mortgage comparison table that displays the morgage name, principal amounts, APR, loan length, monthly payments, and lifetime interest. If the user has saved a minimum of two Mortgages, a red error message displays alerting them of the problem. The user can then select an option that allows them to create and save a Mortgage in the session. 
+
+### Request Booking Form
+The Booking Form 
+<details>
+<summary>Request Booking Form</summary>
+
+![Request Booking Form](link)
+</details>
 
 ### Overpayments
 <details >

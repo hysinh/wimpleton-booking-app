@@ -70,58 +70,64 @@ The Agile Methodology was the project management approach used for this project.
 ### Kanban Board 
   Something about kanban boards
 
-### Flowchart
-  Created in draw.io, the following flowchart provides a visualization of the planning process for this application. During the development of the application, it became apparent that additional inputs, functionality, and outputs were required for the implementation for some of the calculations required and to better organise the options in a way that made sense to the user.
-
-  An example of this additional development is for principal overpayments. Originally, I had them as separate options. But based on initial user testing and feedback, I decided to combine them in the same menu option and allowing the user to select which type of overpayment they would make. This helped the organise the menu in a more logical way to the user.
+### UI Design
+  I created some rough wireframes when first planning the website. I had three basic variations with consideration to reponsive design for the mobile, tablet, and desktop layouts.
 
   <details >
-  <summary>Application Flowcart</summary>  
+  <summary>Design Mockups</summary>  
 
-  ![screenshot of application flowchart](docs/documentation/mortgage_flowchart.drawio.png)
+  ![wireframes](link)
   </details>
 
 
 ## Features
-### Logo
+### Navbar - top navigation
+The navbar incorporates the logo and a responsive navbar that collapses to a hamburger when a device is less than a tablet. The navigation options provide the user with all of their potential navigation options including registering as a user or logging into the user dashboard to create and/or manage bookings.
 <details >
-<summary></summary>  
+<summary>Public navbar</summary>  
 
-![screenshot card grid](docs/documentation/screenshot_logo.png)
-</details>  
-The Logo of the Mortgage Calculator is diplayed using ASCII. 
-
-### Menu
-<details>
-<summary></summary>
-
-![screenshot of main menu](docs/documentation/screenshot_main_menu.png)
+![navbar](documentation/readme/features/screenshot_navbar_laptop.png)
 </details>
-A Main Menu displays to explain the options to the user. The User is given a reminder message that they can enter 0 at any juncture that prompts the user to make a main menu selection to view the menu. 
-
-### Input Validation
 <details>
-<summary></summary>
+<summary>Registered user navbar (logged in)</summary>
 
-![screenshot of input validation](docs/documentation/screenshot_input_validation.png)
+![navbar - logged in](link)
 </details>
-When user input is required, input is validated to ensure that the input is within the parameters set. For example, if the user is required to input the APR (Annual Percentage Rate). The user is given an example of the format in the prompt and the input is validated as a float between 0 and 100. If the user inputs something that is not a number, a red error message is printed to the terminal stating the error and prompts the user to try again. If the user enters a number that is not within the paraments, in this case a negative number or a number greater than 100, a red error message is printed to the terminal and the user is prompted again to input a valid input. 
+ 
 
-### Add Mortgages
+### Home Page
+The Home page provides a featured image of Wimpleton House as well as brief details about the venue hire opportunities at the Wimpleton.
 <details>
-<summary></summary>
+<summary>Home Page</summary>
 
-![screenshot of add mortgages](docs/documentation/screenshot_add_mortgage.png)
+![home page](link)
 </details>
-The user is allowed to add as many mortgages as they choose. Each mortgage is asked for user input for the name (or label) for the mortgage, principal amount, APR, and mortgage length. The monthly payment and lifetime interest is then calculated and printed on the terminal along with the mortgage inputs provided by the user. The user is then prompted to decide if they want to save this mortgage for their session. If the user chooses Yes, the mortgage is saved and the user is redirected back to the Main Menu options. If the user chooses not to save the mortgage, the user is redirected back to the Main Menu.
 
-### View Mortgages
+
+### Venue Hire Page
+The Venue Hire page features details about each of the venue hire options available at the Wimpleton Hosue. A visitor also can click on a button that directs them to the Booking form if they are logged in or to the sign in page if they are not already signed in or registered as a user. There are additional buttons at the end of each venue description that once clicked directs the user to the Booking form with that particular venue preselected in the booking form. Each of the venue images and descriptions are generated dynamically from the venues saved in the database.
 <details>
-<summary></summary>
+<summary>Venue Hire page</summary>
 
-![screenshot of view mortgages](docs/documentation/screenshot_view_mortgage.png)
+![venue hire page](link)
 </details>
-The user is allowed to view the details of any individual Mortgage profile that they have saved during their session. If they selected the View Mortgage menu option, but have NOT entered in any mortgages, they will receive an error message and will be prompted to make a different choice from the main menu. If there are mortgages saved, the user is provided with a list of the available Mortgage profiles and they can enter in a mortgage number that corresponds with their saved mortgages to view the details for that individual mortgage. After the mortgage details are printed to the terminal, the user is prompted to choose a different mortgage to view or to return to the main menu and exit the View Mortgages section.
+
+### About Page
+The About page provides basic information about Wimpleton House and emphasises it's versatility as a venue for hire for special events. Following the Wimpleton House details, there is a gallery that features images of various special events that were hosted previously at the Wimpleton House.
+<details>
+<summary>About page</summary>
+
+![about page](link)
+</details>
+
+### Contact Page
+The Contact page features basic contact information for the Wimplton House including address and telephone details. The page also includes a google maps embedded into the page. The Contact page also features a email contact form that allows the vistor to ask questions or to send a message to the Wimpleton House staff by completing the form. The information is stored in the database and the messages accessible to staff members via the Admin panel.
+<details>
+<summary>Contact Page</summary>
+
+![contact page](link)
+</details>
+
 
 
 ### Compare Mortgages

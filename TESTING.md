@@ -227,6 +227,8 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   | Sign out page  | Does the sign out page allow a user to sign out? | ? |
   | 404 Error page | Does the 404 error page render correctly when visitor attempts to navigate to a page that doesn't exist? | ? |
   | 500 Error page | Does the 500 error page render correctly when there is a server error | ? |
+  | Admin panel | Can only access the admin panel if any authorised user? | Yes |
+  | Admin | Does the 500 error page render correctly when there is a server error | ? |
   
 
 

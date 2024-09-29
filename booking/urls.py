@@ -23,8 +23,6 @@ urlpatterns = [
     path('delete-booking/<int:booking_id>/',
          views.delete_booking, name='delete-booking'),
     path('request-booking/', views.request_booking, name='request-booking'),
-    path('request-booking-test/', views.request_booking_test,
-         name='request-booking-test'),
     path('venue-hire/', views.VenueList.as_view(), name='venue-hire'),
     path('booking-dashboard/', booking_dashboard, name='booking-dashboard'),
 ]

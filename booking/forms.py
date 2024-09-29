@@ -1,8 +1,6 @@
 from django import forms
-from django.core.validators import MaxValueValidator
 from django.utils.timezone import now
 from datetime import timedelta
-from django.core.exceptions import NON_FIELD_ERRORS
 from .models import Booking, Email
 
 

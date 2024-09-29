@@ -84,12 +84,6 @@ class Booking(models.Model):
     def is_active(self):
         return date.today() <= self.event_date
 
-    # Tried this for validation error - not working
-    def save(self, *args, **kwargs):
-        if self.num_guests > 500:
-            raise ValidationError("Guest count cannot exceed 500 guests")
-        super(Booking, self).save(*args, **kwargs)
-
     class Meta:
         ordering = ["event_date", "-client_id"]
         constraints = [

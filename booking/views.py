@@ -31,6 +31,11 @@ class VenueList(generic.ListView):
 
 @login_required()
 def booking_dashboard(request):
+    """
+    Creates the Booking dashboard and displays all the user's bookings
+    Also provides buttons that allow user to request a booking, edit
+    an existing booking, and delete an existing booking
+    """
     pending_bookings = Booking.objects.filter(client_id=request.user, status=0)
     approved_bookings = Booking.objects.filter(client_id=request.user,
                                                status=1)
@@ -42,49 +47,6 @@ def booking_dashboard(request):
         "all_bookings": all_bookings,
     }
     return render(request, "user/booking_dashboard.html", context)
-
-
-@login_required()
-def request_booking_test(request):
-    """
-    Creates a booking request from the venue page with the venue auto selected
-    """
-    form = BookingForm()
-    context = {}
-    venue_selected = request.POST.get("venue", None)
-    form.venue = venue_selected
-    if request.method == "POST":
-        form = BookingForm(request.POST)
-
-        if form.is_valid():
-            booking = form.save(commit=False)
-
-            # find all bookings that have the same venue and event date as
-            # selected checks to see if there is already a booking with the
-            # same venue and date
-            already_booked_with_venue = Booking.objects.filter(
-                venue=booking.venue, event_date=booking.event_date
-            )
-            if already_booked_with_venue:
-                context = {"form": form}
-
-                return render(request, "user/request_booking.html", context)
-
-            else:
-                booking.client = request.user
-                booking.save()
-
-                messages.success(
-                    request,
-                    "Request for a booking has been created successfully.",
-                )
-                return redirect("booking-dashboard")
-
-    context = {
-        "form": form,
-    }
-
-    return render(request, "user/request_booking_test.html", context)
 
 
 @login_required()

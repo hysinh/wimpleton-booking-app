@@ -4,34 +4,10 @@
 ## Testing Overview
 ## CONTENTS  
   
-* [User Story Testing](#user-story-testing)
-* [Validator Testing](#validator-testing)
-  * [HTML Validation](#html-validation)
-  * [CSS Validation](#css-validation)
-  * [Javascript Validation](#javascript-validation)
-  * [Python Validation](#python-validation)
-* [Unit Testing](#unit-testing)
-* [Error Handling](#error-handling)
-* [Manual Testing](#manual-testing)
-  * [Input Validation](#input-validation)
-  * [Add Mortgages](#add-mortgages)
-  * [View Mortgages](#view-mortgages)
-  * [Compare Mortgages](#compare-mortgages)  
-  * [Overpayments](#overpayments)
-  * [Amortization Schedule](#amortization-schedule)
-  * [Mortgage Data Analysis](#mortgage-data-analysis)
-  * [Exit Program](#exit-program)
-* [Future Features](#future-features)
-* [Technologies](#technologies)
-  * [Languages Used](#languages-used)
-  * [Technologies and Programs Used](#technologies-and-programs-used)
-  * [Deployment](#deployment)
 * [Testing](#testing)
-  * [Python3 Validation](#python3-validation)
   * [Manual Testing](#manual-testing)
   * [Bugs and Fixes](#bugs-and-fixes)
   * [Unfixed Bugs](#unfixed-bugs)
-* [Credits](#credits) 
 
   
 ---   
@@ -199,29 +175,31 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   #### The results of testing are as follows:
   | Page | Test | Pass/Fail |
   | ---- | ---- | --------- |
-  | Home page | Does the Home page load correctly? | ? |
-  | Home page (base.html) | Do all the navigation links work? | ? |
-  | Home page (base.html) | Do all the footer links work? | ? |
+  | Home page | Does the Home page load correctly? | Yes |
+  | Home page (base.html) | Do all the navigation links work? | Yes |
+  | Home page (base.html) | Do all the footer links work? | Yes |
   | Home page (base.html) | Is the user able to see a notification in the navbar that they are currently logged in? | Yes |
-  | Venue Hire page | Does the Venue Hire page render correctly? | ? |
-  | Venue Hire page | Do all the venues render correctly? | ? |
-  | Venue Hire page | Does the generic booking link take you the booking form page? | ? |
-  | Venue Hire page | Do each of the booking links at the bottom of each venue link correctly to the Booking form page and set the initial value for the venue in the form? | ? |
-  | About page | Does the About page render correctly? | ? |
-  | Contact page | Does the Contact page render correctly? | ? |
-  | Venue Bookings page | Does the Venue Booking page correctly render the Booking Dashboard | ? |
-  | Venue Bookings page | Do approved, pending approval, and expired bookings display in the correct sections? | ? |
-  | Venue Bookings page | Does the Request a booking button work correctly? | ? |
-  | Venue Bookings page | Do the edit and delete bookings buttons work correctly? | ? |
+  | Venue Hire page | Does the Venue Hire page render correctly? | Yes |
+  | Venue Hire page | Do all the venues render correctly? | Yes |
+  | Venue Hire page | Does the generic booking link take you the booking form page (or Sign in page if not signed in? | Yes |
+  | Venue Hire page | Do each of the booking links at the bottom of each venue link correctly to the Booking form page and set the initial value for the venue in the form? | Yes |
+  | About page | Does the About page render correctly? | Yes |
+  | Contact page | Does the Contact page render correctly? | Yes |
+  | Contact page | Does the Contact Email Contact form work correctly? | Yes |
+  | Contact page | Does the Contact Email Contact form display error and confirmation messages appropriately? | Yes |
+  | Venue Bookings page | Does the Venue Booking page correctly render the Booking Dashboard | Yes |
+  | Venue Bookings page | Do approved, pending approval, and expired bookings display in the correct sections? | Yes |
+  | Venue Bookings page | Does the Request a booking button work correctly? | Yes |
+  | Venue Bookings page | Do the edit and delete bookings buttons work correctly? | Yes |
   | Request Booking page | Does the Request Booking page render correctly? | ? |
-  | | Does the Request Booking form work correctly and allow a user to request a booking? | ? |
-  | | Do the form error messages display correctly? | ? |
-  | | Does a successful request redirect correctly to the booking dashboard and display a success message? | ? |
-  | | Does the event date input validated and display the correct error handling? | ? |
-  | | Does the event date input validated and display the correct error handling? | ? |
-  | | Does the number of guests input validated and display the correct error handling? | ? |
-  | Edit Booking page | Does the Edit booking page render correctly? | ? |
-  | Edit Booking page | Does the Edit booking page allow the user to edit a specific existing booking? | ? |
+  | | Does the Request Booking form work correctly and allow a user to request a booking? | Yes |
+  | | Do the form error messages display correctly? | Yes |
+  | | Does a successful request redirect correctly to the booking dashboard and display a success message? | Yes |
+  | | Does the event date input validated and display the correct error handling? | Yes |
+  | | Does the number of guests input validated and display the correct error handling? | Yes |
+  | Edit Booking page | Does the Edit booking page render correctly? | Yes |
+  | | Does the Edit booking page allow the user to edit a specific existing booking? | Yes |
+  | | Is the input validated and display the correct error messages? | Yes |
   | Delete Booking button | Does the Delete booking button open a Deletion modal correctly? | ? |
   | Delete Booking button | Does the Delete booking button allow the user to delete a selected booking associated that user? | ? |
   | Register page | Does the Register user page render correctly? | ? |
@@ -239,17 +217,12 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   #### Bugs and Fixes
   | Bug | Page | Fix |
   | --- | ---- | --- |
-  | Confirmation message for saved mortgage option not printing to terminal after saving a mortgage | Extra Monthly Principal Payments | Removed code that ends loop to resolve. |
-  | Confirmation message for saved mortgage option not printing to terminal after saving a mortgage | Extra Lump Principal Payments | Removed code that ends loop to resolve. |
-  | Unclear for users what to do if Main Menu is no longer visible. | All Pages | Add text above menu prompt that instructs user to enter 0 to go to the Main menu. |
-  | Table needs to display Mortgage name rather than Mortgage key | Compare Mortgages | Updates Mortgage class method that generates values for comparison table so that mortgage name displays instead of mortgage ID/key |
-  | Table needs to display Mortgage name rather than Mortgage key | Amortization Schedule | Replace print statement with mortgage name variable rather than Mortgage key |
-  | Unexpected indentation | Main Menu Prompt| Removes backslash from string |
+  | Error message in Edit Booking form is displaying incorrect message | Edit booking page | Pending |
+  
 
   
   ### Unfixed Bugs
-  - Although I have included a function that clears the terminal, I noticed that anything above the terminal screen does not clear and is still available to view if you scroll up. This is potentially confusing but I was not able to resolve it. My mentor said that it is common for older terminals to push content upward and not truly clear the screen.
-  - When viewed through a mobile device, the terminal goes off screen. I will need to research this to see if this is something that is resolvable.
+  - 
   
   ### Unresolved Linter Code Errors
 

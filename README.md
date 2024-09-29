@@ -14,16 +14,7 @@ Wimpleton House Booking website is a full-stack web application created with HTM
   * [Design](#design)
   * [Flowchart](#flowchart)
 * [Features](#features)
-  * [Logo](#logo)
-  * [Menu](#menu)
-  * [Input Validation](#input-validation)
-  * [Add Mortgages](#add-mortgages)
-  * [View Mortgages](#view-mortgages)
-  * [Compare Mortgages](#compare-mortgages)  
-  * [Overpayments](#overpayments)
-  * [Amortization Schedule](#amortization-schedule)
-  * [Mortgage Data Analysis](#mortgage-data-analysis)
-  * [Exit Program](#exit-program)
+  * 
 * [Future Features](#future-features)
 * [Technologies](#technologies)
   * [Languages Used](#languages-used)
@@ -91,16 +82,21 @@ The navbar incorporates the logo and a responsive navbar that collapses to a ham
 <details>
 <summary>Registered user navbar (logged in)</summary>
 
-![navbar - logged in](link)
+![navbar - logged in](documentation/readme/features/screenshot_navbar_loggedin.png)
 </details>
  
 
 ### Home Page
 The Home page provides a featured image of Wimpleton House as well as brief details about the venue hire opportunities at the Wimpleton.
 <details>
-<summary>Home Page</summary>
+<summary>Home Page - Featured Image</summary>
 
-![home page](link)
+![home page](documentation/readme/features/screenshot_home_featured_image.png)
+</details>
+<details>
+<summary>Home Page - Venue Hire short descriptions</summary>
+
+![home page](documentation/readme/features/screenshot_home_venue_options.png)
 </details>
 
 
@@ -109,7 +105,12 @@ The Venue Hire page features details about each of the venue hire options availa
 <details>
 <summary>Venue Hire page</summary>
 
-![venue hire page](link)
+![venue hire page](documentation/readme/features/screenshot_venuehire_featured_image.png)
+</details>
+<details>
+<summary>Venue Hire - Venue Descriptions</summary>
+
+![venue hire page](documentation/readme/features/screenshot_venuehire_venues.png)
 </details>
 
 ### About Page
@@ -133,71 +134,100 @@ The Booking Dashboard is the hub for the user to create, manage, and delete book
 <details>
 <summary>Booking Dashboard</summary>
 
-![booking dashboard](link)
+![booking dashboard](documentation/readme/features/screenshot_booking_dashboard.png)
 </details>
 
 ### Request Booking Form
-The Booking Form 
+This page allows the user to input the details of the venue they'd like to book. Users are requested to choose a venue (based on the a selection based on the approved Venues saved in the database), an event type (via preset choices), number of guests (a minumum of 20 guests and maximum of 500 guests), and the event date (only dates from 5 days in advance of the current date to two years out are accepted). The form validates the data and prints an error message corresponding with each field input box if the user inputs something that is not in line with the predetermined paramenters. A successful submission removes the venue with that particular event date from future bookings and returns the user to the Booking dashboard where they can see a success message.
 <details>
 <summary>Request Booking Form</summary>
 
-![Request Booking Form](link)
+![Request Booking Form](documentation/readme/features/screenshot_bookingform.png)
+</details>
+<details>
+<summary>Request Booking Error Messages Example</summary>
+
+![Request Booking Form](documentation/readme/features/screenshot_bookingform_error.png)
+</details>
+<details>
+<summary>Request Booking Success Example</summary>
+
+![Request Booking Form](documentation/readme/features/screenshot_booking_dashboard_success_msg.png)
 </details>
 
-### Overpayments
-<details >
-<summary></summary>  
+### Edit Booking Page
+The Edit booking page is an option for any current and existing booking for that user. Expired bookings (in the past) are not editable by the user. The user is able to edit any of the booking details such as venue, event type, event date, and number of guests as long as they make changes that stay within the form's criteria. For example, if the user attempts to rebook the venue to a date that's already book, the user will not be allowed to change the booking.
+<details>
+<summary>Edit Booking page</summary>
 
-![screenshot overpayments](docs/documentation/screenshot_overpayments.png)
-</details>  
-There are two options in the Overpayments feature: 1) Additional Monthly Principal overpayments and 2) A Lump Principal Payment. Once this feature is selected, the user is required to choose which type of Overpayment they would like to calculate.
+![Edit Booking Page](documentation/readme/features/screenshot_edit_booking.png)
+</details>
+<details>
+<summary>Edit Booking success message</summary>
 
-- ### Additional Monthly Principal Overpayment
-  <details >
-  <summary></summary>  
+![Edit Booking Page](documentation/readme/features/screenshot_edit_booking_success.png)
+</details>
 
-  ![screenshot monthly overpayments](docs/documentation/screenshot_overpayments_monthly.png)
-  </details>  
-  The user is prompted to input basic mortgage details as well as an amount for the extra monthly payments. This input is then used to calculate a Mortgage profile and prints both the profile and an amortization schedule based on the new calculations. The user is given the option to save this mortgage to their mortgages when the calculations are completed.
+### Delete Booking
+A user can only delete bookings that both exist and are current. Expired bookings are not deletable by the user. When the user clicks on the delete button, a modal will open and the user must confirm that they wish to delete the booking or they are given the option to cancel the request. Once the user confirms, they are then redirected back to the Booking dashboard and will see a confirmation that they deleted their booking.
+<details>
+<summary>Delete Booking</summary>
 
-- ### Lump Principal Overpayment
-  <details >
-  <summary></summary>  
+![Delete Booking](link)
+</details>
+<details>
+<summary>Delete Booking Confirmation</summary>
 
-  ![screenshot lump overpayments](docs/documentation/screenshot_overpayments_lump.png)
-  </details>  
-  The user is prompted to input basic mortgage details as well as an amount for the lump payment to be applied to the Principal balance. This input is then used to calculate a Mortgage profile and prints both the original profile inputed and then an updated Mortgage profile. The user is given the option to save this updated mortgage to their mortgages when the calculations are completed.
+![Delete Booking confirmation](link)
+</details>
 
+### Sign In Page
+A user is prompted to sign in when they attempt to make a booking.
+<details>
+<summary>Sign in Page</summary>
 
-### Amortization Schedule
-<details >
-<summary></summary>  
+![sign in](documentation/readme/features/screenshot_signin_laptop.png)
+</details>
 
-![screenshot amortization](docs/documentation/screenshot_amortization.png)
-</details>  
-This option requires at least one saved Mortgage profile. If there is an insufficient number of Mortgage profiles, the user is alerted with a red error message and redirected back to the Main menu options. If there is at least one Mortgage profile, it is printed in a list and the user is asked to input a Mortgage Profile selection. Once selected, the amortization schedule is calculated and printed to the terminal. The user can either choose another Mortgage profile to view or can exit to the main menu. 
+### Sign Out Page
+The user can sign out at any point.
+<details>
+<summary>Sign Out Page</summary>
 
+![sign out](link)
+</details>
 
-### Mortgage Data Analysis
-<details >
-<summary></summary>  
+### Register Page
+If the user wishes to make a booking and clicks on any of the booking buttons, they will be directed a register page where they can register or log in if they have already registered.
+<details>
+<summary>Register Page</summary>
 
-![screenshot amortization](docs\documentation\screenshot_mortgage_data_analysis.png)
-</details>  
-When this option is selected, the data stores in a Google Sheet is retrieved and the average is calculated for each of the following catergories and printed for the user to view and compare inputed averages of all users to their own mortgage needs.
-  - Average Principal Amount
-  - Average APR
-  - Average Loan Length
-  - Average Monthly Payment
-  - Average Lifetime Interest
+![Register](link)
+</details>
 
-### Exit Program
-<details >
-<summary></summary>  
+### Footer
+The footer contains links to the Venue Hire page, the About page, the Contact Page and the Home Page. It also contains two social media links to Facebook and Instagram. The Copyright information is also on the footer.
+<details>
+<summary>Footer</summary>
 
-![screenshot exit](docs/documentation/screenshot_exit.png)
-</details> 
-Should the user which to exit the Mortgage Comparison Tool, they can select option 6 from the Main menu. When this option is selected, the terminal is cleared and a Thank you message is printed before the program is terminated. 
+![footer](documentation/readme/features/screenshot_footer.png)
+</details>
+
+### 404 Error Page
+If the user attempts to navigate to a non-existing page, the 404 Error page will display.
+<details>
+<summary>404 Error Page</summary>
+
+![404 Error](link)
+</details>
+
+### 500 Error Page
+If there is a server error, a 500 Error page will display.
+<details>
+<summary>500 Error Page</summary>
+
+![500 Error](link)
+</details>
 
 ### Future Development
 - 
@@ -242,7 +272,7 @@ Should the user which to exit the Mortgage Comparison Tool, they can select opti
   12. For the first key, type in "CLOUDINARY_URL" and then copy and paste the entirety of your cloudinary url file into the value box.
   13. For the second key, type in "DATABASE_URL" and then type in your unique Postgres database url in its corresponding value.
   14. Then in the third key, type in "SECRET_KEY" and your secret key in to the corresponding value.
-  15. Under Buildpacks, add the <b>python</b> buildpack first. Then, add the <b>nodejs</b> buildpack. The buildpacks must be added in that order.
+  15. Under Buildpacks, add the <b>python</b> buildpack. 
   16. After this is complete, navigate to the Deploy tab from the menu across the top of the page. Click on "GitHub" under Deployment method and provide the required access when prompted.
   17. Choose Automatic or Manual deployment.
   18. Click "Deploy" when ready to deploy.
@@ -258,113 +288,28 @@ Should the user which to exit the Mortgage Comparison Tool, they can select opti
   7. In the next window, paste the copied link of the [Wimpleton](https://github.com/hysinh/wimpleton-booking-app) into the line.
   8. Then, click Begin Import to import the repository code.
   9. Make changes and/or deploy as desired.
-  10. This program requires the use of a postgres database, the Django Webframe work, Bootstrap CSS library, and a Cloudinary account.
+  10. This program requires the use of a postgres database, the Django Webframe work, Bootstrap CSS library, Django Crispy Forms, Gunicorn, Django Summernote and a Cloudinary account.
 
   ## Testing
   Please view all the testing documentation in [TESTING.md](TESTING.md)
 
-  ### Manual Testing
-  Manual testing was performed on the website checking for print errors, content errors, and any errors in the flow of the application or in it's calculations.
-
-  #### Browsers
-  1. Microsoft Edge
-  2. Google Chrome
-  3. Opera
-
-  #### The results of testing are as follows:
-  | Page | Test | Pass/Fail |
-  | ---- | ---- | --------- |
-  | Intro/Logo  | Does the Logo page load and allow the user to progress to the Main Menu? | Pass |
-  | Main Menu  | Does the Main menu display correctly | Pass |
-  | Main Menu  | Is the input validation for the Main Menu working correctly? | Pass |
-  | Main Menu  | If the user selects an option from the Main Menu, does it direct the user to that option correctly? | Pass |
-  | Add Mortgage  | On the Add Mortgage page, does it allow the user to create a Mortgage profile? | Pass |
-  | Add Mortgage  | Is the input validation on the Add Mortgage page working? | Pass |
-  | Add Mortgage  | Is a Mortgage profile added correctly if the user selects this option? | Pass |
-  | Add Mortgage  | Is the Google Sheet updated with the data of the new Mortgage profile created regardless of whether the Mortgage profile is saved for the session? | Pass |
-  | Add Mortgage  | Once Add Mortgage options are completed, is the user directed back to the Main Menu options? | Pass |
-  | View Mortgage  | Does the page display an error message if there are no saved Mortgage profiles and directed back to the Main Menu? | Pass |
-  | View Mortgage  | Does the page display all of the saved Mortgage Profiles and their name to the user? | Pass |
-  | View Mortgage  | Is the user able to select a Mortgage Profile to view? | Pass |
-  | View Mortgage  | Does an error message display if the user enters an invalid Mortgage option? | Pass |
-  | View Mortgage  | Does the page display all of the saved Mortgage Profiles and their name to the user? | Pass |
-  | View Mortgage  | When the user enters a valid Mortgage option, is the Mortgage profile displayed on the terminal? | Pass |
-  | View Mortgage  | Is the user able to view another Mortgage and is given the option to exit this page and return to Main Menu? | Pass |
-  | Compare Mortgages  | Does the page display an error message if there are less than 2 Mortgage profiles saved and directed back to the Main Menu? | Pass |
-  | Compare Mortgages  | Does the page display all of the saved Mortgage Profiles and their name to the user? | Pass |
-  | Compare Mortgages  | If there are 2 or more saved Mortgage profiles saved, does a comparison table print to the terminal? | Pass |
-  | Compare Mortgages  | Is the user directed back to the Main Menu after the comparison table display is completed? | Pass |
-  | Overpayments  | Is the user given an option to explore Extra Monthly Principal payments or Lump Principal Payments? | Pass |
-  | Overpayments  | Is the user given an error message if they choose an invalid option? | Pass |
-  | Overpayments  | Is the user able to exit the menu and return to the Main Menu? | Pass |
-  | Extra Monthly Principal Overpayments  | Is the user able to enter Mortgage profile with extra monthly principal payments? | Pass |
-  | Extra Monthly Principal Overpayments  | Are all user inputs validated with an error message printed? | Pass |
-  | Extra Monthly Principal Overpayments  | Once the data is accepted, is the Mortgage profile displayed with an updated Amortization schedule? | Pass |
-  | Extra Monthly Principal Overpayments  | Is the user able to save their Mortgage profile if desired? Does a confirmation display | Pass |
-  | Extra Monthly Principal Overpayments  | Is the user redirected to the Main menu? | Pass |
-  | Extra Lump Overpayments  | Is the user able to enter Mortgage profile with extra monthly principal payments? | Pass |
-  | Extra Lump Overpayments | Are all user inputs validated with an error message printed? | Pass |
-  | Extra Lump Overpayments | Once the data is accepted, is the Mortgage profile displayed with an updated Amortization schedule? | Pass |
-  | Extra Lump Overpayments | Is the user able to save their Mortgage profile if desired? Does a confirmation display| Pass |
-  | Extra Lump Overpayments  | Is the user redirected to the Main menu? | Pass |
-  | Amortization Schedule  | Does the page display an error message if there are no saved Mortgage profiles and directed back to the Main Menu? | Pass |
-  | Amortization Schedule  | Does the page display all of the saved Mortgage Profiles and their name to the user? | Pass |
-  | Amortization Schedule  | Is the user able to select a Mortgage Profile to amortize? | Pass |
-  | Amortization Schedule  | Does an error message display if the user enters an invalid Mortgage option? | Pass |
-  | Amortization Schedule  | Does an amortization schedule print for the selected Mortgage Profile | Pass |
-  | Amortization Schedule  | Is the user able to view another Mortgage and is given the option to exit this page and return to Main Menu? | Pass |
-  | Exit Program  | Does the terminal clear and an exit message print when this option is selected? | Pass |
-  | 0 Menu Option  | Does the terminal clear and the Main menu print with a prompted to input a Menu option? | Pass |
-
-
-
-  #### Bugs and Fixes
-  | Bug | Page | Fix |
-  | --- | ---- | --- |
-  | Confirmation message for saved mortgage option not printing to terminal after saving a mortgage | Extra Monthly Principal Payments | Removed code that ends loop to resolve. |
-  | Confirmation message for saved mortgage option not printing to terminal after saving a mortgage | Extra Lump Principal Payments | Removed code that ends loop to resolve. |
-  | Unclear for users what to do if Main Menu is no longer visible. | All Pages | Add text above menu prompt that instructs user to enter 0 to go to the Main menu. |
-  | Table needs to display Mortgage name rather than Mortgage key | Compare Mortgages | Updates Mortgage class method that generates values for comparison table so that mortgage name displays instead of mortgage ID/key |
-  | Table needs to display Mortgage name rather than Mortgage key | Amortization Schedule | Replace print statement with mortgage name variable rather than Mortgage key |
-  | Unexpected indentation | Main Menu Prompt| Removes backslash from string |
-
   
-  ### Unfixed Bugs
-  - Although I have included a function that clears the terminal, I noticed that anything above the terminal screen does not clear and is still available to view if you scroll up. This is potentially confusing but I was not able to resolve it. My mentor said that it is common for older terminals to push content upward and not truly clear the screen.
-  - When viewed through a mobile device, the terminal goes off screen. I will need to research this to see if this is something that is resolvable.
-  
-  ### Unresolved Linter Code Errors
-
-  | Bug | Line | Unresolved Reason |
-  | --- | ---- | --- |
-  | Line length | 111 | I tried several different places to attempt to break up the lines to stay <79 but it resulted in poor print outcomes. |
-  | Line length | 121 | I tried to delete the extra spaces in the formula but it caused "missing white space around operator" errors. |
-
-  
-
 ## Credits
+### Code
+- Sandeep Aggarwal, my Code Institute Mentor, helped me write the maximum attribute for the code for my DateInput function.
+- Jason Holt Smith helped me write the code in my Form Unit tests for the Venue which is a foreign key to my Booking model.
+- I reused the delete modal used in in the Code Institute Django Blog walk through project
 ### Content
-- ASCII Art https://stackoverflow.com/questions/9632995/how-to-easily-print-ascii-art-text
-- https://pypi.org/project/pyfiglet/
-- http://www.figlet.org/examples.html
-- Clearing the console https://stackoverflow.com/questions/517970/how-can-i-clear-the-interpreter-console
-- Input validation
-https://www.copahost.com/blog/input-python/#:~:text=For%20example%2C%20if%20you%20want,%22)
-- Mortgage calculator formulas https://en.wikipedia.org/wiki/Mortgage_calculator,
-- Mortgage calculator https://www.ccpc.ie/consumers/money-tools/extra-mortgage-payments-calculator/
-- Mortgage calculator https://www.ccpc.ie/consumers/money-tools/mortgage-calculator/
-- https://automatetheboringstuff.com/2e/chapter8/
-- Python dictionaries https://www.codecademy.com/learn/dscp-python-fundamentals/modules/dscp-python-dictionaries/cheatsheet
-- Python dictionaries https://www.freecodecamp.org/news/add-to-dict-in-python/
-- Python dictionaries https://www.w3schools.com/python/python_dictionaries_nested.asp
-- Python dictionaries https://www.digitalocean.com/community/tutorials/python-add-to-dictionary
-- Tabulate https://pypi.org/project/tabulate/
-- Amoritization https://www.investopedia.com/terms/a/amortization.asp
-- Amoritization https://discuss.python.org/t/calculation-of-mortgage-amortization/20687/3
-- Amoritization https://sidhanthk9.medium.com/how-to-code-an-amortization-schedule-in-python-e2d2b417c61a
-- Color https://pypi.org/project/termcolor/
-https://sparkbyexamples.com/pandas/print-pandas-dataframe-without-index/#:~:text=Use%20hide_index(),Python%203.7%20or%20the%20latest.
-- https://stackoverflow.com/questions/517970/how-can-i-clear-the-interpreter-console
-- https://www.geeksforgeeks.org/clear-screen-python/
-- W3Schools Python https://www.w3schools.com/python
-- https://www.python.org/
+- #### Images - [Pexels](https://www.pexels.com/) was my primary image source
+  - 
+- Getting a json file output of object
+  https://sentry.io/answers/creating-a-json-response-using-django-and-python/
+- Comparing dates - strings vs objects
+  https://stackoverflow.com/questions/15311222/comparing-dates-stored-as-strings-in-django
+- Accessing django properties
+  https://dev.to/doridoro/django-model-properties-28ac
+- How to compare dates in django
+  https://stackoverflow.com/questions/3798812/how-to-compare-dates-in-django-templates
+- 404 custom and 500 pages with handler url
+  https://stackoverflow.com/questions/20581017/django-custom-404-page-not-working
+

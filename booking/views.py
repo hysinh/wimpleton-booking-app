@@ -158,6 +158,11 @@ def edit_booking(request, booking_id):
             form.save()
             messages.success(request, "Booking edited successfully")
             return redirect("booking-dashboard")
+        else:
+            messages.error(
+                request,
+                "Your changes could not be saved. Please check your form and try again"
+            )
 
     form = BookingForm(instance=original_booking)
 

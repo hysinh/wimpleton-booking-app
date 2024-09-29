@@ -230,7 +230,7 @@ If there is a server error, a 500 Error page will display.
 </details>
 
 ### Future Development
-- 
+- I think the error handling on the Edit Booking page could be better. I didn't realise until late in the testing phase that the form doesn't validate changes to the date and number of guests the same way it does for the Request Booking form. I changed the error message so that it works for current form but it doesn't give the user enough information about the specific problem. I didn't have enough time to figure out a better solution before this project concluded. In a future version, I would like to resolve this and provide better error messaging.
 - I had hoped to delve deeper into unit testing and if time allowed, develop more comprehensive unit testing in the future.
 
 

@@ -199,7 +199,7 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   | | Does the number of guests input validated and display the correct error handling? | Yes |
   | Edit Booking page | Does the Edit booking page render correctly? | Yes |
   | | Does the Edit booking page allow the user to edit a specific existing booking? | Yes |
-  | | Is the input validated and display the correct error messages? | Yes |
+  | | Is the input validated and display an error messages when not valid? | Yes |
   | Delete Booking button | Does the Delete booking button open a Deletion modal correctly? | ? |
   | Delete Booking button | Does the Delete booking button allow the user to delete a selected booking associated that user? | ? |
   | Register page | Does the Register user page render correctly? | ? |
@@ -217,7 +217,7 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   #### Bugs and Fixes
   | Bug | Page | Fix |
   | --- | ---- | --- |
-  | Error message in Edit Booking form is displaying incorrect message | Edit booking page | Pending |
+  | Error message in Edit Booking form is displaying incorrect message | Edit booking page | Updated error message to be more appropriate |
   
 
   

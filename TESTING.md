@@ -199,49 +199,35 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   #### The results of testing are as follows:
   | Page | Test | Pass/Fail |
   | ---- | ---- | --------- |
-  | Home page  | Does the Home page load correctly? | ? |
+  | Home page | Does the Home page load correctly? | ? |
   | Home page (base.html) | Do all the navigation links work? | ? |
-  |Home page (base.html) | Do all the footer links work? | ? |
-  | Venue Hire page  | Does the Venue Hire page load? | ? |
-  | Venue Hire page  | Do all the venues render correctly? | ? |
-  | Venue Hire page  | Does the generic booking link take you the booking form page? | ? |
-  | Add Mortgage  | On the Add Mortgage page, does it allow the user to create a Mortgage profile? | Pass |
-  | Add Mortgage  | Is the input validation on the Add Mortgage page working? | Pass |
-  | Add Mortgage  | Is a Mortgage profile added correctly if the user selects this option? | Pass |
-  | Add Mortgage  | Is the Google Sheet updated with the data of the new Mortgage profile created regardless of whether the Mortgage profile is saved for the session? | Pass |
-  | Add Mortgage  | Once Add Mortgage options are completed, is the user directed back to the Main Menu options? | Pass |
-  | View Mortgage  | Does the page display an error message if there are no saved Mortgage profiles and directed back to the Main Menu? | Pass |
-  | View Mortgage  | Does the page display all of the saved Mortgage Profiles and their name to the user? | Pass |
-  | View Mortgage  | Is the user able to select a Mortgage Profile to view? | Pass |
-  | View Mortgage  | Does an error message display if the user enters an invalid Mortgage option? | Pass |
-  | View Mortgage  | Does the page display all of the saved Mortgage Profiles and their name to the user? | Pass |
-  | View Mortgage  | When the user enters a valid Mortgage option, is the Mortgage profile displayed on the terminal? | Pass |
-  | View Mortgage  | Is the user able to view another Mortgage and is given the option to exit this page and return to Main Menu? | Pass |
-  | Compare Mortgages  | Does the page display an error message if there are less than 2 Mortgage profiles saved and directed back to the Main Menu? | Pass |
-  | Compare Mortgages  | Does the page display all of the saved Mortgage Profiles and their name to the user? | Pass |
-  | Compare Mortgages  | If there are 2 or more saved Mortgage profiles saved, does a comparison table print to the terminal? | Pass |
-  | Compare Mortgages  | Is the user directed back to the Main Menu after the comparison table display is completed? | Pass |
-  | Overpayments  | Is the user given an option to explore Extra Monthly Principal payments or Lump Principal Payments? | Pass |
-  | Overpayments  | Is the user given an error message if they choose an invalid option? | Pass |
-  | Overpayments  | Is the user able to exit the menu and return to the Main Menu? | Pass |
-  | Extra Monthly Principal Overpayments  | Is the user able to enter Mortgage profile with extra monthly principal payments? | Pass |
-  | Extra Monthly Principal Overpayments  | Are all user inputs validated with an error message printed? | Pass |
-  | Extra Monthly Principal Overpayments  | Once the data is accepted, is the Mortgage profile displayed with an updated Amortization schedule? | Pass |
-  | Extra Monthly Principal Overpayments  | Is the user able to save their Mortgage profile if desired? Does a confirmation display | Pass |
-  | Extra Monthly Principal Overpayments  | Is the user redirected to the Main menu? | Pass |
-  | Extra Lump Overpayments  | Is the user able to enter Mortgage profile with extra monthly principal payments? | Pass |
-  | Extra Lump Overpayments | Are all user inputs validated with an error message printed? | Pass |
-  | Extra Lump Overpayments | Once the data is accepted, is the Mortgage profile displayed with an updated Amortization schedule? | Pass |
-  | Extra Lump Overpayments | Is the user able to save their Mortgage profile if desired? Does a confirmation display| Pass |
-  | Extra Lump Overpayments  | Is the user redirected to the Main menu? | Pass |
-  | Amortization Schedule  | Does the page display an error message if there are no saved Mortgage profiles and directed back to the Main Menu? | Pass |
-  | Amortization Schedule  | Does the page display all of the saved Mortgage Profiles and their name to the user? | Pass |
-  | Amortization Schedule  | Is the user able to select a Mortgage Profile to amortize? | Pass |
-  | Amortization Schedule  | Does an error message display if the user enters an invalid Mortgage option? | Pass |
-  | Amortization Schedule  | Does an amortization schedule print for the selected Mortgage Profile | Pass |
-  | Amortization Schedule  | Is the user able to view another Mortgage and is given the option to exit this page and return to Main Menu? | Pass |
-  | Exit Program  | Does the terminal clear and an exit message print when this option is selected? | Pass |
-  | 0 Menu Option  | Does the terminal clear and the Main menu print with a prompted to input a Menu option? | Pass |
+  | Home page (base.html) | Do all the footer links work? | ? |
+  | Home page (base.html) | Is the user able to see a notification in the navbar that they are currently logged in? | Yes |
+  | Venue Hire page | Does the Venue Hire page render correctly? | ? |
+  | Venue Hire page | Do all the venues render correctly? | ? |
+  | Venue Hire page | Does the generic booking link take you the booking form page? | ? |
+  | Venue Hire page | Do each of the booking links at the bottom of each venue link correctly to the Booking form page and set the initial value for the venue in the form? | ? |
+  | About page | Does the About page render correctly? | ? |
+  | Contact page | Does the Contact page render correctly? | ? |
+  | Venue Bookings page | Does the Venue Booking page correctly render the Booking Dashboard | ? |
+  | Venue Bookings page | Do approved, pending approval, and expired bookings display in the correct sections? | ? |
+  | Venue Bookings page | Does the Request a booking button work correctly? | ? |
+  | Venue Bookings page | Do the edit and delete bookings buttons work correctly? | ? |
+  | Request Booking page | Does the Request Booking page render correctly? | ? |
+  | Request Booking page | Does the Request Booking form work correctly and allow a user to request a booking? | ? |
+  | Request Booking page | Do the form error messages display correctly? | ? |
+  | Request Booking page | Does a successfully request redirect correctly to the booking dashboard and display a success message? | ? |
+  | Edit Booking page | Does the Edit booking page render correctly? | ? |
+  | Edit Booking page | Does the Edit booking page allow the user to edit a specific existing booking? | ? |
+  | Delete Booking button | Does the Delete booking button open a Deletion modal correctly? | ? |
+  | Delete Booking button | Does the Delete booking button allow the user to delete a selected booking associated that user? | ? |
+  | Register page | Does the Register user page render correctly? | ? |
+  | Register page | Does the Register user page allow a visitor to register as a user? | ? |
+  | Sign out page | Does the Sign out page render correctly? | ? |
+  | Sign out page  | Does the sign out page allow a user to sign out? | ? |
+  | 404 Error page | Does the 404 error page render correctly when visitor attempts to navigate to a page that doesn't exist? | ? |
+  | 500 Error page | Does the 500 error page render correctly when there is a server error | ? |
+  
 
 
 

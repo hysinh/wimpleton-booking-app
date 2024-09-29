@@ -21,10 +21,6 @@ Wimpleton House Booking website is a full-stack web application created with HTM
   * [Technologies and Programs Used](#technologies-and-programs-used)
   * [Deployment](#deployment)
 * [Testing](#testing)
-  * [Python3 Validation](#python3-validation)
-  * [Manual Testing](#manual-testing)
-  * [Bugs and Fixes](#bugs-and-fixes)
-  * [Unfixed Bugs](#unfixed-bugs)
 * [Credits](#credits) 
 
   
@@ -238,6 +234,8 @@ If there is a server error, a 500 Error page will display.
 ### Future Development
 - I think the error handling on the Edit Booking page could be better. I didn't realise until late in the testing phase that the form doesn't validate changes to the date and number of guests the same way it does for the Request Booking form. I changed the error message so that it works for current form but it doesn't give the user enough information about the specific problem. I didn't have enough time to figure out a better solution before this project concluded. In a future version, I would like to resolve this and provide better error messaging.
 - I had hoped to delve deeper into unit testing and if time allowed, develop more comprehensive unit testing in the future.
+- I had included a staff name and venue capacity on my Venue models. I had hoped to build a staff dashboard that would allow staff members to access the website from the front end and be able to create, edit, and delete venues as well as bookings. Although I wasn't able to implement this in version, I would like to develop this in the future.
+- I also had hoped for this version to be able to implement a venue capacity limitation on the booking form. However, although I spent some time on this, I was not able to implement this function in the this current version and would hope that I can implement this in a future version.
 
 
 ## Technologies
@@ -305,9 +303,20 @@ If there is a server error, a 500 Error page will display.
 - Sandeep Aggarwal, my Code Institute Mentor, helped me write the maximum attribute for the code for my DateInput function.
 - Jason Holt Smith helped me write the code in my Form Unit tests for the Venue which is a foreign key to my Booking model.
 - I reused the delete modal used in in the Code Institute Django Blog walk through project
+
 ### Content
 - #### Images - [Pexels](https://www.pexels.com/) was my primary image source
-  - 
+  - Photo by Анна Хазова: https://www.pexels.com/photo/happy-friends-and-newlywed-couple-celebrating-wedding-at-night-5005252/
+  - Photo by Dan Fuhrman: https://www.pexels.com/photo/beige-concrete-building-1076234/
+  - Photo by Dominik Reiter: https://www.pexels.com/photo/gray-concrete-building-2169965/
+  - Photo by Eugenia Remark: https://www.pexels.com/photo/bride-in-wedding-dress-posing-near-old-castle-15283360/
+  - Photo by Ingo Joseph: https://www.pexels.com/photo/beige-painted-concrete-building-87378/
+  - Photo by Jeremy Wong: https://www.pexels.com/photo/white-chairs-1082024/
+  - Photo by Ahmed ツ: https://www.pexels.com/photo/tables-in-a-room-24023467/
+  - Photo by Pixabay: https://www.pexels.com/photo/white-concrete-castle-surrounded-by-green-plants-50673/
+  - Photo by Soner Görkem: https://www.pexels.com/photo/people-doing-wedding-party-6119578/
+  - Photo by Pixabay: https://www.pexels.com/photo/steel-gate-of-brown-brick-building-159490/
+  - Photo by Victoria Strelka_ph: https://www.pexels.com/photo/bride-and-groom-walking-towards-the-church-12194355/
 - Getting a json file output of object
   https://sentry.io/answers/creating-a-json-response-using-django-and-python/
 - Comparing dates - strings vs objects

@@ -211,51 +211,25 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   | Admin panel | Can only access the admin panel if any authorised user? | Yes |
   
 
-
-
   #### Bugs and Fixes
   | Bug | Page | Fix |
   | --- | ---- | --- |
   | Error message in Edit Booking form is displaying incorrect message | Edit booking page | Updated error message to be more appropriate |
   | 500 Error message has wrong copy | 500 Error page | Updated error message to be more appropriate |
-  
+  | Parse error | styles.css | Remove errant character |
+  | Family Name for font family | style.css | Add quotes around family name |
+  | One undefined variable | bookings.js | Add "globals bootstrap" to top of code to remove warning |
 
   
   ### Unfixed Bugs
-  - 
+  - Although there were some spots where I could have found a better solution, there were no bugs that I was able to find that I could not resolve unless otherwise noted.
   
   ### Unresolved Linter Code Errors
 
   | Bug | Line | Unresolved Reason |
   | --- | ---- | --- |
-  | Line length | 111 | I tried several different places to attempt to break up the lines to stay <79 but it resulted in poor print outcomes. |
-  | Line length | 121 | I tried to delete the extra spaces in the formula but it caused "missing white space around operator" errors. |
+  | There were a few places that were greater than the 79 character length max | settings.py - line 129 | Was unable to resolve as caused more errors when shortened |
+  | There were a few places that were greater than the 79 character length max | views.py | Could not reduce error strings further and was unable to break up the line without causing further problems |
 
   
 
-## Credits
-### Content
-- ASCII Art https://stackoverflow.com/questions/9632995/how-to-easily-print-ascii-art-text
-- https://pypi.org/project/pyfiglet/
-- http://www.figlet.org/examples.html
-- Clearing the console https://stackoverflow.com/questions/517970/how-can-i-clear-the-interpreter-console
-- Input validation
-https://www.copahost.com/blog/input-python/#:~:text=For%20example%2C%20if%20you%20want,%22)
-- Mortgage calculator formulas https://en.wikipedia.org/wiki/Mortgage_calculator,
-- Mortgage calculator https://www.ccpc.ie/consumers/money-tools/extra-mortgage-payments-calculator/
-- Mortgage calculator https://www.ccpc.ie/consumers/money-tools/mortgage-calculator/
-- https://automatetheboringstuff.com/2e/chapter8/
-- Python dictionaries https://www.codecademy.com/learn/dscp-python-fundamentals/modules/dscp-python-dictionaries/cheatsheet
-- Python dictionaries https://www.freecodecamp.org/news/add-to-dict-in-python/
-- Python dictionaries https://www.w3schools.com/python/python_dictionaries_nested.asp
-- Python dictionaries https://www.digitalocean.com/community/tutorials/python-add-to-dictionary
-- Tabulate https://pypi.org/project/tabulate/
-- Amoritization https://www.investopedia.com/terms/a/amortization.asp
-- Amoritization https://discuss.python.org/t/calculation-of-mortgage-amortization/20687/3
-- Amoritization https://sidhanthk9.medium.com/how-to-code-an-amortization-schedule-in-python-e2d2b417c61a
-- Color https://pypi.org/project/termcolor/
-https://sparkbyexamples.com/pandas/print-pandas-dataframe-without-index/#:~:text=Use%20hide_index(),Python%203.7%20or%20the%20latest.
-- https://stackoverflow.com/questions/517970/how-can-i-clear-the-interpreter-console
-- https://www.geeksforgeeks.org/clear-screen-python/
-- W3Schools Python https://www.w3schools.com/python
-- https://www.python.org/

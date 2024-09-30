@@ -58,7 +58,7 @@
             <div class="card-text">{{ venue.venue_description | safe }}
             </div>
             <div>
-                <form action="{% url 'request-booking' %}" method="POST" id="venue{{ venue.id }}">
+                <form action="{% url 'request-booking' %}" method="GET" id="venue{{ venue.id }}">
                     {% csrf_token %}
                     <button type="submit" name="venue" value="{{ venue.id }}" form="venue{{ venue.id }}"
                         class="btn btn-edit">

@@ -56,6 +56,14 @@ def request_booking(request):
     """
     form = BookingForm()
     context = {}
+    
+	# If user inputs a venue by clicking the corresponding button
+    # on the Venue Hire page, this will get that venue selection and
+    # set as the initial venue value in the booking form
+    if request.method == "GET":
+        selected_venue =  request.GET.get("venue")
+        form = BookingForm(initial={'venue': selected_venue})
+	
     if request.method == "POST":
         form = BookingForm(request.POST)
         if form.is_valid():
@@ -88,6 +96,7 @@ def request_booking(request):
     context = {
         "form": form,
         "venues": venues,
+        "selected_venue": selected_venue,
     }
 
     return render(request, "user/request_booking.html", context)

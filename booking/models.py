@@ -1,6 +1,5 @@
 from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
-from django.core.exceptions import ValidationError
 from cloudinary.models import CloudinaryField
 from datetime import date
 from django.contrib.auth.models import User

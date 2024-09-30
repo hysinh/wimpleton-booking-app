@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import Booking, Email, Venue
+from .models import Venue
 from .forms import BookingForm, EmailForm
 from django.contrib.auth.models import User
 import json

@@ -1,8 +1,6 @@
 from . import views
-from django.views import generic
 from django.urls import path
 from .views import booking_dashboard, display_404, display_500
-from django.conf.urls import handler404, handler500
 
 
 # 404 and 500 custom error pages

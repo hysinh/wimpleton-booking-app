@@ -20,6 +20,9 @@
     <p><a href="{% url 'request-booking' %}" class="btn btn-edit btn-spacing">Request a Booking</a></p>
     <hr>
     <h5 class="bold">Your Approved Bookings:</h5>
+    <p>Approved bookings can not be edited via your user dashboard. If you need 
+      to make any changes to your booking, please contact the Events staff.
+    </p>
       <!-- Displays Active Approved Bookings -->
       <div class="booking-card-container">
         {% for booking in approved_bookings %}
@@ -31,19 +34,6 @@
             <p><span class="text-muted bold">Event type:</span> {{ booking.event_type }}</p>
             <p><span class="text-muted bold">Number of guests:</span> {{ booking.num_guests }}</p>
             <p><span class="text-muted bold">Status:</span> {% if booking.status == 1 %}<span class="green bold">Approved</span>{% else %}<span class="red bold">Pending Approval</span>{% endif %}</p>
-            <!-- Edit Booking Button -->
-            <div>
-            {% if user.is_authenticated and booking.client == user %}
-              <a href="{% url 'edit-booking' booking.booking_id %}" class="btn btn-edit" 
-                data-booking_id="{{ booking.booking_id }}">Edit Booking
-              </a>
-            </div>
-            <div>
-              <!-- Delete Booking Button -->
-              <button class="btn btn-delete" data-booking_id="{{ booking.booking_id }}">
-              Delete Booking</button>
-            </div>
-            {% endif %}
           </div>
           {% endif %}
           {% empty %}

@@ -61,7 +61,7 @@ body {
 
 /* Home page: Featured image styles */
 .featured-image-container {
-    width: 100vw;
+    /* width: 100vw; */
 }
 
 .home-image {

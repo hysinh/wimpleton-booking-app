@@ -147,6 +147,16 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
     ![test_views.py](documentation/testing/python/screenshot_python_booking_test_views.png)
     </details>
 
+  ### Search Engine Optimization
+  This application was developed with HTML, CSS, Javascript, and Python using the Django Web Framework.
+  - #### HTML Validation
+    The [W3C HTML validator](https://validator.w3.org/) was used for the HTML validation. I copied the page source of the fully rendered page into the validator for testing.
+    #### Public Pages
+    <details >
+    <summary>Home page (base.html and index.html)</summary>  
+
+    ![Hpme page](documentation/testing/html/screenshot_html_validation_indexpage.png)
+    </details>
 
   ### Unit Testing
   I was able to successfully execute unit testing on the booking form and the email contact form. 

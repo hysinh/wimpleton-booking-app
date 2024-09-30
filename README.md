@@ -9,12 +9,13 @@ Wimpleton House Booking website is a full-stack web application created with HTM
 ## CONTENTS  
   
 * [User Experience](#user-experience)
-  * [User Stories](#user-stories) 
-* [Data Model](#data-model)
-  * [Design](#design)
+  * [User Stories](#user-stories)
+  * [Site Admin Stories](#site-admin-stories)
+* [Agile Methodology](#agile-methodology)
+  * [Kanban Board](#kanban-board)
+  * [UI Design](#design)
   * [Flowchart](#flowchart)
 * [Features](#features)
-  * 
 * [Future Features](#future-features)
 * [Technologies](#technologies)
   * [Languages Used](#languages-used)
@@ -44,12 +45,11 @@ Although some events may be one-off events like a wedding, the estate has a goal
   9. As a visitor, I can see customized error pages for 404 and 500 errors so that I can understand what happened and take the appropriate action.
 
 - ### Site Admin Stories
-  1. As a site owner/administrator, I can create a user account for a client.
-  2. As a site owner/administrator, I can create, read, update, and delete Venue options and descriptions.
-  3. As a site owner/administrator, I can create, read, update, and delete Bookings for clients.
-  4. As a site owner/administrator, I can read, update, and delete existing Bookings for a client.
-  5. As a site owner/administrator, I can approve a booking, which in theory, initializes the next step for the client for the booking (i.e. initialises an event consultation, contract creation, and deposit payment).
-  6. As a site owner/administrator, I can view messages sent through the email contact form via the website.
+  1. As a site owner/administrator, I can create, read, update, and delete Venue options and descriptions.
+  2. As a site owner/administrator, I can create, read, update, and delete Bookings for clients.
+  3. As a site owner/administrator, I can read, update, and delete existing Bookings for a client.
+  4. As a site owner/administrator, I can approve a booking, which in theory, initializes the next step for the client for the booking (i.e. initialises an event consultation, contract creation, and deposit payment).
+  5. As a site owner/administrator, I can view messages sent through the email contact form via the website.
 
 
 ## Agile Methodology
@@ -58,13 +58,42 @@ The Agile Methodology was the project management approach used for this project.
   Something about kanban boards
 
 ### UI Design
-  I created some rough wireframes when first planning the website. I had three basic variations with consideration to reponsive design for the mobile, tablet, and desktop layouts.
+  I created some rough wireframes when first planning the website. I had three basic variations with consideration to reponsive design for the mobile, tablet, and desktop layouts. After roughing out what I wanted for the general layouts and content, I created a mockup for the overall look and feel for the site in Adobe Photoshop. I also designed the Entity Relationship Diagrams and considered how each model would interact with the others.
+
+  <details >
+  <summary>Preliminary Sketches</summary>  
+
+  ![preliminary](link)
+  </details>
 
   <details >
   <summary>Design Mockups</summary>  
 
-  ![wireframes](link)
+  ![design mockup](documentation/readme/design_mobile_designmockup.webp)
   </details>
+
+  <details >
+  <summary>Color Scheme</summary>  
+
+  ![color scheme](documentation/readme/screenshot_color_palette.webp)
+  </details>
+
+  #### Font Family
+  For the body and majority of the website, Monserrat was used for it's
+  readability and versatility. For the Wimpleton logo/brand, I used Libre Baskerville. I wanted an understated, serif typeface that gave the brand the weight I wanted to convey a sense of old-world style and elegance and that would look appropriate on any printables for events for weddings and corporate events, etc.
+  <details >
+  <summary>Fonts</summary>  
+
+  ![color scheme](documentation/readme/screenshot_fontfamilies.png)
+  </details>
+
+### Postgres Database / Model Design
+  <details >
+  <summary>Entity Relationship Diagrams</summary>  
+
+  ![ERDs](documentation/readme/screenshot_ERDs.png)
+  </details>
+  
 
 
 ## Features
@@ -256,6 +285,9 @@ If there is a server error, a 500 Error page will display.
   - W3C Jigsaw
   - Jshint Linter
   - Code Institute PEP8 Python Linter
+  - https://www.drawio.com/ for Entity Relationship Diagramming
+  - Adobe Photoshop - mockups and image editing
+  - Google Lighthouse - SEO Assessments
 
   ### Deployment
   GitHub and Heroku was used to deploy this website using the Gitpod Code Institute template which preloads any required dependencies. The following steps were taken:
@@ -305,6 +337,8 @@ If there is a server error, a 500 Error page will display.
 - I reused the delete modal used in in the Code Institute Django Blog walk through project
 
 ### Content
+- https://fonts.google.com/
+- https://fontawesome.com/  
 - #### Images - [Pexels](https://www.pexels.com/) was my primary image source
   - Photo by Анна Хазова: https://www.pexels.com/photo/happy-friends-and-newlywed-couple-celebrating-wedding-at-night-5005252/
   - Photo by Dan Fuhrman: https://www.pexels.com/photo/beige-concrete-building-1076234/
@@ -317,6 +351,7 @@ If there is a server error, a 500 Error page will display.
   - Photo by Soner Görkem: https://www.pexels.com/photo/people-doing-wedding-party-6119578/
   - Photo by Pixabay: https://www.pexels.com/photo/steel-gate-of-brown-brick-building-159490/
   - Photo by Victoria Strelka_ph: https://www.pexels.com/photo/bride-and-groom-walking-towards-the-church-12194355/
+- #### Code resources
 - Getting a json file output of object
   https://sentry.io/answers/creating-a-json-response-using-django-and-python/
 - Comparing dates - strings vs objects

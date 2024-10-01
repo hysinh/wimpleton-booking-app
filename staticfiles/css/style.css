@@ -2,6 +2,8 @@ body {
     background-color: #ffffff;
     font-family: Montserrat, sans-serif;
     color: #252525;
+    padding: 0;
+    margin: 0;
 }
 
 .bold {
@@ -60,22 +62,15 @@ body {
 }
 
 /* Home page: Featured image styles */
+.featured-image-container {
+}
+
 .home-image {
     background: url("/static/images/wimpleton_home_1067x600.webp") no-repeat center/cover, #445261;
     height: 400px;
 }
 
 /* Home page: Featured content section */
-.new-featured-content-container{
-    display: block;
-}
-
-.new-featured-content {
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-}
-
 .featured-content-container {
     width: 90vw;
     padding: 20px 0;
@@ -112,7 +107,7 @@ body {
     width: 100vw;
     display: block;
     justify-content: center;
-    padding: 15px 0px;
+    padding: 15px 15px;
     background-color: #ffffff;
 }
 
@@ -139,8 +134,8 @@ body {
     margin: 0 auto;
     padding-bottom: 20px;
     border-radius: 50%;
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 270px;
+    max-height: 270px;
 }
 
 #featured-events-img-celebrations {
@@ -150,8 +145,8 @@ body {
     margin: 0 auto;
     padding-bottom: 20px;
     border-radius: 50%;
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 270px;
+    max-height: 270px;
 }
 
 #featured-events-img-corporate {
@@ -161,8 +156,8 @@ body {
     margin: 0 auto;
     padding-bottom: 20px;
     border-radius: 50%;
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 270px;
+    max-height: 270px;
 }
 
 #featured-events-img-galas {
@@ -172,8 +167,8 @@ body {
     margin: 0 auto;
     padding-bottom: 20px;
     border-radius: 50%;
-    max-width: 300px;
-    max-height: 300px;
+    max-width: 270px;
+    max-height: 270px;
 }
 
 /* Venue Hire Page */
@@ -445,7 +440,7 @@ body {
     }
 
     .event-container {
-        width: 100vw;
+        width: 100%;
     }
 
     .event-type-container {
@@ -480,7 +475,7 @@ body {
     }
 
     .featured-events {
-        width: 325px;
+        /* width: 300px; */
     }
 
     /* Booking Dashboard - Booking Cards Section */

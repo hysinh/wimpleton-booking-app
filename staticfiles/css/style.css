@@ -62,6 +62,10 @@ body {
 }
 
 /* Home page: Featured image styles */
+.featured-image-container {
+    padding: 0;
+}
+
 .home-image {
     background: url("/static/images/wimpleton_home_1067x600.webp") no-repeat center/cover, #445261;
     height: 550px;

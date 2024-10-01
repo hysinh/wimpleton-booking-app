@@ -479,7 +479,7 @@ body {
 @media screen and (min-width: 768px) {
     /* Home page */
     .home-image {
-        height: 500px;
+        height: 550px;
         background-position: center;
     }
 

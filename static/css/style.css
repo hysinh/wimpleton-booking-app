@@ -64,7 +64,7 @@ body {
 }
 
 .home-image {
-    background: url("/static/images/wimpleton_home_1067x600.webp") no-repeat center/cover, #445261;
+    background: url("/static/images/wimpleton_home_800x450.webp") no-repeat center/cover, #445261;
     height: 550px;
 }
 
@@ -201,7 +201,7 @@ body {
 }
 
 .venue-image {
-    background: url("/static/images/featured_image_1600x900_chapel.webp") no-repeat left/cover, 40px, #445261;
+    background: url("/static/images/featured_image_800x450_chapel.webp") no-repeat left/cover, 40px, #445261;
     height: 550px;
     display: flex;
     justify-content: center;
@@ -209,7 +209,7 @@ body {
 }
 
 .about-image {
-    background: url("/static/images/featured_image_1600x900_courtyard.webp") no-repeat left/cover, 40px, #445261;
+    background: url("/static/images/featured_image_800x450_courtyard.webp") no-repeat left/cover, 40px, #445261;
     height: 550px;
     display: flex;
     justify-content: center;
@@ -217,7 +217,7 @@ body {
 }
 
 .contact-image {
-    background: url("/static/images/featured_image_1600x900_gardens.webp") no-repeat left/cover, 40px, #445261;
+    background: url("/static/images/featured_image_800x450_gardens.webp") no-repeat center/cover, 40px, #445261;
     height: 550px;
     display: flex;
     justify-content: center;
@@ -439,15 +439,13 @@ body {
     .footer-content p {
         padding: 20px 0;
     }
-
-    
-
 }
 
 /* Media query: tablets and larger (768px and up) */
 @media screen and (min-width: 768px) {
     /* Home page */
     .home-image {
+        background: url("/static/images/wimpleton_home_1600x900.webp") no-repeat center/cover, #445261;
         height: 550px;
         background-position: center;
     }
@@ -466,6 +464,18 @@ body {
     .featured-content {
         width: 90vw;
         margin: 0 auto;
+    }
+
+    .venue-image {
+        background: url("/static/images/featured_image_1600x900_chapel.webp") no-repeat left/cover, 40px, #445261;
+    }
+    
+    .about-image {
+        background: url("/static/images/featured_image_1600x900_courtyard.webp") no-repeat left/cover, 40px, #445261;
+    }
+    
+    .contact-image {
+        background: url("/static/images/featured_image_1600x900_gardens.webp") no-repeat center/cover, 40px, #445261;
     }
 
     /* Venue Listing page */

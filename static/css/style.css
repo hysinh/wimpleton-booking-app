@@ -16,15 +16,10 @@ body {
     padding-top: .3125rem;
     padding-bottom: .3125rem;
     margin-right: 1rem;
-    /* white-space: nowrap; */
     font-size: .95rem;
     font-weight: 700;
     letter-spacing: 3px;
     color: #d9dcd6;
-}
-
-.navbar {
-    /* width: 100vw; */
 }
 
 .nav-background {
@@ -36,7 +31,6 @@ body {
 }
 
 .container {
-    /* width: 100vw; */
     margin: 0px;
     padding: 0px;
 }
@@ -50,7 +44,6 @@ body {
 }
 
 /* Sign in / Sign out / Register pages */
-
 .container-authentication {
     display: block;
     justify-content: center;
@@ -113,7 +106,6 @@ body {
 .event-type-container {
     display: block;
     justify-content: center;
-    /* background-color: purple; */
     background-color: #ffffff;
     width: 100vw;
 }
@@ -121,7 +113,6 @@ body {
 .authenticated-user {
     background-color: #445261;
     color: orange;
-    /* color: rgba(255, 255, 255, .55); */
     padding: .5rem 0;
 }
 
@@ -130,7 +121,6 @@ body {
     display: block;
     justify-content: center;
     padding: 15px 15px;
-    /* background-color: pink; */
     background-color: #ffffff;
 }
 
@@ -484,7 +474,7 @@ body {
     }
 
     .event-container {
-        width: 100vw;
+        /* width: 100vw; */
     }
 
     .event-type-container {

@@ -2,8 +2,6 @@ body {
     background-color: #ffffff;
     font-family: Montserrat, sans-serif;
     color: #252525;
-    padding: 0;
-    margin: 0;
 }
 
 .bold {
@@ -12,16 +10,21 @@ body {
 
 /* Navigation */
 .brand {
-    font-family: "Libre Baskerville", serif;
+    font-family: Libre Baskerville, serif;
     text-transform: uppercase;
     text-decoration: none;
     padding-top: .3125rem;
     padding-bottom: .3125rem;
     margin-right: 1rem;
+    /* white-space: nowrap; */
     font-size: .95rem;
     font-weight: 700;
     letter-spacing: 3px;
     color: #d9dcd6;
+}
+
+.navbar {
+    /* width: 100vw; */
 }
 
 .nav-background {
@@ -33,6 +36,7 @@ body {
 }
 
 .container {
+    /* width: 100vw; */
     margin: 0px;
     padding: 0px;
 }
@@ -72,13 +76,28 @@ body {
 }
 
 /* Home page: Featured content section */
+.new-featured-content-container{
+    display: block;
+    /* background-color: yellow; */
+    /* padding: 20px 0; */
+}
+
+.new-featured-content {
+    /* background-color: pink; */
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
 .featured-content-container {
+    /* background-color: aqua; */
     width: 90vw;
     padding: 20px 0;
     margin: 0 auto;
 }
 
 .featured-content {
+    /* background-color: orange; */
     background-color: #d9dcd6;
     padding: 40px 25px;
     font-size: 1em;
@@ -94,6 +113,7 @@ body {
 .event-type-container {
     display: block;
     justify-content: center;
+    /* background-color: purple; */
     background-color: #ffffff;
     width: 100vw;
 }
@@ -101,6 +121,7 @@ body {
 .authenticated-user {
     background-color: #445261;
     color: orange;
+    /* color: rgba(255, 255, 255, .55); */
     padding: .5rem 0;
 }
 
@@ -109,11 +130,12 @@ body {
     display: block;
     justify-content: center;
     padding: 15px 15px;
+    /* background-color: pink; */
     background-color: #ffffff;
 }
 
 .featured-events h2 {
-    font-family: "Libre Baskerville", serif;
+    font-family: Libre Baskerville, serif;
     text-transform: uppercase;
     font-size: 1.12rem;
     font-weight: 700;
@@ -134,9 +156,10 @@ body {
     width: 90vw;
     margin: 0 auto;
     padding-bottom: 20px;
+    /* Makes the square image into a circle */
     border-radius: 50%;
-    max-width: 270px;
-    max-height: 270px;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 #featured-events-img-celebrations {
@@ -145,9 +168,10 @@ body {
     width: 90vw;
     margin: 0 auto;
     padding-bottom: 20px;
+    /* Makes the square image into a circle */
     border-radius: 50%;
-    max-width: 270px;
-    max-height: 270px;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 #featured-events-img-corporate {
@@ -156,9 +180,10 @@ body {
     width: 90vw;
     margin: 0 auto;
     padding-bottom: 20px;
+    /* Makes the square image into a circle */
     border-radius: 50%;
-    max-width: 270px;
-    max-height: 270px;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 #featured-events-img-galas {
@@ -167,9 +192,10 @@ body {
     width: 90vw;
     margin: 0 auto;
     padding-bottom: 20px;
+    /* Makes the square image into a circle */
     border-radius: 50%;
-    max-width: 270px;
-    max-height: 270px;
+    max-width: 300px;
+    max-height: 300px;
 }
 
 /* Venue Hire Page */
@@ -236,11 +262,12 @@ body {
 }
 
 .venue-title {
-    font-family: "Libre Baskerville", serif;
+    font-family: Libre Baskerville, serif;
     text-transform: uppercase;
     text-decoration: none;
     padding-top: .3125rem;
     padding-bottom: .3125rem;
+    /*white-space: nowrap;*/
     font-size: 1.15rem;
     font-weight: 700;
     letter-spacing: 3px;
@@ -299,6 +326,14 @@ body {
 .btn-edit {
     background-color: #188181;
     color: #fff;
+    /* width: 150px;
+    padding: .5rem;
+    margin: auto;
+    text-align: center;
+    color: #1A1A1A;
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: medium; */
 }
 
 .btn-delete {
@@ -377,7 +412,7 @@ body {
 }
 
 .footer-brand {
-    font-family: "Libre Baskerville", serif;
+    font-family: Libre Baskerville, serif;
     text-transform: uppercase;
     text-decoration: none;
     padding-top: .3125rem;
@@ -414,7 +449,8 @@ body {
         margin: 10px 0px 30px;
     }
 
-    /* About page - Gallery */
+    /* About page */
+    /* Gallery */
     #photos {
         column-count: 2;
     }
@@ -426,10 +462,17 @@ body {
         align-items: flex-start;
         justify-content: space-evenly;
     }
+
+    .footer-content {
+        /* background-color: orange; */
+    }
     
     .footer-content p {
         padding: 20px 0;
     }
+
+    
+
 }
 
 /* Media query: tablets and larger (768px and up) */
@@ -441,11 +484,12 @@ body {
     }
 
     .event-container {
-        width: 100%;
+        width: 100vw;
     }
 
     .event-type-container {
         display: flex;
+        /* width: 100vw; */
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
@@ -476,7 +520,7 @@ body {
     }
 
     .featured-events {
-        width: 300px;
+        width: 325px;
     }
 
     /* Booking Dashboard - Booking Cards Section */
@@ -493,7 +537,8 @@ body {
         padding: 10px;
     }
 
-    /* About page - Gallery */
+    /* About page gallery */
+    /* Gallery */
     #photos {
         column-count: 3;
     }
@@ -528,6 +573,8 @@ body {
     .container-error-box {
         width: 550px;
     }
+v
+
 }
 
 /* larger devices - laptops, desktops, and up (992px and up)  */

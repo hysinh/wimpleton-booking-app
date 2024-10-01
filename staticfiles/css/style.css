@@ -16,15 +16,10 @@ body {
     padding-top: .3125rem;
     padding-bottom: .3125rem;
     margin-right: 1rem;
-    /* white-space: nowrap; */
     font-size: .95rem;
     font-weight: 700;
     letter-spacing: 3px;
     color: #d9dcd6;
-}
-
-.navbar {
-    /* width: 100vw; */
 }
 
 .nav-background {
@@ -36,7 +31,6 @@ body {
 }
 
 .container {
-    /* width: 100vw; */
     margin: 0px;
     padding: 0px;
 }
@@ -50,7 +44,6 @@ body {
 }
 
 /* Sign in / Sign out / Register pages */
-
 .container-authentication {
     display: block;
     justify-content: center;
@@ -78,26 +71,21 @@ body {
 /* Home page: Featured content section */
 .new-featured-content-container{
     display: block;
-    /* background-color: yellow; */
-    /* padding: 20px 0; */
 }
 
 .new-featured-content {
-    /* background-color: pink; */
     margin: 0 auto;
     padding: 20px;
     text-align: center;
 }
 
 .featured-content-container {
-    /* background-color: aqua; */
     width: 90vw;
     padding: 20px 0;
     margin: 0 auto;
 }
 
 .featured-content {
-    /* background-color: orange; */
     background-color: #d9dcd6;
     padding: 40px 25px;
     font-size: 1em;
@@ -113,7 +101,6 @@ body {
 .event-type-container {
     display: block;
     justify-content: center;
-    /* background-color: purple; */
     background-color: #ffffff;
     width: 100vw;
 }
@@ -121,7 +108,6 @@ body {
 .authenticated-user {
     background-color: #445261;
     color: orange;
-    /* color: rgba(255, 255, 255, .55); */
     padding: .5rem 0;
 }
 
@@ -130,7 +116,6 @@ body {
     display: block;
     justify-content: center;
     padding: 15px 15px;
-    /* background-color: pink; */
     background-color: #ffffff;
 }
 
@@ -267,7 +252,6 @@ body {
     text-decoration: none;
     padding-top: .3125rem;
     padding-bottom: .3125rem;
-    /*white-space: nowrap;*/
     font-size: 1.15rem;
     font-weight: 700;
     letter-spacing: 3px;
@@ -326,14 +310,6 @@ body {
 .btn-edit {
     background-color: #188181;
     color: #fff;
-    /* width: 150px;
-    padding: .5rem;
-    margin: auto;
-    text-align: center;
-    color: #1A1A1A;
-    font-weight: 600;
-    letter-spacing: 2px;
-    font-size: medium; */
 }
 
 .btn-delete {
@@ -341,7 +317,6 @@ body {
     background: red;
     margin-top: 5px;
 }
-
 
 /* About Page */
 #gallery {
@@ -358,7 +333,6 @@ body {
 #photos {
     line-height: 0;
 }
-
 
 /* Contact Page */
 .featured-content-container-contact {
@@ -433,7 +407,6 @@ body {
     color: #d9dcd6;
 }
 
-
 /* Media query for mobile devices and later (375px and up) */
 @media screen and (min-width: 375px)  {
     /* Venue Listing Page */
@@ -463,10 +436,6 @@ body {
         justify-content: space-evenly;
     }
 
-    .footer-content {
-        /* background-color: orange; */
-    }
-    
     .footer-content p {
         padding: 20px 0;
     }
@@ -483,13 +452,8 @@ body {
         background-position: center;
     }
 
-    .event-container {
-        width: 100vw;
-    }
-
     .event-type-container {
         display: flex;
-        /* width: 100vw; */
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-evenly;
@@ -568,12 +532,10 @@ body {
         padding-top: 30px;
     }
 
-
     /* 404 & 500 Error pages */
     .container-error-box {
         width: 550px;
     }
-v
 
 }
 

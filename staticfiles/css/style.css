@@ -62,9 +62,6 @@ body {
 }
 
 /* Home page: Featured image styles */
-.featured-image-container {
-}
-
 .home-image {
     background: url("/static/images/wimpleton_home_1067x600.webp") no-repeat center/cover, #445261;
     height: 400px;
@@ -475,7 +472,7 @@ body {
     }
 
     .featured-events {
-        /* width: 300px; */
+        width: 300px;
     }
 
     /* Booking Dashboard - Booking Cards Section */

@@ -114,8 +114,7 @@ def edit_booking(request, booking_id):
 
     """
     original_booking = get_object_or_404(Booking, pk=booking_id)
-    form = BookingForm(instance=original_booking)
-    context = {"form": form, "original_booking": original_booking}
+    
     # redirects the user back to the booking dashboard if they do not have
     # permissions to edit the booking
     if original_booking.client != request.user:
@@ -134,6 +133,9 @@ def edit_booking(request, booking_id):
                 request,
                 "Your changes could not be saved. Please check your form and try again",
             )
+
+    form = BookingForm(instance=original_booking)
+    context = {"form": form, "original_booking": original_booking}
 
     return render(request, "user/edit_booking.html", context)
 

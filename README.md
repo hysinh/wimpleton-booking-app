@@ -112,7 +112,7 @@ I also found it challenging to organise the EPICs and the user stories effective
     - View venue details page
 
 ### UI Design
-  I created some rough wireframes when first planning the website and a flowchart. I had three basic variations with consideration to reponsive design for the mobile, tablet, and desktop layouts. After roughing out what I wanted for the general layouts and content, I created a mockup for the overall look and feel for the site in Adobe Photoshop. I also designed the Entity Relationship Diagrams and considered how each model would interact with the others.
+  I created some rough wireframes when first planning the website and a flowchart. I had three basic variations with consideration to responsive design for the mobile, tablet, and desktop layouts. After roughing out what I wanted for the general layouts and content, I created a mockup for the overall look and feel for the site in Adobe Photoshop. I also designed the Entity Relationship Diagrams and considered how each model would interact with the others.
 
   <details >
   <summary>Preliminary Wireframe sketch</summary>  
@@ -147,6 +147,13 @@ I also found it challenging to organise the EPICs and the user stories effective
   ![color scheme](documentation/readme/screenshot_fontfamilies.png)
   </details>
 
+  #### Responsiveness
+  The Wimpleton House website needed to be responsive and available on a variety of screen sizes and devices to make it as accessible as possible. I focused on the following sizes:
+
+  1. Mobile Device dimensions (larger): 375px and larger
+  2. Tablet Device dimensions: 736px and larger
+  3. Laptop Device dimensions: 992px and larger
+
 ### Database Design
 Custom models were created for Venues, Bookings, and Contacts. A venue can have many bookings. A booking can only have one client and one venue.
 <details >
@@ -159,7 +166,7 @@ Custom models were created for Venues, Bookings, and Contacts. A venue can have 
 
 ## Features
 ### Navbar - top navigation
-The navbar incorporates the logo and a responsive navbar that collapses to a hamburger when a device is less than a tablet. The navigation options provide the user with all of their potential navigation options including registering as a user or logging into the user dashboard to create and/or manage bookings.
+The navbar incorporates the logo and a responsive navbar that collapses to a hamburger when a device is less than a tablet. The navigation options provide the user with all of their potential navigation options including registering as a user or logging into the user dashboard to create and/or manage bookings. If a user is logged in, their user name is displayed adjacent to the navbar.
 <details >
 <summary>Public navbar</summary>  
 
@@ -187,7 +194,7 @@ The Home page provides a featured image of Wimpleton House as well as brief deta
 
 
 ### Venue Hire Page
-The Venue Hire page features details about each of the venue hire options available at the Wimpleton Hosue. A visitor also can click on a button that directs them to the Booking form if they are logged in or to the sign in page if they are not already signed in or registered as a user. There are additional buttons at the end of each venue description that once clicked directs the user to the Booking form with that particular venue preselected in the booking form. Each of the venue images and descriptions are generated dynamically from the venues saved in the database.
+The Venue Hire page features details about each of the venue hire options available at the Wimpleton House. A visitor also can click on a button that directs them to the Booking form if they are logged in or to the sign in page if they are not already signed in or registered as a user. There are additional buttons at the end of each venue description that once clicked directs the user to the Booking form with that particular venue preselected in the booking form. Each of the venue images and descriptions are generated dynamically from the venues saved in the database.
 <details>
 <summary>Venue Hire page</summary>
 

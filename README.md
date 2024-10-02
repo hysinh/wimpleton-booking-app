@@ -296,7 +296,7 @@ If there is a server error, a 500 Error page will display.
 
   
   1. Log into GitHub account. 
-  2. Navigate to the project repository: [Wimpleton]((https://github.com/hysinh/wimpleton-booking-app)
+  2. Navigate to the project repository: [Wimpleton](https://github.com/hysinh/wimpleton-booking-app)
   3. Navigate to the CODE link on the navigation across the top.
   3. Then, navigate to the green CODE button on the right side and click.
   4. Select the Local tab and click on the copy icon to make a copy of the repository.

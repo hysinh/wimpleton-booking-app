@@ -5,6 +5,12 @@
 ## CONTENTS  
   
 * [Testing](#testing)
+  * [HTML Validation](#html-validation)
+  * [CSS Validation](#css-validation)
+  * [Javascript Validation](#javascript-validation)
+  * [Python Validation](#python-validation)
+  * [Google Lighthouse Audits](#google-lighthouse-audits)
+  * [Unit Testing](#unit-testing)
   * [Manual Testing](#manual-testing)
   * [Bugs and Fixes](#bugs-and-fixes)
   * [Unfixed Bugs](#unfixed-bugs)
@@ -303,6 +309,9 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
       ![500 page](documentation/testing/lighthouse/screenshot_lighthouse_500error_desktop.png)
       </details>
 
+  ### Browser Compatability
+  
+  
   ### Unit Testing
   I was able to successfully execute unit testing on the booking form and the email contact form. 
 
@@ -318,11 +327,11 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   </details>
 
 
-
   ### Manual Testing
   Manual testing was performed on the website checking to ensure pages rendered correctly, input forms worked correctly, and a user was able to create, view, edit, and delete their bookings.
 
   #### Browsers
+  Browser compatability was checked on Google Chrome, Microsoft Edge, Brave, and Opera. For manual testing, the following browsers were used:
   1. Microsoft Edge
   2. Google Chrome
   3. Opera
@@ -386,6 +395,4 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   | There were a few places that were greater than the 79 character length max | settings.py - line 129 | Was unable to resolve as caused more errors when shortened |
   | There were a few places that were greater than the 79 character length max | views.py | Could not reduce error strings further and was unable to break up the line without causing further problems |
   | HTML errors | account/signup.html | These html errors were inside the built in Django signup form |
-
-  
 

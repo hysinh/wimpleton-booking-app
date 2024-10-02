@@ -9,6 +9,11 @@ from .models import Booking, Email
 # Assistance in figuring out how to use timedelta and setting a max
 # time limit by CI Mentor, Sandeep Aggarwal
 class DateInput(forms.DateInput):
+    """
+    Creates a Date picker for the Booking form.
+    Sets available dates for a minimum of 5 days from today's
+    date and a maximum of two years from today's date.
+    """
     input_type = "date"
 
     def get_context(self, name, value, attrs):

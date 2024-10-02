@@ -148,7 +148,7 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
     </details>
 
   ### Search Engine Optimization, Accessibility, Best Practices, & Performance
-  - #### Google Lighthouse Audit
+  - #### Google Lighthouse Audits
     Google Lighthouse was used to assess each page on it's performance, accessibility, Best Practices, and SEO. Using google fonts, font awesome as well as an Google maps embed all affected the performance of different pages as they are considered render-blocking resources. For my mobile performance assessments, the ratings were a little low due to the featured image file size. Although I used a smaller image set to 800px x 450px which affected the ratings only a little, the file size was still a bit larger than the Lighthouse standard. I decided that I didn't want to compromise the image size or quality further as it is an integral part of the website branding.
     #### Home Page
     - <details >
@@ -226,46 +226,82 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
 
       ![Login page](documentation/testing/lighthouse/screenshot_lighthouse_signin_mobile.png)
       </details>
-      - <details>
+    - <details>
       <summary>desktop</summary>  
 
       ![Login page](documentation/testing/lighthouse/screenshot_lighthouse_signin_desktop.png)
       </details>
     
-
     #### Registered User Pages (Logged in)
-    <details >
-    <summary>Booking Dashboard page</summary>  
+    #### Booking Dashboard page
+    - <details>
+      <summary>mobile</summary>  
 
-    ![Booking Dashboard page](link)
-    </details>
-    <details >
-    <summary>Request Booking page</summary>  
+      ![Booking Dashboard page](documentation/testing/lighthouse/screenshot_lighthouse_bookingdashboard_mobile.png)
+      </details>
+    - <details>
+      <summary>desktop</summary>  
 
-    ![Request Booking page](link)
-    </details>
-    <details >
-    <summary>Edit Booking page</summary>  
+      ![Booking Dashboard page](documentation/testing/lighthouse/screenshot_lighthouse_bookingdashboard_desktop.png)
+      </details>
+    
+    #### Request Booking page
+    - <details >
+      <summary>mobile</summary>  
 
-    ![Edit Booking page](link)
-    </details>
-    <details>
-    <summary>Signout page</summary>  
+      ![Request Booking page](documentation/testing/lighthouse/screenshot_lighthouse_requestbooking_mobile.png)
+      </details>
+    - <details >
+      <summary>desktop</summary>  
 
-    ![Signout page](link)
-    </details>
+      ![Request Booking page](documentation/testing/lighthouse/screenshot_lighthouse_requestbooking_desktop.png)
+      </details>
+    
+    #### Edit Booking page
+    - <details >
+      <summary>mobile</summary>  
+
+      ![Edit Booking page](documentation/testing/lighthouse/screenshot_lighthouse_editbooking_mobile.png)
+      </details>
+    - <details >
+      <summary>desktop</summary>  
+
+      ![Edit Booking page](documentation/testing/lighthouse/screenshot_lighthouse_requestbooking_desktop.png)
+      </details>
+
+    #### Sign Out Page
+    - <details>
+      <summary>mobile</summary>  
+
+      ![Signout page](documentation/testing/lighthouse/screenshot_lighthouse_signout_mobile.png)
+      </details>
+    - <details>
+      <summary>desktop</summary>  
+
+      ![Signout page](documentation/testing/lighthouse/screenshot_lighthouse_signout_desktop.png)
+      </details>
     
     #### Custom Error Pages
-    <details >
-    <summary>404 Error Page</summary>  
+    - <details >
+      <summary>404 Error Page - mobile</summary>  
 
-    ![404 Error page](link)
-    </details>
-    <details >
-    <summary>500 Error page</summary>  
+      ![404 Error page](documentation/testing/lighthouse/screenshot_lighthouse_404error_mobile.png)
+      </details>
+    - <details >
+      <summary>404 Error Page - desktop</summary>  
 
-    ![500 page](link)
-    </details>
+      ![404 Error page](documentation/testing/lighthouse/screenshot_lighthouse_404error_desktop.png)
+      </details>
+    - <details >
+      <summary>500 Error page - mobile</summary>  
+
+      ![500 page](documentation/testing/lighthouse/screenshot_lighthouse_500error_mobile.png)
+      </details>
+    - <details >
+      <summary>500 Error page - desktop</summary>  
+
+      ![500 page](documentation/testing/lighthouse/screenshot_lighthouse_500error_desktop.png)
+      </details>
 
   ### Unit Testing
   I was able to successfully execute unit testing on the booking form and the email contact form. 
@@ -320,11 +356,11 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   | | Does the Edit booking page allow the user to edit a specific existing booking? | Yes |
   | | Is the input validated and display an error messages when not valid? | Yes |
   | Delete Booking button | Does the Delete booking button open a Deletion modal correctly? | Yes |
-  | | Does the Delete booking button allow the user to delete a selected booking associated that user? | Yes |
+  | | Does the Delete booking button allow the user to delete a selected booking associated with that user? | Yes |
   | Register page | Does the Register user page render correctly? | Yes |
-  | Register page | Does the Register user page allow a visitor to register as a user? | Yes |
+  | | Does the Register user page allow a visitor to register as a user? | Yes |
   | Sign out page | Does the Sign out page render correctly? | Yes |
-  | Sign out page  | Does the sign out page allow a user to sign out? | Yes |
+  |  | Does the sign out page allow a user to sign out? | Yes |
   | 404 Error page | Does the 404 error page render correctly when visitor attempts to navigate to a page that doesn't exist? | Yes |
   | 500 Error page | Does the 500 error page render correctly when there is a server error | Yes |
   | Admin panel | Can only access the admin panel if any authorised user? | Yes |
@@ -338,6 +374,7 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   | Parse error | styles.css | Remove errant character |
   | Family Name for font family | style.css | Add quotes around family name |
   | One undefined variable | bookings.js | Add "globals bootstrap" to top of code to remove warning |
+  | Form method set to POST causing form errors on render | venue_list.html template | Change method to GET |
 
   
   ### Unfixed Bugs

@@ -9,16 +9,17 @@ Wimpleton House Booking website is a full-stack web application created with HTM
 ## CONTENTS  
   
 * [User Experience](#user-experience)
+  * [Project Goals](#project-goals)
   * [User Stories](#user-stories)
   * [Site Admin Stories](#site-admin-stories)
 * [Agile Methodology](#agile-methodology)
   * [Kanban Board](#kanban-board)
   * [UI Design](#design)
-  * [Flowchart](#flowchart)
+  * [Database Design](#database-design)
 * [Features](#features)
-* [Future Features](#future-features)
+* [Future Development](#future-development)
 * [Technologies](#technologies)
-  * [Languages Used](#languages-used)
+  * [Languages and Libraries Used](#languages-and-libraries-used)
   * [Technologies and Programs Used](#technologies-and-programs-used)
   * [Deployment](#deployment)
 * [Testing](#testing)
@@ -39,7 +40,7 @@ Although some events may be one-off events like a wedding, the estate has a goal
   - Create an admin portal where staff could manage the venues and the bookings of all clients
   - Create a website that was responsive and attractive
 
-- ### Visitor Goal
+- ### Visitor Goals
   As a user, I want to easily view potential venue hire options at the Wimpleton House estate, to create a booking, and to view and manage all my bookings.
 
 - ### User Stories
@@ -66,14 +67,49 @@ Although some events may be one-off events like a wedding, the estate has a goal
 ## Agile Methodology
 The Agile Methodology was the project management approach used for this project. I attempted to break the project into phases and followed a cycle of planning, executing, and evaluating. To be honest, this was probably the most challenging part of the project for two reasons. First, it was the least interesting and enjoyable and secondly, I found it difficult to design effective user stories for the project. Since I was simultaneously writing user stories and trying to learn how to implement a Django web framework, I realised that I didn't know exactly how things would flow and how to ask the right questions to get the results I needed.
 
-As I wrote the stories, everything seemed equally important and dependent on each other. I set a plan for 2 week iterations but I found it difficult to stick to any of these stages as some things went smoothly and other areas, I would get stuck or need to go back and revise things that weren't working properly. Looking back, I think I would redesign the user stories to be broken down into smaller more manageable sections instead of grouping functionality together.
+As I wrote the stories, almost everything seemed equally important and dependent on each other. I set a plan for 2 week iterations or sprints but I found it difficult to stick to any of these stages as some things went smoothly and other areas, I would get stuck or need to go back and revise things that weren't working properly. I found it very difficult to gauge how many story points something would take. Looking back, I think I would redesign the user stories to be broken down into smaller more manageable sections instead of grouping functionality together. Even so, assigning accurate story points to items that I was only designing and implementing for the first time would be challenging.
+
+All issues/user stories began in the Backlog section. As I got to a section, I moved issues from the backlog into the "Ready" section and as I began work on that specific issue, I moved it into the "In progress" section. As issues were resolved, they were moved into the "Done" column.
+
+I also implemented the MoSCoW prioritisation scheme (Must Have, Should Have, Could Have, and Won't Have). However, when attempted to implement this, most of my user stories fell into the "Must have" criteria.
+
+I also found it challenging to organise the EPICs and the user stories effectively in the GitHub Project tool. I tried a couple of different ways, but it got a bit messy. Now that I have tried to utilize this tool for a project, I hope that my next project's Kanban board will go more smoothly and be more clear and effective.
+
 - ### Kanban Board 
-  I used the github projects space to design a [Kanban Board](https://github.com/users/hysinh/projects/5)
+  I used the GitHub Project board to design and manage a [Kanban Board](https://github.com/users/hysinh/projects/5)
   <details >
   <summary>Kanban Board screenshot</summary>  
 
   ![Kanban Board screenshot](documentation/readme/screenshot_kanban.png)
   </details>
+
+- ### Issues
+  I had 18 issues:
+  - 3 Epics:
+    - Research and Planning for app
+    - Set up and Build App and Public Pages
+    - Build CRUD Functionality
+  - Must Haves
+    - Manage bookings as site admin
+    - Manage bookings as a registered user
+    - Create Venue options as site admin
+    - Accessing the booking section
+    - Adding authentication to app
+    - Design the ERD
+    - Planning for application
+    - Initial App Research
+    - Create all the public pages for booking app
+    - Register as a registered user
+    - Sign in and out as a registered user
+    - Access the public pages
+    - Supepruser admin access to admin dashboard
+    - Initial Heroku Deployment
+  - Should Haves
+    - Deletion of Booking confirmation message
+    - Confirmation messages for bookings
+  - Could Haves
+    - Staff dashboard
+    - View venue details page
 
 ### UI Design
   I created some rough wireframes when first planning the website and a flowchart. I had three basic variations with consideration to reponsive design for the mobile, tablet, and desktop layouts. After roughing out what I wanted for the general layouts and content, I created a mockup for the overall look and feel for the site in Adobe Photoshop. I also designed the Entity Relationship Diagrams and considered how each model would interact with the others.
@@ -111,12 +147,13 @@ As I wrote the stories, everything seemed equally important and dependent on eac
   ![color scheme](documentation/readme/screenshot_fontfamilies.png)
   </details>
 
-### Postgres Database / Model Design
-  <details >
-  <summary>Entity Relationship Diagrams</summary>  
+### Database Design
+Custom models were created for Venues, Bookings, and Contacts. A venue can have many bookings. A booking can only have one client and one venue.
+<details >
+<summary>Entity Relationship Diagrams</summary>  
 
-  ![ERDs](documentation/readme/screenshot_ERDs.png)
-  </details>
+![ERDs](documentation/readme/screenshot_ERDs.png)
+</details>
   
 
 
@@ -167,7 +204,7 @@ The About page provides basic information about Wimpleton House and emphasises i
 <details>
 <summary>About page</summary>
 
-![about page](link)
+![about page](documentation/readme/features/screenshot_about.png)
 </details>
 
 ### Contact Page
@@ -175,7 +212,17 @@ The Contact page features basic contact information for the Wimplton House inclu
 <details>
 <summary>Contact Page</summary>
 
-![contact page](link)
+![contact page](documentation/readme/features/screenshot_contact_page.png)
+</details>
+<details>
+<summary>Google Maps</summary>
+
+![contact page](documentation/readme/features/screenshot_contact_map.png)
+</details>
+<details>
+<summary>Contact form</summary>
+
+![contact page](documentation/readme/features/screenshot_contact_contactform.png)
 </details>
 
 ### Booking Dashboard
@@ -378,14 +425,14 @@ If there is a server error, a 500 Error page will display.
   - Photo by Pixabay: https://www.pexels.com/photo/steel-gate-of-brown-brick-building-159490/
   - Photo by Victoria Strelka_ph: https://www.pexels.com/photo/bride-and-groom-walking-towards-the-church-12194355/
 - #### Code resources
-- Getting a json file output of object
-  https://sentry.io/answers/creating-a-json-response-using-django-and-python/
-- Comparing dates - strings vs objects
-  https://stackoverflow.com/questions/15311222/comparing-dates-stored-as-strings-in-django
-- Accessing django properties
-  https://dev.to/doridoro/django-model-properties-28ac
-- How to compare dates in django
-  https://stackoverflow.com/questions/3798812/how-to-compare-dates-in-django-templates
-- 404 custom and 500 pages with handler url
-  https://stackoverflow.com/questions/20581017/django-custom-404-page-not-working
+  - Getting a json file output of object
+    https://sentry.io/answers/creating-a-json-response-using-django-and-python/
+  - Comparing dates - strings vs objects
+    https://stackoverflow.com/questions/15311222/comparing-dates-stored-as-strings-in-django
+  - Accessing django properties
+    https://dev.to/doridoro/django-model-properties-28ac
+  - How to compare dates in django
+    https://stackoverflow.com/questions/3798812/how-to-compare-dates-in-django-templates
+  - 404 custom and 500 pages with handler url
+    https://stackoverflow.com/questions/20581017/django-custom-404-page-not-working
 

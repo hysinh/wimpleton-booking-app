@@ -16,7 +16,6 @@
 <!-- About Wimpleton House blurb -->
 <div class="featured-content-container-contact">
   <div class="featured-content-contact">
-    <!-- <div class="row featured-content-contact align-items-center"> -->
     <div class="address-block">
       <div class="address">
         <h4>Contact Information</h4>
@@ -49,7 +48,6 @@
 
         <ul class="messages">
           {% for message in messages %}
-          <!-- <li>{{ form.non_field_errors }}</li> -->
           <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
             {% endfor %}
         </ul>

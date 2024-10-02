@@ -8,3 +8,4 @@ node_modules/
 .github/
 cloudinary_python.txt
 templates/account/login_original.html
+db.sqlite3

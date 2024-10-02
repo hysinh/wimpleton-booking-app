@@ -95,7 +95,6 @@ def request_booking(request):
     context = {
         "form": form,
         "venues": venues,
-        "selected_venue": selected_venue,
     }
 
     return render(request, "user/request_booking.html", context)

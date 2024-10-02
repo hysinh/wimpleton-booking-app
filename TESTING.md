@@ -41,17 +41,17 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
     ![Contact page](documentation/testing/html/screenshot_html_validation_contactpage.png)
     </details>
     <details>
-    <summary>Register page (signup.html) - ERRORS Detail - See bug in Table</summary>  
+    <summary>Sign up page (signup.html) - ERRORS Detail - See error in Linter Error Table below</summary>  
 
-    ![Register page](documentation/testing/html/screenshot_html_signup_errors1.png)
+    ![Signup page](documentation/testing/html/screenshot_html_signup_errors1.png)
     </details>
     <details>
-    <summary>Register page (signup.html) - ERRORS Detail 2 - See bug in Table</summary>  
+    <summary>Sign Up page (signup.html) - ERRORS Detail 2 - See error in Linter Error Table below</summary>  
 
-    ![Register page](documentation/testing/html/screenshot_html_signup_errors2.png)
+    ![Signup page](documentation/testing/html/screenshot_html_signup_errors2.png)
     </details>
     <details>
-    <summary>Login page (signin.html)</summary>  
+    <summary>Sign In page (signin.html)</summary>  
 
     ![Login page](documentation/testing/html/screenshot_html_signin.png)
     </details>
@@ -147,15 +147,124 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
     ![test_views.py](documentation/testing/python/screenshot_python_booking_test_views.png)
     </details>
 
-  ### Search Engine Optimization
-  This application was developed with HTML, CSS, Javascript, and Python using the Django Web Framework.
-  - #### HTML Validation
-    The [W3C HTML validator](https://validator.w3.org/) was used for the HTML validation. I copied the page source of the fully rendered page into the validator for testing.
-    #### Public Pages
-    <details >
-    <summary>Home page (base.html and index.html)</summary>  
+  ### Search Engine Optimization, Accessibility, Best Practices, & Performance
+  - #### Google Lighthouse Audit
+    Google Lighthouse was used to assess each page on it's performance, accessibility, Best Practices, and SEO. Using google fonts, font awesome as well as an Google maps embed all affected the performance of different pages as they are considered render-blocking resources. For my mobile performance assessments, the ratings were a little low due to the featured image file size. Although I used a smaller image set to 800px x 450px which affected the ratings only a little, the file size was still a bit larger than the Lighthouse standard. I decided that I didn't want to compromise the image size or quality further as it is an integral part of the website branding.
+    #### Home Page
+    - <details >
+      <summary>mobile</summary>  
 
-    ![Hpme page](documentation/testing/html/screenshot_html_validation_indexpage.png)
+      ![Hpme page](documentation/testing/lighthouse/screenshot_lighthouse_home_mobile.png)
+      </details>
+    - <details >
+      <summary>desktop</summary>  
+
+      ![Hpme page](documentation/testing/lighthouse/screenshot_lighthouse_home_desktop.png)
+      </details>
+
+    #### Venue Hire Page
+    Using images from Cloudinary had a big impact on Best Practices assessments as they are considered insecure requests. 
+    - <details >
+      <summary>mobile</summary>  
+
+      ![Venue Hire page](documentation/testing/lighthouse/screenshot_lighthouse_venuehire_mobile.png)
+      </details>
+    - <details >
+      <summary>mobile - details</summary>  
+
+      ![Venue Hire page](documentation/testing/lighthouse/screenshot_lighthouse_venuehire_bestpractices_issue.png)
+      </details> 
+    - <details >
+      <summary>desktop</summary>  
+
+      ![Venue Hire page](documentation/testing/lighthouse/screenshot_lighthouse_venuehire_desktop.png)
+      </details>
+
+    #### About Page
+    - <details>
+      <summary>mobile</summary>  
+
+      ![About page](documentation/testing/lighthouse/screenshot_lighthouse_about_mobile.png)
+      </details>
+    - <details>
+      <summary>desktop</summary>  
+
+      ![About page](documentation/testing/lighthouse/screenshot_lighthouse_about_desktop.png)
+      </details>
+    
+    #### Contact Page
+    Best Practices assessment was affected by the Google Maps embed that I used in the contact information section.
+    - <details>
+      <summary>mobile</summary>  
+
+      ![Contact page](documentation/testing/lighthouse/screenshot_lighthouse_contact_mobile.png)
+      </details>
+    - <details>
+      <summary>desktop</summary>  
+
+      ![Contact page](documentation/testing/lighthouse/screenshot_lighthouse_contact_desktop.png)
+      </details>
+    - <details>
+      <summary>Best Practices detail - Google Maps</summary>  
+
+      ![Contact page](documentation/testing/lighthouse/screenshot_lighthouse_contact_bestpractices_issues.png)
+      </details>
+    #### Sign Up Page
+    - <details>
+      <summary>mobile</summary>  
+
+      ![Register page](documentation/testing/lighthouse/screenshot_lighthouse_signup_mobile.png)
+      </details>
+    - <details>
+      <summary>desktop</summary>  
+
+      ![Register page](documentation/testing/lighthouse/screenshot_lighthouse_signout_desktop.png)
+      </details>
+    #### Sign in Page
+    - <details>
+      <summary>mobile</summary>  
+
+      ![Login page](documentation/testing/lighthouse/screenshot_lighthouse_signin_mobile.png)
+      </details>
+      - <details>
+      <summary>desktop</summary>  
+
+      ![Login page](documentation/testing/lighthouse/screenshot_lighthouse_signin_desktop.png)
+      </details>
+    
+
+    #### Registered User Pages (Logged in)
+    <details >
+    <summary>Booking Dashboard page</summary>  
+
+    ![Booking Dashboard page](link)
+    </details>
+    <details >
+    <summary>Request Booking page</summary>  
+
+    ![Request Booking page](link)
+    </details>
+    <details >
+    <summary>Edit Booking page</summary>  
+
+    ![Edit Booking page](link)
+    </details>
+    <details>
+    <summary>Signout page</summary>  
+
+    ![Signout page](link)
+    </details>
+    
+    #### Custom Error Pages
+    <details >
+    <summary>404 Error Page</summary>  
+
+    ![404 Error page](link)
+    </details>
+    <details >
+    <summary>500 Error page</summary>  
+
+    ![500 page](link)
     </details>
 
   ### Unit Testing
@@ -201,7 +310,7 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   | | Do approved, pending approval, and expired bookings display in the correct sections? | Yes |
   | | Does the Request a booking button work correctly? | Yes |
   | | Do the edit and delete bookings buttons work correctly? | Yes |
-  | Request Booking page | Does the Request Booking page render correctly? | ? |
+  | Request Booking page | Does the Request Booking page render correctly? | Yes |
   | | Does the Request Booking form work correctly and allow a user to request a booking? | Yes |
   | | Do the form error messages display correctly? | Yes |
   | | Does a successful request redirect correctly to the booking dashboard and display a success message? | Yes |

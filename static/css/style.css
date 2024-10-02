@@ -422,12 +422,6 @@ body {
         margin: 10px 0px 30px;
     }
 
-    /* About page */
-    /* Gallery */
-    #photos {
-        column-count: 2;
-    }
-
     /* Footer */
     .footer {
         display: flex;

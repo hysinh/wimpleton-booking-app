@@ -1,33 +1,33 @@
 from django.test import TestCase
 from .models import Venue
-from .forms import BookingForm, EmailForm
+from .forms import BookingForm, ContactForm
 from django.contrib.auth.models import User
 import json
 
 
 # Create your tests here.
-class TestEmailForm(TestCase):
+class TestContactForm(TestCase):
     """
-    Test cases for the Email Contact form
+    Test cases for the Contact form
     """
-    def test_email_form_is_valid(self):
+    def test_Contact_form_is_valid(self):
         """
-        Test the Email contact form with valid data
+        Test the Contact form with valid data
         """
         data = {
             "name": 'Ralph Test',
             "email": "test@test.com",
             "message": "Hello, This is a test",
         }
-        form = EmailForm(data=data)
+        form = ContactForm(data=data)
         self.assertTrue(form.is_valid())
 
-    def test_email_form_with_invalid_data(self):
+    def test_contact_form_with_invalid_data(self):
         """
-        Test the Email contact form with invalid data
+        Test the Contact form with invalid data
         """
         data = {}
-        form = EmailForm(data=data)
+        form = ContactForm(data=data)
         self.assertFalse(form.is_valid())
         self.assertIn("name", form.errors)
         self.assertIn("email", form.errors)

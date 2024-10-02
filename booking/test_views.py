@@ -1,6 +1,6 @@
 from django.test import TestCase
-from .models import Booking, Email, Venue
-from .forms import BookingForm, EmailForm
+from .models import Booking, Contact, Venue
+from .forms import BookingForm, ContactForm
 from django.contrib.auth.models import User
 from django.urls import reverse
 import json

@@ -97,9 +97,9 @@ class Booking(models.Model):
         return f"{self.venue}"
 
 
-class Email(models.Model):
+class Contact(models.Model):
     """
-    Stores a single booking entry
+    Stores a single contact form entry
     """
 
     name = models.CharField(max_length=250)
@@ -108,4 +108,4 @@ class Email(models.Model):
     read = models.BooleanField(default=False)
 
     def __str__(self):
-        return f"Email Inquiry from {self.name}"
+        return f"Contact Form Inquiry from {self.name}"

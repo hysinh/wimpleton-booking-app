@@ -6,8 +6,8 @@ from django.http import JsonResponse
 from django.contrib.auth.decorators import login_required, permission_required
 from django.http import HttpResponseRedirect
 from django.urls import reverse
-from .models import Venue, Booking
-from .forms import BookingForm, EmailForm
+from .models import Venue, Booking, Contact
+from .forms import BookingForm, ContactForm
 
 
 # Create your views here.
@@ -37,8 +37,8 @@ def booking_dashboard(request):
     an existing booking, and delete an existing booking
     """
     pending_bookings = Booking.objects.filter(client_id=request.user, status=0)
-    approved_bookings = Booking.objects.filter(client_id=request.user,
-                                               status=1)
+    approved_bookings = Booking.objects.filter(
+        client_id=request.user, status=1)
     all_bookings = Booking.objects.filter(client_id=request.user)
 
     context = {
@@ -56,14 +56,13 @@ def request_booking(request):
     """
     form = BookingForm()
     context = {}
-    
-	# If user inputs a venue by clicking the corresponding button
+    # If user inputs a venue by clicking the corresponding button
     # on the Venue Hire page, this will get that venue selection and
     # set as the initial venue value in the booking form
     if request.method == "GET":
-        selected_venue =  request.GET.get("venue")
-        form = BookingForm(initial={'venue': selected_venue})
-	
+        selected_venue = request.GET.get("venue")
+        form = BookingForm(initial={"venue": selected_venue})
+
     if request.method == "POST":
         form = BookingForm(request.POST)
         if form.is_valid():
@@ -119,8 +118,8 @@ def edit_booking(request, booking_id):
     # redirects the user back to the booking dashboard if they do not have
     # permissions to edit the booking
     if original_booking.client != request.user:
-        messages.error(request,
-                       "You do not have permissions to edit this booking.")
+        messages.error(
+            request, "You do not have permissions to edit this booking.")
         return redirect("booking-dashboard")
 
     if request.method == "POST":
@@ -132,7 +131,7 @@ def edit_booking(request, booking_id):
         else:
             messages.error(
                 request,
-                "Your changes could not be saved. Please check your form and try again"
+                "Your changes could not be saved. Please check your form and try again",
             )
 
     form = BookingForm(instance=original_booking)
@@ -159,9 +158,7 @@ def delete_booking(request, booking_id):
         return redirect("booking-dashboard")
     else:
         messages.error(
-            request,
-            "You do not have permissions to delete this booking."
-        )
+            request, "You do not have permissions to delete this booking.")
 
     return HttpResponseRedirect(reverse("booking-dashboard"))
 
@@ -181,12 +178,12 @@ def contactpage(request):
     to the Wimpleton House staff
     Displays the EmailForm
     """
-    email_form = EmailForm()
+    contact_form = ContactForm()
     context = {}
     if request.method == "POST":
-        email_form = EmailForm(request.POST)
-        if email_form.is_valid():
-            email_form.save()
+        contact_form = ContactForm(request.POST)
+        if contact_form.is_valid():
+            contact_form.save()
 
             messages.success(
                 request,
@@ -199,7 +196,7 @@ def contactpage(request):
             return render(request, "public/contact.html", context)
 
     context = {
-        "email_form": email_form,
+        "contact_form": contact_form,
     }
 
     return render(request, "public/contact.html", context)

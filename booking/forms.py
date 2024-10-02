@@ -1,7 +1,7 @@
 from django import forms
 from django.utils.timezone import now
 from datetime import timedelta
-from .models import Booking, Email
+from .models import Booking, Contact
 
 
 # DateInput Source:
@@ -33,7 +33,7 @@ class BookingForm(forms.ModelForm):
         widgets = {"event_date": DateInput()}
 
 
-class EmailForm(forms.ModelForm):
+class ContactForm(forms.ModelForm):
     class Meta:
-        model = Email
+        model = Contact
         fields = ["name", "email", "message"]

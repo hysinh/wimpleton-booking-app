@@ -76,16 +76,22 @@ As I wrote the stories, everything seemed equally important and dependent on eac
   </details>
 
 ### UI Design
-  I created some rough wireframes when first planning the website. I had three basic variations with consideration to reponsive design for the mobile, tablet, and desktop layouts. After roughing out what I wanted for the general layouts and content, I created a mockup for the overall look and feel for the site in Adobe Photoshop. I also designed the Entity Relationship Diagrams and considered how each model would interact with the others.
+  I created some rough wireframes when first planning the website and a flowchart. I had three basic variations with consideration to reponsive design for the mobile, tablet, and desktop layouts. After roughing out what I wanted for the general layouts and content, I created a mockup for the overall look and feel for the site in Adobe Photoshop. I also designed the Entity Relationship Diagrams and considered how each model would interact with the others.
 
   <details >
-  <summary>Preliminary Sketches</summary>  
+  <summary>Preliminary Wireframe sketch</summary>  
 
-  ![preliminary](link)
+  ![wireframe](documentation/readme/screenshot_wireframe.png)
   </details>
 
   <details >
-  <summary>Design Mockups</summary>  
+  <summary>Flowchart sketch</summary>  
+
+  ![wireframe](documentation/readme/screenshot_flowchart.png)
+  </details>
+
+  <details >
+  <summary>Design mockup</summary>  
 
   ![design mockup](documentation/readme/design_mobile_designmockup.webp)
   </details>

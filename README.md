@@ -31,31 +31,49 @@ Wimpleton House Booking website is a full-stack web application created with HTM
 The goal of the Wimpleton House Booking website is to provide a business tool that allows the business to engage meaningfully with potential clients. The website offers information about the different Venue hire options for the estate and then allows visitors to register as users and create, view, edit, and delete booking requests with the estate.
 
 Although some events may be one-off events like a wedding, the estate has a goal of creating ongoing relationships with event planners, businesses, corporations, and communities for events that potentially could be annual, bi-annual, quarterly, or even more frequent and facilitates clients managing their bookings and review past booking records.
+
+- ### Project Goals
+  - Create a booking system that allowed clients to book a venue for a particular date and that date would be reserved for the client
+  - Create a website that offered pertinent information to a potential client to make a decision about booking a particular venue option
+  - Create a dashboard that allowed a client to manage their bookings (create/edit/delete) as well as view all their bookings in a manageable way
+  - Create an admin portal where staff could manage the venues and the bookings of all clients
+  - Create a website that was responsive and attractive
+
 - ### Visitor Goal
   As a user, I want to easily view potential venue hire options at the Wimpleton House estate, to create a booking, and to view and manage all my bookings.
-- ### User Stories
-  1. As a vistor, I can access the main, public pages and navigate easily through the website.
-  2. As a visitor, I can easily review the venue hire options available at the Wimpleton house.
-  3. As a visitor, I can easily register as a user to the website.
-  4. As a user, I can log into the website to access my account.
-  5. As a user, I can see that I am logged into the website on the navbar.
-  6. As a user, I can easily access the Booking Dashboard and view my current and expired bookings.
-  7. As a user, I can easily book a specific venue for a specific date either via the Booking dashboard or directly from the Venue Hire page.
-  8. As a logged in user, I can securely end by session by logging out.
-  9. As a visitor, I can see customized error pages for 404 and 500 errors so that I can understand what happened and take the appropriate action.
 
-- ### Site Admin Stories
-  1. As a site owner/administrator, I can create, read, update, and delete Venue options and descriptions.
-  2. As a site owner/administrator, I can create, read, update, and delete Bookings for clients.
-  3. As a site owner/administrator, I can read, update, and delete existing Bookings for a client.
-  4. As a site owner/administrator, I can approve a booking, which in theory, initializes the next step for the client for the booking (i.e. initialises an event consultation, contract creation, and deposit payment).
-  5. As a site owner/administrator, I can view messages sent through the email contact form via the website.
+- ### User Stories
+  1. As a Site User, I can view and access the main, public pages so that I can navigate easily through the website.
+  2. As a Site User, I can easily review the venue hire options available at the Wimpleton house so that I can make a decision about which venue option to choose.
+  3. As a Potential Registered User, I can register for an account so that I can access the booking area, make a venue booking, and see my bookings
+  4. As a Registered User, I can sign into or out of the site so that I can make/manage my booking(s).
+  5. As a Registered user, I can see that I am logged into the website on the navbar.
+  6. As a Registered User, I can access the 'Bookings' section/form so that I can make/manage my bookings.
+  7. As a Registered User, I can view/update/delete any of my bookings so that I can manage the details of each of my bookings.
+  8. As a registered user, I will see a confirmation message for deletion before a booking is deleted so that I can be sure that I actually want to delete the booking.
+  9. As a Registered user, I can view a confirmation message so that I know that my booking has been created or updated correctly.
+  10. As a visitor, I can see customized error pages for 404 and 500 errors so that I can understand what happened and take the appropriate action.
+
+  ### Site Admin Stories
+  1. As a site admin, I can create and manage any booking so that I can manage the bookings for the venue.
+  2. As a site admin, I add/update/delete venue options so that the most updated venue options are available for the site users to book.
+  3. As a Super User or Admin, I can access the admin panel/dashboard so that I can edit venue information, about us, information, make/edit/review/update/delete bookings.
+  4. As a Site admin, I can add/update/delete venue options so that the most updated venue options are available for site users to book.
+  5. As a site owner/administrator, I can approve a booking, which in theory, initializes the next step for the client for the booking (i.e. initialises an event consultation, contract creation, and deposit payment).
+  6. As a site owner/administrator, I can view messages sent through the email contact form via the website.
 
 
 ## Agile Methodology
-The Agile Methodology was the project management approach used for this project. I attempted to break the project into phases and followed a cycle of planning, executing, and evaluating.
-### Kanban Board 
-  Something about kanban boards
+The Agile Methodology was the project management approach used for this project. I attempted to break the project into phases and followed a cycle of planning, executing, and evaluating. To be honest, this was probably the most challenging part of the project for two reasons. First, it was the least interesting and enjoyable and secondly, I found it difficult to design effective user stories for the project. Since I was simultaneously writing user stories and trying to learn how to implement a Django web framework, I realised that I didn't know exactly how things would flow and how to ask the right questions to get the results I needed.
+
+As I wrote the stories, everything seemed equally important and dependent on each other. I set a plan for 2 week iterations but I found it difficult to stick to any of these stages as some things went smoothly and other areas, I would get stuck or need to go back and revise things that weren't working properly. Looking back, I think I would redesign the user stories to be broken down into smaller more manageable sections instead of grouping functionality together.
+- ### Kanban Board 
+  I used the github projects space to design a [Kanban Board](https://github.com/users/hysinh/projects/5)
+  <details >
+  <summary>Kanban Board screenshot</summary>  
+
+  ![Kanban Board screenshot](documentation/readme/screenshot_kanban.png)
+  </details>
 
 ### UI Design
   I created some rough wireframes when first planning the website. I had three basic variations with consideration to reponsive design for the mobile, tablet, and desktop layouts. After roughing out what I wanted for the general layouts and content, I created a mockup for the overall look and feel for the site in Adobe Photoshop. I also designed the Entity Relationship Diagrams and considered how each model would interact with the others.

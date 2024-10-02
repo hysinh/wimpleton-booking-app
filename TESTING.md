@@ -3,7 +3,8 @@
 
 ## Testing Overview
 ## CONTENTS  
-  
+
+* [User Story Testing](#user-story-testing)
 * [Testing](#testing)
   * [HTML Validation](#html-validation)
   * [CSS Validation](#css-validation)
@@ -19,6 +20,23 @@
 ---   
 
 ## User Story Testing
+| User Story | Pass/Fail |
+| ---- | --------- |
+| As a Site User, I can view and access the main, public pages so that I can navigate easily through the website. | Pass |
+|  As a Site User, I can easily review the venue hire options available at the Wimpleton house so that I can make a decision about which venue option to choose | Pass |
+| As a Potential Registered User, I can register for an account so that I can access the booking area, make a venue booking, and see my bookings | Pass |
+| As a Registered User, I can sign into or out of the site so that I can make/manage my booking(s) | Pass |
+| As a Registered user, I can see that I am logged into the website on the navbar. | Pass |
+| As a Registered User, I can access the 'Bookings' section/form so that I can make/manage my bookings | Pass |
+| As a Registered User, I can view/update/delete any of my bookings so that I can manage the details of each of my bookings | Pass |
+| As a registered user, I will see a confirmation message for deletion before a booking is deleted so that I can be sure that I actually want to delete the booking | Pass |
+| As a Registered user, I can view a confirmation message so that I know that my booking has been created or updated correctly | Pass |
+| As a site admin, I can create and manage any booking so that I can manage the bookings for the venue | Pass |
+| As a site admin, I add/update/delete venue options so that the most updated venue options are available for the site users to book | Pass |
+| As a Super User or Admin, I can access the admin panel/dashboard so that I can edit venue information, about us, information, make/edit/review/update/delete bookings | Pass |
+| As a Site admin, I can add/update/delete venue options so that the most updated venue options are available for site users to book | Pass |
+
+
 
 ## Testing
 ### Validator Testing
@@ -308,8 +326,6 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
 
       ![500 page](documentation/testing/lighthouse/screenshot_lighthouse_500error_desktop.png)
       </details>
-
-  ### Browser Compatability
   
   
   ### Unit Testing
@@ -331,7 +347,7 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   Manual testing was performed on the website checking to ensure pages rendered correctly, input forms worked correctly, and a user was able to create, view, edit, and delete their bookings.
 
   #### Browsers
-  Browser compatability was checked on Google Chrome, Microsoft Edge, Brave, and Opera. For manual testing, the following browsers were used:
+  Browser compatibility was checked on Google Chrome, Microsoft Edge, Brave, and Opera. For manual testing, the following browsers were used:
   1. Microsoft Edge
   2. Google Chrome
   3. Opera

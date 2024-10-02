@@ -235,11 +235,11 @@ This application was developed with HTML, CSS, Javascript, and Python using the 
   - Although there were some spots where I could have found a better solution, there were no bugs that I was able to find that I could not resolve unless otherwise noted.
   
   ### Unresolved Linter Code Errors
-
   | Bug | Line | Unresolved Reason |
   | --- | ---- | --- |
   | There were a few places that were greater than the 79 character length max | settings.py - line 129 | Was unable to resolve as caused more errors when shortened |
   | There were a few places that were greater than the 79 character length max | views.py | Could not reduce error strings further and was unable to break up the line without causing further problems |
+  | HTML errors | account/signup.html | These html errors were inside the built in Django signup form |
 
   
 
